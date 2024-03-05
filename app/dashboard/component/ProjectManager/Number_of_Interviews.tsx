@@ -1,0 +1,42 @@
+function Number_of_Interviews() {
+    return (
+        <div className="row">
+            <div className="col-lg-12 col-md-6">
+                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between">
+                <h3 className="projectManHeading">Number of Interviews</h3>
+                <div className="flex">
+                    <div>
+                        <h1 className="totalCount mt-3 Poppins-SemiBold">25</h1>
+                        <div className="flex mt-3 align-items-center ">
+                            <img className="h-3 mr-2" src="image/arrowiocn.png" alt=""/>
+                            <p className="text-[10px] md:text-[12px]"><span>28%</span> vs Last Week</p>
+                        </div>
+                    </div>
+                    <div className="ml-auto mt-4">
+                        <img className="h-10" src="image/menmassaeicon.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div className="col-lg-12 col-md-6 mt-4">
+                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between">
+                <h3 className="projectManHeading">Hired Candidates</h3>
+                <div className="flex">
+                    <div>
+                        <h1 className="totalCount mt-3 Poppins-SemiBold">09</h1>
+                        <div className="flex mt-3">
+                            <img className="h-3 mr-2" src="image/arrowiocn.png" alt="" />
+                            <p className="text-[10px] md:text-[12px]"><span>22%</span> vs Last Week</p>
+                        </div>
+                    </div>
+                    <div className="ml-auto mt-4">
+                        <img className="h-10" src="image/righticon.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    );
+}
+
+export default Number_of_Interviews;
