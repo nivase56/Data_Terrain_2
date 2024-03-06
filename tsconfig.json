@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/component/ProjectManager/CalendarProject.js", "app/dashboard/component/ProjectManager/GraphProject.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/component/ProjectManager/CalendarProject.jsx", "app/dashboard/component/ProjectManager/GraphProject.tsx"],
   "exclude": ["node_modules"]
 }
