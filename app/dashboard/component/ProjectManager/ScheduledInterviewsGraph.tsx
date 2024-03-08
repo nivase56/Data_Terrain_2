@@ -21,7 +21,6 @@
 // }
 
 // export default GraphProject;
-
 import {
   LineChart,
   Line,
@@ -30,7 +29,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Area,
 } from "recharts";
 
 function GraphProject() {
@@ -45,8 +43,8 @@ function GraphProject() {
   const CustomLegend = () => null;
 
   return (
-    <div className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
-      <div className="flex align-items-center">
+    <div className="TotalEmployees shadow bg-white rounded-3 p-3">
+      <div className="md:flex align-items-center">
         <h3 className="projectManHeading">Scheduled Interviews Info</h3>
         <div className="ml-auto d-flex">
           <button className="btn btn-blue me-3 mx-lg-2">Day</button>
@@ -54,20 +52,59 @@ function GraphProject() {
         </div>
       </div>
       <hr className="my-2" />
-      <LineChart width={820} height={320} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Legend content={<CustomLegend />} />
-        <Line
-          type="monotone"
-          dataKey="Interviews"
-          stroke="#0B74AD"
-          fill="#0B74AD"
-          strokeWidth={3}
-        />
-      </LineChart>
+      <div className="d-none d-lg-block " style={{ width: "100%", height: "190px" }}>
+        <LineChart
+          width={window.innerWidth < 768 ? window.innerWidth - 10 : 810}
+          height={200}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Legend content={<CustomLegend />} />
+          <Line
+            type="monotone"
+            dataKey="Interviews"
+            stroke="#0B74AD"
+            fill="#0B74AD"
+            strokeWidth={3}
+          />
+        </LineChart>
+      </div>
+
+      <div className="d-lg-none" style={{ width: "100%", height: "190px" }}>
+        <LineChart
+          width={window.innerWidth < 768 ? window.innerWidth - 10 : 310}
+          height={190}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Legend content={<CustomLegend />} />
+          <Line
+            type="monotone"
+            dataKey="Interviews"
+            stroke="#0B74AD"
+            fill="#0B74AD"
+            strokeWidth={3}
+          />
+        </LineChart>
+      </div>
     </div>
   );
 }

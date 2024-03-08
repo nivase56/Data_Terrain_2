@@ -11,7 +11,7 @@ const data = [
 ];
 
 const size = {
-  width: 300,
+  width: 280,
   height: 200,
 };
 
@@ -45,6 +45,7 @@ function TotalEmployeesGraph({ totalEmloyeesCount, count, color }: any) {
   const colors = [color, "#E6E6E6"];
   return (
     <PieChart
+    className="dddddsss"
       series={[{ data, innerRadius: 70 }]}
       {...size}
       sx={overrideStyles}

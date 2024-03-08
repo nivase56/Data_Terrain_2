@@ -10,6 +10,11 @@
        transform: translate(-50%, 0%);
     }
   }
+  @media screen and (max-width: 767px) {
+    .logo-top {
+      height: 100%;
+    }
+  }
 
   
   @media screen and (min-width: 991px) {

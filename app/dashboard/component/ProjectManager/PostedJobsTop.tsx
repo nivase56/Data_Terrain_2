@@ -8,6 +8,7 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLik
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 
 function PostedJobsTop(props: { titleName: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined }) {
@@ -52,7 +53,7 @@ function PostedJobsTop(props: { titleName: string | number | boolean | ReactElem
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <i className="fa fa-filter" aria-hidden="true"></i> Filters
+        <FilterListIcon/> Filters
       </Button>
       <Menu
         id="basic-menu"
