@@ -3,3 +3,17 @@
         white-space: nowrap;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    .modalHeader {
+       top:0% !important;
+       transform: translate(-50%, 0%);
+    }
+  }
+
+  
+  @media screen and (min-width: 991px) {
+    .headerDropdwon .MuiMenu-paper {
+      top: 60px !important;
+    }
+  }

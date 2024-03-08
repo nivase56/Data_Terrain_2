@@ -1,6 +1,13 @@
-import ManGraph from "./ManGraph";
+import TotalEmployeesGraph from "./TotalEmployeesGraph";
 
 function TotalEmployees() {
+    const man = {
+        color: "#0B74AD", 
+      };
+      const women = {
+        color: "#40484A", 
+      };
+      
     return (
         <>
             <div className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
@@ -12,11 +19,25 @@ function TotalEmployees() {
                     </div>
                 </div>
                 <hr className="my-2" />
-                <div className="flex pt-4 justify-center h-[300px] position-relative  overflow-hidden">
-                    <ManGraph/>
-                    <ManGraph/>
+                <div className="flex pt-4 justify-center position-relative  overflow-hidden">
+                    <div className="col-6 flex align-middle">
+                        <div className="text-center w-[147px]">
+                        <TotalEmployeesGraph totalEmloyeesCount={72} count={40} color={'#0B74AD'} />
+                        <i className="fa fa-square" aria-hidden="true" style={man}></i> Man
+
+                        </div>
+                    </div>
+                    <div className="col-6 text-center">
+                        
+                        <div className="text-center w-[147px]">
+                        <TotalEmployeesGraph totalEmloyeesCount={72} count={32} color={'#40484A'} />
+                        <i className="fa fa-square" aria-hidden="true" style={women}></i> Women
+                        </div>
+                    </div>
+
+
                 </div>
-               
+
             </div>
         </>
     )

@@ -73,7 +73,7 @@ function TodayInterviews() {
                                     </tr>
 
                                     <tr>
-                                        <td colSpan={2}>
+                                        <td className="py-4" colSpan={2}>
                                             <button className="btn btnOutlineblue px-[10px!important] mx-1">Reschedule Meeting</button>
                                             <button className="btn btn-blue px-[10px!important] text-[11px] mx-1">Join Meeting</button>
                                         </td>
