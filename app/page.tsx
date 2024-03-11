@@ -122,7 +122,7 @@ export default function Home() {
 
           <div className="col-lg-11 pe-lg-4">
             <div className="row justify-content-between  align-items-center">
-              <div className="col-lg-8 projectText">
+              <div className="col-lg-8 ps-lg-0 projectText">
                 <h1>Project Manager</h1>
                 <p className="mt-3">
                   Enjoy your selecting potential candidates Tracking and
@@ -167,7 +167,7 @@ export default function Home() {
             {/* new section */}
 
             <div className="row">
-              <div className="col-lg-9 mt-4">
+              <div className="col-lg-9 ps-lg-0 mt-4">
                 <div className="shadow bg-white p-3">
                   <h3 className="projectManHeading">
                     Today Interviews Meetings Info

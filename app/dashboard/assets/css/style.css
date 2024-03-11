@@ -108,6 +108,9 @@ maintop sliders
   .ListSideMEnu:hover .subMainSideMenu{
     display: block;
   }
+  .ListSideMEnu:hover img{
+    filter: brightness(9) invert(3) sepia(1) saturate(9000%) hue-rotate(232deg);
+  }
   .subMainSideMenu a{
     display: block;
     padding: 5px 8px;
@@ -312,4 +315,8 @@ margin: 0px !important;
 .lineChartCustom{
   width: 100%;
   height: 200px;
+}
+
+.notification_Menu:hover{
+  background-color: #D6E5EE;
 }

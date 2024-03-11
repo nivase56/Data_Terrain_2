@@ -582,11 +582,64 @@ function HeadersTop() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
+
+      <MenuItem className="px-1 w-auto" onClick={handleMenuClose}>
+        <div>
+          <div className="notification_Menu">
+            <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
+              <div className="col-lg-3 col-3 ps-2 pe-0">
+                <img className="w-[35px] rounded-full h-[35px]" src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png" alt="" />
+              </div>
+              <div className="col-lg-6 pe-0 ps-1 col-6">
+                <h6 className="text-[10px]">Johan</h6>
+                <p className="text-[9px] line-clamp-1">Hi, Angela, What......</p>
+              </div>
+              <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
+                <p className="text-[10px]">2.00 A.M</p>
+                <div className="text-white px-2 py-1 rounded bg-blue d-inline-block">
+                  <h6 className="text-[8px]">2</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="notification_Menu">
+            <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
+              <div className="col-lg-3 col-3 ps-2 pe-0">
+                <img className="w-[35px] rounded-full h-[35px]" src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png" alt="" />
+              </div>
+              <div className="col-lg-6 pe-0 ps-1 col-6">
+                <h6 className="text-[10px]">Johan</h6>
+                <p className="text-[9px] line-clamp-1">Hi, Angela, What......</p>
+              </div>
+              <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
+                <p className="text-[10px]">2.00 A.M</p>
+                <div className="text-white px-2 py-1 rounded bg-blue d-inline-block">
+                  <h6 className="text-[8px]">2</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </MenuItem>
+
       <MenuItem onClick={handleMenuClose}>
         <Link href="/">Home</Link>
       </MenuItem>
+      <MenuItem className="" onClick={handleMenuClose}>
+        <Link href="/ProjectManagerUpcomings">P_M_Upcoming</Link>
+      </MenuItem>
       <MenuItem onClick={handleMenuClose}>
-        <Link href="/ProjectManagerUpcomings">Upcoming</Link>
+        <Link href="/ProjectManagerProfile">P_M_Profile</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Link href="/ProjectMangaerActivity">P_M_Activity</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Link href="/ProjectManagerMessages">P_M_Messages</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Link href="/ProjectManagerNotifications">P_M_Notifications</Link>
       </MenuItem>
     </Menu>
   );
@@ -628,6 +681,7 @@ function HeadersTop() {
           </Badge>
         </IconButton>
         <p>Notifications</p>
+
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -738,7 +792,7 @@ function HeadersTop() {
                 color="inherit"
               >
                 <Badge badgeContent={4} color="error">
-                <NotificationsIcon />
+                  <NotificationsIcon />
                 </Badge>
               </IconButton>
               <IconButton
@@ -751,7 +805,7 @@ function HeadersTop() {
                 onClick={handleProfileMenuOpen}
                 color="inherit"
               >
-                
+
                 <SettingsOutlinedIcon />
               </IconButton>
               <IconButton
