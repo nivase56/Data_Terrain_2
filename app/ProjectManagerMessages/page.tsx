@@ -48,7 +48,7 @@ export default function ProjectManagerMessages() {
                         <SideMenu />
                     </div>
 
-                    <div className="col-lg-11 pe-lg-4">
+                    <div className="col-lg-11 pe-lg-4 ps-lg-0">
                         <div className="row justify-content-between  align-items-center">
                             <div className="col-lg-8 projectText">
                                 <h1>Messages</h1>
@@ -67,7 +67,7 @@ export default function ProjectManagerMessages() {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-9 ps-lg-0">
+                            <div className="col-lg-9">
                                 <div className="row">
                                     <div className="col-lg-5 flex col-md-6 mt-4">
                                         <div className="shadow w-100 pb-2">

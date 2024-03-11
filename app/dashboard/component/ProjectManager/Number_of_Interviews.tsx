@@ -1,8 +1,8 @@
 function Number_of_Interviews() {
     return (
-        <div className="row">
-            <div className="col-lg-12 col-md-6">
-                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between">
+        <div className="row w-100">
+            <div className="col-lg-12 col-md-6 d-flex">
+                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between w-100">
                 <h3 className="projectManHeading">Number of Interviews</h3>
                 <div className="flex">
                     <div>
@@ -18,8 +18,8 @@ function Number_of_Interviews() {
                 </div>
             </div>
             </div>
-            <div className="col-lg-12 col-md-6 mt-4">
-                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between">
+            <div className="col-lg-12 col-md-6 mt-4 d-flex">
+                <div className=" shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between w-100">
                 <h3 className="projectManHeading">Hired Candidates</h3>
                 <div className="flex">
                     <div>

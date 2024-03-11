@@ -13,7 +13,7 @@ function ProjectManagerProfile() {
                         <SideMenu />
                     </div>
 
-                    <div className="col-lg-11 pe-lg-4">
+                    <div className="col-lg-11 pe-lg-4 ps-lg-0">
                         <div className="row justify-content-between  align-items-center">
                             <div className="col-xl-8 col-lg-7 projectText">
                                 <h1>Settings</h1>
@@ -46,7 +46,7 @@ function ProjectManagerProfile() {
                                 </div>
                                 <hr className="mt-0 mx-3" />
                                 <div className="row p-md-3 pb-3 align-items-center ">
-                                    <div className="col-lg-9 ps-lg-0 col-md-8">
+                                    <div className="col-lg-9 col-md-8">
                                         <div className="row px-3">
                                             <div className="col-lg-12 mt-3 mb-2">
                                                 <h5>DataTerrain Information</h5>

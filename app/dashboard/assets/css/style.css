@@ -150,6 +150,9 @@ maintop sliders
   .tabledataInterVi tr td{
     white-space: nowrap
   }
+  .tabledataInterVi tr:last-child{
+    background-color: red !important;
+  }
 
   .PostedInput input{box-shadow: 0px 0px 17px 0px #dadada;padding-right: 35px;font-size: 12px;}
 

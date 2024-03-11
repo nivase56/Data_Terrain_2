@@ -1,14 +1,14 @@
 function ApplicationsReceived() {
     return (
         <>
-            <div className="bg-center bg-cover rounded-5 w-100 shadow overflow-hidden" style={{ backgroundImage: 'url("image/ApplicationsReceive.png")' }}>
+            <div className="bg-center bg-cover rounded-5 w-100 shadow overflow-hidden d-flex" style={{ backgroundImage: 'url("image/ApplicationsReceive.png")' }}>
                 <div className="row mx-0 px-3 py-5 h-100">
                     <div className="pe-lg-0 col-lg-6 col-6 col-md-6 px-0 px-lg-3 d-flex flex-column justify-content-between">
                         <div className="bg-white d-inline-block w-[90px] p-2 text-center">
                             <img className="w-[50px] mx-auto" src="image/simicon.png" alt="" />
                         </div>
                        <div>
-                       <h1 className="text-white text-[35px] mt-3 lg:text-[40px] mt-4">2024</h1>
+                       <h1 className="text-white text-[35px] mt-auto lg:text-[40px] mt-4">2024</h1>
                         <h5 className="text-white text-[10px] lg:text-[16px] mt-lg-3 mt-2">Application recived</h5>
                        </div>
                     </div>

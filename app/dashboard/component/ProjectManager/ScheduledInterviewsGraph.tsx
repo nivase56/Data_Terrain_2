@@ -43,7 +43,7 @@ function GraphProject() {
   const CustomLegend = () => null;
 
   return (
-    <div className="TotalEmployees shadow bg-white rounded-3 p-3">
+    <div className="TotalEmployees shadow bg-white rounded-3 p-3 w-100">
       <div className="md:flex align-items-center">
         <h3 className="projectManHeading">Scheduled Interviews Info</h3>
         <div className="ml-auto d-flex">

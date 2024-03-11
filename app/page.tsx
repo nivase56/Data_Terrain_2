@@ -120,9 +120,9 @@ export default function Home() {
             <SideMenu />
           </div>
 
-          <div className="col-lg-11 pe-lg-4">
+          <div className="col-lg-11 pe-lg-4 ps-lg-0">
             <div className="row justify-content-between  align-items-center">
-              <div className="col-lg-8 ps-lg-0 projectText">
+              <div className="col-lg-8 projectText">
                 <h1>Project Manager</h1>
                 <p className="mt-3">
                   Enjoy your selecting potential candidates Tracking and
@@ -139,7 +139,7 @@ export default function Home() {
             </div>
 
             <div className="row mt-4">
-              <div className="col-lg-8 col-md-7 mt-3 mt-md-0 projectText">
+              <div className="col-lg-8 col-md-7 mt-3 mt-md-0 projectText d-flex">
                 <ScheduledInterviewsGraph />
               </div>
 
@@ -159,7 +159,7 @@ export default function Home() {
                 <NumberofVacancies />
               </div>
 
-              <div className="col-lg-4 col-md-12 mt-4 pt-md-2">
+              <div className="col-lg-4 col-md-12 mt-4 pt-md-2 d-flex">
                 <Number_of_Interviews />
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
             {/* new section */}
 
             <div className="row">
-              <div className="col-lg-9 ps-lg-0 mt-4">
+              <div className="col-lg-9  mt-4">
                 <div className="shadow bg-white p-3">
                   <h3 className="projectManHeading">
                     Today Interviews Meetings Info
