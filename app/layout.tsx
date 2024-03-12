@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../app/dashboard/assets/css/comman.css"; 
 import "../app/dashboard/assets/css/globals.css"; 
+import "../app/dashboard/assets/css/comman.css"; 
 import "../app/dashboard/assets/css/style.css"; 
 import "../app/dashboard/assets/css/responsive.css"; 
 
@@ -25,3 +25,4 @@ export default function RootLayout({
     </html>
   );
 }
+

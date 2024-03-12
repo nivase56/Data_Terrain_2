@@ -1,7 +1,7 @@
 function NumberofVacancies() {
     return (
         <>
-            <section className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
+            <div className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
                 <div className="flex align-items-center border-bottom">
                     <h3 className="projectManHeading">Number of Vacancies</h3>
                     <img className="h-5 ml-5" src="image/eyeicon.png" alt="" />
@@ -48,7 +48,7 @@ function NumberofVacancies() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     )
 }

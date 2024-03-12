@@ -111,12 +111,12 @@ export default function Home() {
   //tab end
   return (
 
-    <main className="demo">
+    <main className="">
       <HeadersTop />
 
       <section className="container-fluid my-md-5 my-4">
         <div className="row">
-          <div className="col-lg-1 ps-0 position-relative">
+          <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
             <SideMenu />
           </div>
 
@@ -185,7 +185,7 @@ export default function Home() {
                 {/* new section */}
 
                 <div className="shadow bg-white">
-                  <PostedJobsTop titleName="Posted Jobs" />
+                  <PostedJobsTop titleName="Posted Jobs"  classTitle="Poppins-Bold" classSamll="text-underline" samllText="View All"/>
 
                   {/* <div className="ol-lg-12 px-3">
                     <ul className="d-flex">
@@ -227,7 +227,7 @@ export default function Home() {
 
                 {/* new sections */}
                 <div className="shadow bg-white">
-                  <PostedJobsTop titleName="Candidate Status" />
+                  <PostedJobsTop titleName="Candidate Status" classTitle="Poppins-Bold"  classSamll="text-underline"  samllText="View All" />
                   <CandidateStatus />
                 </div>
               </div>

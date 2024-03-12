@@ -623,23 +623,34 @@ function HeadersTop() {
         </div>
       </MenuItem>
 
-      <MenuItem onClick={handleMenuClose}>
-        <Link href="/">Home</Link>
-      </MenuItem>
-      <MenuItem className="" onClick={handleMenuClose}>
-        <Link href="/ProjectManagerUpcomings">P_M_Upcoming</Link>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/">Home</Link>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>
-        <Link href="/ProjectManagerProfile">P_M_Profile</Link>
+        <Link className="text-[14px]"  href="/P_M_Upcomings">P_M_Upcoming</Link>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <Link href="/ProjectMangaerActivity">P_M_Activity</Link>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_Profile">P_M_Profile</Link>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <Link href="/ProjectManagerMessages">P_M_Messages</Link>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_Activity">P_M_Activity</Link>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <Link href="/ProjectManagerNotifications">P_M_Notifications</Link>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_Messages">P_M_Messages</Link>
+      </MenuItem>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_Notifications">P_M_Notifications</Link>
+      </MenuItem>
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_JobDescriptionsOne">P_M_JobDescrp...</Link>
+      </MenuItem>
+
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_JobDescriptionsTwo">P_M_JobDescrp2...</Link>
+      </MenuItem>
+
+      <MenuItem  onClick={handleMenuClose}>
+        <Link  className="text-[14px]" href="/P_M_JobDescriptionsFour">P_M_JobDescrp4...</Link>
       </MenuItem>
     </Menu>
   );
@@ -853,7 +864,7 @@ function HeadersTop() {
             </h5>
             <Button
               onClick={handleClose}
-              className="btn-blue py-1 px-0"
+              className="btn-blue py-[5px!important] px-0 w-[20px!important]"
               variant="contained"
             >
               <i className="fa fa-close" aria-hidden="true"></i>
@@ -884,11 +895,11 @@ function HeadersTop() {
             Suggestion
           </h5>
           <hr className="mt-0" />
-          <div className="position-relative headerInput px-3">
+          <div className="position-relative headerInput px-3 my-2">
             <input
               onChange={handleChange}
               variant="outlined"
-              className="form-control border-2 rouned-2 shadow"
+              className="form-control border-1 rouned-2 shadow-sm"
               type="text"
               placeholder="Search your Data"
             />
