@@ -27,13 +27,17 @@ const SideMenu = () => {
     setOpen(newOpen);
   };
 
-// mobile size code start
+  // mobile size code start
   const DrawerList = (
     <Box
       sx={{ width: 250 }}
       role="presentation"
       onClick={() => setOpen(false)}
     >
+
+      <div className="p-3">
+      <img src="image/logo.png"/>
+      </div>
       <Accordion className="LargeDrawer" onClick={(e) => e.stopPropagation()}>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon />}
@@ -101,7 +105,7 @@ const SideMenu = () => {
       <ul className="d-none d-lg-block deshboard_Menu shadow">
         <li className="ListSideMEnu">
           <Link href="common/ProjectManagerUpcomings">
-            <img src="image/Vector.png" alt="" />
+            <img src="image/menuData.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
@@ -123,6 +127,55 @@ const SideMenu = () => {
             </li>
           </ul>
         </li>
+        <li className="ListSideMEnu">
+          <Link href="common/ProjectManagerUpcomings">
+            <img src="image/noteIcon.png" alt="" />
+          </Link>
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link href="">
+                Dashboard
+              </Link>
+            </li>
+
+            <li className="subSideMenu">
+              <Link href="">
+                Project Manager
+              </Link>
+            </li>
+
+            <li className="subSideMenu">
+              <Link href="">
+                Today Interviews
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+
+        <li className="ListSideMEnu">
+          <img src="image/menuSElect.png" alt="" />
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link href="">
+                Dashboard
+              </Link>
+            </li>
+
+            <li className="subSideMenu">
+              <Link href="">
+                Project Manager
+              </Link>
+            </li>
+
+            <li className="subSideMenu">
+              <Link className="" href="">
+                Today Interviewdds
+              </Link>
+            </li>
+          </ul>
+        </li>
+
         <li className="ListSideMEnu">
           <img src="image/user1.png" alt="" />
           <ul className="subMainSideMenu">
@@ -147,56 +200,23 @@ const SideMenu = () => {
         </li>
 
         <li className="ListSideMEnu">
+          <img src="image/Vector.png" alt="" />
+        </li>
+
+
+        <li className="ListSideMEnu">
           <img src="image/shoping.png" alt="" />
-          <ul className="subMainSideMenu">
-            <li className="subSideMenu">
-              <Link href="">
-                Dashboard
-              </Link>
-            </li>
-
-            <li className="subSideMenu">
-              <Link href="">
-                Project Manager
-              </Link>
-            </li>
-
-            <li className="subSideMenu">
-              <Link className="" href="">
-                Today Interviewdds
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-
-        <li className="ListSideMEnu">
-          <img src="image/filter.png" alt="" />
-        </li>
-
-        <li className="ListSideMEnu">
-          <img src="image/noteIcon.png" alt="" />
         </li>
 
         <li className="ListSideMEnu">
           <img src="image/Frame.png" alt="" />
         </li>
-
         <li className="ListSideMEnu">
           <img src="image/help.png" alt="" />
         </li>
 
         <li className="ListSideMEnu">
-          <img src="image/menuSElect.png" alt="" />
-        </li>
-
-
-        <li className="ListSideMEnu">
-          <img src="image/menuData.png" alt="" />
-        </li>
-
-        <li className="ListSideMEnu">
-          <img src="image/help.png" alt="" />
+          <img src="image/filter.png" alt="" />
         </li>
       </ul>
 

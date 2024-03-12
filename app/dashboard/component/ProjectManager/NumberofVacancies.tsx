@@ -2,14 +2,14 @@ function NumberofVacancies() {
     return (
         <>
             <section className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
-                <div className="flex align-items-center">
+                <div className="flex align-items-center border-bottom">
                     <h3 className="projectManHeading">Number of Vacancies</h3>
                     <img className="h-5 ml-5" src="image/eyeicon.png" alt="" />
                     <div className="ml-auto">
                         <h4 className="totalCount Poppins-SemiBold">36</h4>
                     </div>
                 </div>
-                <hr className="my-2" />
+               
                 <div className="row mt-4">
                     <div className="col-lg-6">
                         <div className="PythonDeveloper border rouded-2 p-2">

@@ -25,7 +25,7 @@ function TodayInterviews() {
 
                     <div className="col-lg-7 px-0 d-flex col-7">
                         <div className="table-responsive w-100">
-                            <table className="table text-center table-bordered mb-0 tabledataInterVi">
+                            <table className="table text-center  mb-0 tabledataInterVi border-start-0 border-end-0">
                                 <tbody>
                                     <tr>
                                         <td>
@@ -74,8 +74,8 @@ function TodayInterviews() {
 
                                     <tr>
                                         <td className="py-4" colSpan={2} style={{borderBottom:0}}>
-                                            <button className="btn btnOutlineblue px-[10px!important] mx-1">Reschedule Meeting</button>
-                                            <button className="btn btn-blue px-[10px!important] text-[11px] mx-1">Join Meeting</button>
+                                            <button className="btn btnOutlineblue px-[10px!important] mx-1 mt-2">Reschedule Meeting</button>
+                                            <button className="btn btn-blue px-[10px!important] text-[11px] mx-1 mt-2">Join Meeting</button>
                                         </td>
 
                                     </tr>

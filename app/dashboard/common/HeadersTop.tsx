@@ -740,14 +740,15 @@ function HeadersTop() {
               onClick={handleOpen}
               className="ms-5 text-gray md:w-[400px]"
             >
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
+         
               <StyledInputBase
-                className="md:w-[400px]"
+                className="md:w-[400px]  headerSearchTop"
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
               />
+                   <SearchIconWrapper className="end-3 top-0 pe-0 text-blue">
+               <i className="fa fa-search"></i>
+              </SearchIconWrapper>
             </Search>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
