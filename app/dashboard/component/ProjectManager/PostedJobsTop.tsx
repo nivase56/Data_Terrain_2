@@ -25,9 +25,9 @@ function PostedJobsTop(props: { titleName: string | number | boolean | ReactElem
 
   return (
     <>
-      <div className={`row justify-between align-items-center p-3 mt-4  ${props.className}`}>
+      <div className={`row justify-between align-items-center p-3  ${props.className}`}>
         <div className="col-md-5 col-12 col-lg-4 d-flex mb-3 mb-md-0 justify-between align-items-center ">
-          <h4 className={` ${props.classTitle}`}>{props.titleName}</h4>
+          <h4 className={`text-[22px] text-[#091316] font-family: Poppins-Medium;  ${props.classTitle}`}>{props.titleName}</h4>
           <h6><Link className={`text-blue text-[14px]  ${props.classSamll}`}  href="/">{props.samllText}</Link></h6>
         </div>
 

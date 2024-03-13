@@ -10,13 +10,13 @@
 
 //             <hr />
 
-//             <h6 className="text-[12px] md:text-[13px] text-center mt-3">Senior Developers</h6>
+//             <h6 className="text-[16px] Poppins-Regular text-center mt-3">Senior Developers</h6>
 
 //             <div className="bg-[#0A66C2] p-1 w-[55px] h-[55px] my-3 mx-auto align-items-center flex justify-center">
 //                 <h6 className="Poppins-Bold text-white text-[20px]">303</h6>
 //             </div>
 
-//             <h6 className="text-[12px] md:text-[13px] text-center">Senior Developers</h6>
+//             <h6 className="text-[16px] Poppins-Regular text-center">Senior Developers</h6>
 
 //             <hr />
 
@@ -46,14 +46,14 @@ function PostedJobsCard(props) {
             <div className="shadow bg-white p-3 mt-3">
                 <div className="d-flex pb-2 align-items-center ">
                     <img className="h-[15px]" src={props.imageSrc} alt="" />
-                    <h4 className="text-[13px] md:text-[14px] ms-2">{props.title}</h4>
+                    <h4 className="text-[16px] Poppins-Regular ms-2 text-[#091316]">{props.title}</h4>
                 </div>
                 <hr />
-                <h6 className="text-[12px] md:text-[13px] text-center mt-3">{props.category}</h6>
+                <h6 className="text-[14px] Poppins-Regular text-[#091316] text-center mt-3">{props.category}</h6>
                 <div className="bg-[#0A66C2] p-1 w-[55px] h-[55px] my-3 mx-auto align-items-center flex justify-center">
                     <h6 className="Poppins-Bold text-white text-[20px]">{props.number}</h6>
                 </div>
-                <h6 className="text-[12px] md:text-[13px] text-center">{props.category}</h6>
+                <h6 className="text-[14px] Poppins-Regular text-[#091316] text-center">{props.category}</h6>
                 <hr />
                 <div className="flex justify-between align-items-center ">
                     <div className="flex align-items-center ">

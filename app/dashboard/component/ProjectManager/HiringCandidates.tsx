@@ -9,8 +9,8 @@ function AppointmentItem(props) {
             </div>
 
             <div className="col-6 pe-0">
-                <h6 className="text-[12px] Poppins-Medium">{props.title}</h6>
-                <h6 className="text-[11px] mt-1">{props.position}</h6>
+                <h6 className="text-[12px] text-[#091316] Poppins-Medium">{props.title}</h6>
+                <h6 className="text-[10px] text-[#091316] mt-1">{props.position}</h6>
                 <h6 className="text-[10px] mt-1">Created by <Link href="/">{props.creator}</Link></h6>
             </div>
 

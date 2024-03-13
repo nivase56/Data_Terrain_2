@@ -13,7 +13,7 @@ function NumberofVacancies() {
                 <div className="row mt-4">
                     <div className="col-lg-6">
                         <div className="PythonDeveloper border rouded-2 p-2">
-                            <h4 className="text-[13px] md:text-[14px]">Python Developer</h4>
+                            <h4 className="text-[14px] md:text-[16px] text-[#091316]">Python Developer</h4>
                             <div className="d-flex justify-content-between mt-3">
                                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">18</h5>
                                 <img src="image/python.png" alt="" />
@@ -22,7 +22,7 @@ function NumberofVacancies() {
                     </div>
                     <div className="col-lg-6">
                         <div className="PythonDeveloper border rouded-2 p-2">
-                            <h4 className="text-[13px] md:text-[14px]">java Developer</h4>
+                            <h4 className="text-[14px] md:text-[16px] text-[#091316]">java Developer</h4>
                             <div className="d-flex justify-content-between mt-3">
                                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">18</h5>
                                 <img src="image/java.png" alt="" />
@@ -31,7 +31,7 @@ function NumberofVacancies() {
                     </div>
                     <div className="col-lg-6 mt-3">
                         <div className="PythonDeveloper border rouded-2 p-2">
-                            <h4 className="text-[13px] md:text-[14px]">Anguls Developer</h4>
+                            <h4 className="text-[14px] md:text-[16px] text-[#091316]">Anguls Developer</h4>
                             <div className="d-flex justify-content-between mt-3">
                                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">18</h5>
                                 <img src="image/Angularicon.png" alt="" />
@@ -40,7 +40,7 @@ function NumberofVacancies() {
                     </div>
                     <div className="col-lg-6 mt-3">
                         <div className="PythonDeveloper border rouded-2 p-2">
-                            <h4 className="text-[13px] md:text-[14px]">UX|UI Designer</h4>
+                            <h4 className="text-[14px] md:text-[16px] text-[#091316]">UX|UI Designer</h4>
                             <div className="d-flex justify-content-between mt-3">
                                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">18</h5>
                                 <img src="image/graphic.png" alt="" />

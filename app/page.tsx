@@ -53,7 +53,7 @@ export default function Home() {
       imageSrc: "image/graphic.png",
     },
     {
-      title: "rrrrrUX|UI Designers",
+      title: "UX|UI Designers",
       category: "Senior Developers",
       number: "250",
       percentage: "18%",
@@ -134,7 +134,7 @@ export default function Home() {
                 <button className="btn btn-light me-3 mx-lg-2">
                   JD Assets
                 </button>
-                <button className="btn btn-blue">Create New JD</button>
+                <button className="btn btn-blue bg-[#0a66c2!important]">Create New JD</button>
               </div>
             </div>
 
@@ -184,8 +184,8 @@ export default function Home() {
 
                 {/* new section */}
 
-                <div className="shadow bg-white">
-                  <PostedJobsTop titleName="Posted Jobs"  classTitle="Poppins-Bold" classSamll="text-underline" samllText="View All"/>
+                <div className="shadow bg-white mt-4">
+                  <PostedJobsTop titleName="Posted Jobs"  classTitle="" classSamll="text-underline" samllText="View All"/>
 
                   {/* <div className="ol-lg-12 px-3">
                     <ul className="d-flex">
@@ -198,8 +198,8 @@ export default function Home() {
                   <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                        <Tab label="Active Jobs" {...a11yProps(0)} />
-                        <Tab label="Inactive Jobs" {...a11yProps(1)} />
+                        <Tab className="postedTab" label="Active Jobs" {...a11yProps(0)} />
+                        <Tab className="postedTab"  label="Inactive Jobs" {...a11yProps(1)} />
 
                       </Tabs>
                     </Box>
@@ -226,8 +226,8 @@ export default function Home() {
                 </div>
 
                 {/* new sections */}
-                <div className="shadow bg-white">
-                  <PostedJobsTop titleName="Candidate Status" classTitle="Poppins-Bold"  classSamll="text-underline"  samllText="View All" />
+                <div className="shadow bg-white mt-4">
+                  <PostedJobsTop titleName="Candidate Status"  classSamll="text-underline"  samllText="View All" />
                   <CandidateStatus />
                 </div>
               </div>

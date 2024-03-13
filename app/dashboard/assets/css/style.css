@@ -62,13 +62,14 @@ maintop sliders
 }
 
 .projectText h1{
-    font-size: 30px;
+    font-size: 36px;
     font-family: Poppins-Medium;
+    color: #091316;
 }
 .projectText p{
-    font-size: 16px;
-    color: #3E3E3E;
-   font-family: Poppins-Regular !important;
+    font-size: 20px;
+    color: #091316;
+    font-family: Poppins-Medium;
 }
 .deshboard_Menu{
     border-top-right-radius: 30px !important;
@@ -143,11 +144,13 @@ maintop sliders
   }
 
   .projectManHeading{
-    font-size: 16px;
+    font-size: 22px;
+    color: #091316;
     font-family: Poppins-Medium;
   }
   .totalCount{
-    font-size: 33px;
+    font-size: 36px;
+    color: #091316;
   }
 
   .tabledataInterVi tr td{
@@ -164,13 +167,15 @@ maintop sliders
 
 .CandidateStatus th{
   background-color: #F5F5F5;
-  color: black;
+
 }
 
 .CandidateStatus tr th, .CandidateStatus tr td{
-  font-size: 13px;
+  font-size: 14px;
   vertical-align: middle;
   text-align: center;
+  font-family: Poppins-Regular !important;
+  color: #091316;
 }
 .CandidateStatus tr td{
   color: #3E3E3E;
@@ -417,4 +422,24 @@ border-radius: 0px !important;
 }
 .filterInputDescriptions .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
   min-height: 34px;
+}
+.filterInputDescriptions .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+  color: var(--royalBlue);
+}
+.filterInputDescriptions .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root, .filterInputDescriptions .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+left: -10px;
+}
+.css-1a4q4r2-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected{
+  background-color: var(--royalBlue);
+}
+
+.blueBorder{
+  border: 1px solid;
+  border-color: #73A1FB;
+}
+
+.postedTab{
+  font-size: 20px !important;
+  font-family: Poppins-Medium !important;
+  color: #091316 !important;
 }
