@@ -64,11 +64,11 @@ maintop sliders
 .projectText h1{
     font-size: 36px;
     font-family: Poppins-Medium;
-    color: #091316;
+    color: var(--darkColor);
 }
 .projectText p{
     font-size: 20px;
-    color: #091316;
+    color: var(--darkColor);
     font-family: Poppins-Medium;
 }
 .deshboard_Menu{
@@ -145,12 +145,12 @@ maintop sliders
 
   .projectManHeading{
     font-size: 22px;
-    color: #091316;
+    color: var(--darkColor);
     font-family: Poppins-Medium;
   }
   .totalCount{
     font-size: 36px;
-    color: #091316;
+    color: var(--darkColor);
   }
 
   .tabledataInterVi tr td{
@@ -175,7 +175,7 @@ maintop sliders
   vertical-align: middle;
   text-align: center;
   font-family: Poppins-Regular !important;
-  color: #091316;
+  color: var(--darkColor);
 }
 .CandidateStatus tr td{
   color: #3E3E3E;
@@ -185,7 +185,7 @@ maintop sliders
   font-size: 13px !important;
 }
 .condidateStatus .fa{
-  color: #091316;
+  color: var(--darkColor);
 }
 .canvasjs-chart-canvas{
   background-color: unset !important;
@@ -441,5 +441,5 @@ left: -10px;
 .postedTab{
   font-size: 20px !important;
   font-family: Poppins-Medium !important;
-  color: #091316 !important;
+  color: var(--darkColor) !important;
 }

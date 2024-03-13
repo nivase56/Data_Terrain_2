@@ -9,7 +9,7 @@
 	--NavyBlueColor: #0b1224;	
 	--blackColor: #0f0f0f;
 	--lightGray: #D9D9D9;
-	--darkColor: #232222;
+	--darkColor: #091316;
 	--royalBlue: #0A66C2;
 	--lightBlue: #EDF5FF;
 	}
@@ -92,7 +92,7 @@
 
 	body {font-size: 15px;background: #F8F8F8;color: var(--blackColor);font-family: Poppins-Medium;}
 	ol, ul{padding: 0px;}
-	h1,h2,h3,h4,h5,h6,p, ul{ margin:0px;}
+	h1,h2,h3,h4,h5,h6,p, ul{ margin:0px;color: var(--darkColor);}
 	h1,.h1{font-size: 38px;}
 	h2,.h2{font-size: 30px;}
 	h3,.h3{font-size: 26px;line-height: 1.2;}
