@@ -174,36 +174,36 @@ function HistoryTab(params:type) {
                                                 />
 
                                                 <ul className='list-unstyled mt-3'>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Python Developers</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Java Developers</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">UX|UI Designer</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">SEO Specialist</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Python Developers</Link>
                                                     </li>
 
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Python Developers</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Java Developers</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">UX|UI Designer</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">SEO Specialist</Link>
                                                     </li>
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    <li className="py-2 my-1">
+                                                        <Link className='Poppins-Medium text-[16px]' href="/">Python Developers</Link>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -7,14 +7,13 @@ import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandid
 import SideMenu from "../dashboard/component/SideMenu"
 import * as React from 'react';
 import Link from 'next/link';
-import Checkbox from '@mui/material/Checkbox';
 import HistoryTab from '../dashboard/component/ProjectManager/HistoryTab';
-
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-function P_M_JobDescriptionsSix(params: type) {
+function P_M_SendHistory1(params: type) {
 
     return (
         <section className="">
@@ -38,7 +37,10 @@ function P_M_JobDescriptionsSix(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">JD Assets</button>
+                                <button className="btn btn-light me-3 mx-lg-2">
+                                    JD Assets
+                                </button>
+                                <button className="btn btn-blue bg-[#0a66c2!important]">Create New JD</button>
                             </div>
                         </div>
 
@@ -46,8 +48,8 @@ function P_M_JobDescriptionsSix(params: type) {
                             <div className="col-lg-9">
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                                     <div className="row justify-between align-items-center p-3">
-                                        <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
-                                            <h4 className="text-[22px] text-[#091316] font-family: Poppins-Medium">Job Descriptions Chat Bot</h4>
+                                        <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
+                                            <h4 className="text-[22px] text-[#091316] font-family: Poppins-Medium">History</h4>
                                             <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
                                         </div>
 
@@ -57,25 +59,22 @@ function P_M_JobDescriptionsSix(params: type) {
                                                 <button className="PostedSearch p-0"> <img src="image/search.png" alt="" /></button>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div className='row mt-3'>
-                                        <div className='col-lg-3 col-md-4'>
-                                            <HistoryTab />
-                                        </div>
-
-                                        <div className='col-lg-9 col-md-8'>
-                                            <div className='bg-[#F9F9F9] h-100 px-3 py-4 mx-3 flex align-center'>
-                                                <div className=" bg-white col-lg-10 col-xl-9 m-auto px-3 py-5">
-                                                    <div className='text-center'>
-                                                        <img src="image/Successfully.png" alt="" />
-                                                    </div>
-                                                    <h3 className='text-[20px] my-4 text-center'>Successfully shared your job descriptions</h3>
-                                                    <div className="mt-4 flex justify-center"><button className="btn btn-blue px-3">Go to Dashboard</button></div>
-                                                </div>
-                                            </div>
+                                        <div className='col-lg-2 col-4 col-md-2 text-end'>
+                                            <button
+                                                className="text-blue hover:text-white align-items-center shadow btn btn-white px-1 px-md-3 w-100 w-lg-auto d-flex text-center justify-center"
+                                                id="basic-button"
+                                            >
+                                                <DateRangeIcon className='' /> Date Filter
+                                            </button>
                                         </div>
                                     </div>
+
+
+<div className='p-3 m-3'>
+
+</div>
+
                                 </div>
                             </div>
 
@@ -103,4 +102,4 @@ function P_M_JobDescriptionsSix(params: type) {
     )
 }
 
-export default P_M_JobDescriptionsSix
+export default P_M_SendHistory1

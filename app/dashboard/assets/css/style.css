@@ -70,6 +70,7 @@ maintop sliders
     font-size: 20px;
     color: var(--darkColor);
     font-family: Poppins-Medium;
+    margin-bottom: 10px;
 }
 .deshboard_Menu{
     border-top-right-radius: 30px !important;
@@ -79,7 +80,7 @@ maintop sliders
     left: 0px;
     /* width: 100px; */
     /* overflow-y: scroll; */
-    z-index: 1;
+    z-index: 2;
    padding-bottom: 50px;
 }
 
@@ -323,6 +324,15 @@ margin: 0px !important;
   overflow: visible !important;
   border:1px solid #D6E5EE;
   top: 50px !important;
+}
+.headerDropdwon a{
+  display: block;
+  width: 100%;
+  padding: 4px;
+}
+.headerDropdwon .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+padding: 0px;
+margin: 10px;
 }
 
 .lineChartCustom{

@@ -110,28 +110,28 @@
 
 //   // modal end code
 
-//   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-//   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
+//   const [anchorEl, setOneMenu] = React.useState<null | HTMLElement>(null);
+//   const [mobileMore, setMobileMore] =
 //     React.useState<null | HTMLElement>(null);
 
-//   const isMenuOpen = Boolean(anchorEl);
-//   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+//   const isOneMenuOpen = Boolean(anchorEl);
+//   const isMobileMenuOpen = Boolean(mobileMore);
 
 //   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-//     setAnchorEl(event.currentTarget);
+//     setOneMenu(event.currentTarget);
 //   };
 
-//   const handleMobileMenuClose = () => {
-//     setMobileMoreAnchorEl(null);
+//   const handleMobileOneMenuClose = () => {
+//     setMobileMore(null);
 //   };
 
-//   const handleMenuClose = () => {
-//     setAnchorEl(null);
-//     handleMobileMenuClose();
+//   const handleOneMenuClose = () => {
+//     setOneMenu(null);
+//     handleMobileOneMenuClose();
 //   };
 
 //   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-//     setMobileMoreAnchorEl(event.currentTarget);
+//     setMobileMore(event.currentTarget);
 //   };
 
 //   const menuId = "primary-search-account-menu";
@@ -149,11 +149,11 @@
 //         vertical: "top",
 //         horizontal: "right",
 //       }}
-//       open={isMenuOpen}
-//       onClose={handleMenuClose}
+//       open={isOneMenuOpen}
+//       onClose={handleOneMenuClose}
 //     >
-//       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-//       <MenuItem onClick={handleMenuClose}>Sign Out</MenuItem>
+//       <MenuItem onClick={handleOneMenuClose}>Profile</MenuItem>
+//       <MenuItem onClick={handleOneMenuClose}>Sign Out</MenuItem>
 //     </Menu>
 //   );
 
@@ -161,7 +161,7 @@
 //   const renderMobileMenu = (
 //     <Menu
 //       className="headerDropdwon"
-//       anchorEl={mobileMoreAnchorEl}
+//       anchorEl={mobileMore}
 //       anchorOrigin={{
 //         vertical: "top",
 //         horizontal: "right",
@@ -173,7 +173,7 @@
 //         horizontal: "right",
 //       }}
 //       open={isMobileMenuOpen}
-//       onClose={handleMobileMenuClose}
+//       onClose={handleMobileOneMenuClose}
 //     >
 //       {/* <MenuItem>
 //         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -189,10 +189,10 @@
 //           aria-label="show 17 new notifications"
 //           color="inherit"
 //         >
-//             <MenuItem onClick={handleMenuClose}>
+//             <MenuItem onClick={handleOneMenuClose}>
 //                 <Link href="/">Home</Link>
 //             </MenuItem>
-//             <MenuItem onClick={handleMenuClose}>
+//             <MenuItem onClick={handleOneMenuClose}>
 //                 <Link href="/ProjectManagerUpcomings">Upcoming</Link>
 //             </MenuItem>
 //             <MenuItem onClick={handleProfileMenuOpen}>
@@ -446,14 +446,11 @@ import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import AodRoundedIcon from "@mui/icons-material/AodRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
@@ -540,31 +537,48 @@ function HeadersTop() {
 
   // modal end code
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
+  const [anchorEl, setOneMenu] = React.useState<null | HTMLElement>(null);
+  const [mobileMore, setMobileMore] =
     React.useState<null | HTMLElement>(null);
 
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [MenuTwo, setMenuTwo] = React.useState<null | HTMLElement>(null);
+
+  const handleMenuTwoOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setMenuTwo(event.currentTarget);
+  };
+
+
+  const isOneMenuOpen = Boolean(anchorEl);
+  const isTwoMenuOpen = Boolean(MenuTwo);
+  const isMobileMenuOpen = Boolean(mobileMore);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+    setOneMenu(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
+  const handleMobileOneMenuClose = () => {
+    setMobileMore(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
+  const handleOneMenuClose = () => {
+    setOneMenu(null);
+    handleMobileOneMenuClose();
+  };
+
+  const handleMenuTwoClose = () => {
+    setMenuTwo(null);
+    handleMobileOneMenuClose();
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
+    setMobileMore(event.currentTarget);
   };
 
+
+
+
   const menuId = "primary-search-account-menu";
+  const menu_IdTwo = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       className="headerDropdwon"
@@ -579,11 +593,11 @@ function HeadersTop() {
         vertical: "top",
         horizontal: "right",
       }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
+      open={isOneMenuOpen}
+      onClose={handleOneMenuClose}
     >
 
-      <MenuItem className="px-1 w-auto" onClick={handleMenuClose}>
+      <MenuItem className="px-1 w-auto" onClick={handleOneMenuClose}>
         <div>
           <div className="notification_Menu">
             <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
@@ -596,8 +610,8 @@ function HeadersTop() {
               </div>
               <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
                 <p className="text-[10px]">2.00 A.M</p>
-                <div className="text-white px-2 py-1 rounded bg-blue d-inline-block">
-                  <h6 className="text-[8px]">2</h6>
+                <div className="px-2 py-1 rounded bg-blue d-inline-block">
+                  <h6 className="text-[8px] text-white">2</h6>
                 </div>
               </div>
             </div>
@@ -614,59 +628,85 @@ function HeadersTop() {
               </div>
               <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
                 <p className="text-[10px]">2.00 A.M</p>
-                <div className="text-white px-2 py-1 rounded bg-blue d-inline-block">
-                  <h6 className="text-[8px]">2</h6>
+                <div className=" px-2 py-1 rounded bg-blue d-inline-block">
+                  <h6 className="text-[8px] text-white">2</h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </MenuItem>
-
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/">Home</Link>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <Link className="text-[14px]"  href="/P_M_Upcomings">P_M_Upcoming</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_Profile">P_M_Profile</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_Activity">P_M_Activity</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_Messages">P_M_Messages</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_Notifications">P_M_Notifications</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions1">P_M_JobDescrp1...</Link>
+      <MenuItem onClick={handleOneMenuClose}>
+        <Link className="text-[14px]" href="/P_M_SendHistory1">P_M_SendHistory1...</Link>
       </MenuItem>
 
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions2">P_M_JobDescrp2...</Link>
+    </Menu>
+  );
+
+
+  const render_MenuTwo = (
+    <Menu
+      className="headerDropdwon"
+      anchorEl={MenuTwo}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      id={menu_IdTwo}
+      keepMounted
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={isTwoMenuOpen}
+      onClose={handleMenuTwoClose}
+    >
+
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/">Home</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Upcomings">P_M_Upcoming</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Profile">P_M_Profile</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Activity">P_M_Activity</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Messages">P_M_Messages</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Notifications">P_M_Notifications</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions1">P_M_JobDescrp1...</Link>
       </MenuItem>
 
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions4">P_M_JobDescrp4...</Link>
-      </MenuItem>
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions5">P_M_JobDescrp5...</Link>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions2">P_M_JobDescrp2...</Link>
       </MenuItem>
 
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions6">P_M_JobDescrp6...</Link>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions4">P_M_JobDescrp4...</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions5">P_M_JobDescrp5...</Link>
       </MenuItem>
 
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions9">P_M_JobDescrp9..</Link>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions6">P_M_JobDescrp6...</Link>
       </MenuItem>
 
-      <MenuItem  onClick={handleMenuClose}>
-        <Link  className="text-[14px]" href="/P_M_JobDescriptions10">P_M_JobDescrp10..</Link>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions9">P_M_JobDescrp9..</Link>
       </MenuItem>
+
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_JobDescriptions10">P_M_JobDescrp10..</Link>
+      </MenuItem>
+
     </Menu>
   );
 
@@ -674,7 +714,7 @@ function HeadersTop() {
   const renderMobileMenu = (
     <Menu
       className="headerDropdwon"
-      anchorEl={mobileMoreAnchorEl}
+      anchorEl={mobileMore}
       anchorOrigin={{
         vertical: "top",
         horizontal: "right",
@@ -686,7 +726,7 @@ function HeadersTop() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
+      onClose={handleMobileOneMenuClose}
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -742,15 +782,7 @@ function HeadersTop() {
       <Box className="navbarTop bg-white" sx={{ flexGrow: 1 }}>
         <AppBar top={0} position="fixed">
           <Toolbar>
-            {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
+          
             <Typography
               variant="h6"
               noWrap
@@ -766,14 +798,14 @@ function HeadersTop() {
               onClick={handleOpen}
               className="ms-5 text-gray md:w-[400px]"
             >
-         
+
               <StyledInputBase
                 className="md:w-[400px]  headerSearchTop"
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
               />
-                   <SearchIconWrapper className="end-3 top-0 pe-0 text-blue">
-               <i className="fa fa-search"></i>
+              <SearchIconWrapper className="end-3 top-0 pe-0 text-blue">
+                <i className="fa fa-search"></i>
               </SearchIconWrapper>
             </Search>
             <Box sx={{ flexGrow: 1 }} />
@@ -796,18 +828,7 @@ function HeadersTop() {
                   <MailOutlinedIcon />
                 </Badge>
               </IconButton>
-              {/* <IconButton
-                className="mx-lg-3"
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton> */}
+           
               <IconButton
                 className="mx-lg-3"
                 size="large"
@@ -827,14 +848,16 @@ function HeadersTop() {
                 size="large"
                 edge="end"
                 aria-label="account of current user"
-                aria-controls={menuId}
+                aria-controls={menu_IdTwo}
                 aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
+                onClick={handleMenuTwoOpen}
                 color="inherit"
               >
 
                 <SettingsOutlinedIcon />
               </IconButton>
+
+
               <IconButton
                 className="mx-lg-3"
                 size="large"
@@ -864,6 +887,7 @@ function HeadersTop() {
         </AppBar>
         {renderMobileMenu}
         {renderMenu}
+        {render_MenuTwo}
       </Box>
 
       <Modal
@@ -919,11 +943,7 @@ function HeadersTop() {
               placeholder="Search your Data"
             />
           </div>
-          {/* <TextField
-                                    label="Filter Text"
-                                    variant="outlined"
-                                    onChange={handleChange}
-                                /> */}
+        
           <List className="overflow-y-scroll h-[300px]">
             {filteredData.map((item, index) => (
               <ListItem
