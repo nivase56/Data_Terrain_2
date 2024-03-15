@@ -13,14 +13,16 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 
 function PostedJobsTop(props: { titleName: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined }) {
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  // filter btn
+  const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(filterBtn);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+    setfilterBtn(event.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setfilterBtn(null);
   };
+  // filter btn end
 
 
   return (
@@ -28,12 +30,12 @@ function PostedJobsTop(props: { titleName: string | number | boolean | ReactElem
       <div className={`row justify-between align-items-center p-3  ${props.className}`}>
         <div className="col-md-5 col-12 col-lg-4 d-flex mb-3 mb-md-0 justify-between align-items-center ">
           <h4 className={`text-[22px] text-[#091316] font-family: Poppins-Medium;  ${props.classTitle}`}>{props.titleName}</h4>
-          <h6><Link className={`text-blue text-[14px]  ${props.classSamll}`}  href="/">{props.samllText}</Link></h6>
+          <h6><Link className={`text-blue text-[14px]  ${props.classSamll}`} href="/">{props.samllText}</Link></h6>
         </div>
 
         <div className="col-md-5 col-8 col-lg-5 ms-auto ps-lg-5">
           <div className="position-relative PostedInput">
-            <input className="form-control border-0 rouned-2" type="text" placeholder='Search.......'/>
+            <input className="form-control border-0 rouned-2" type="text" placeholder='Search.......' />
             <button className="PostedSearch p-0"> <img src="image/search.png" alt="" /></button>
           </div>
         </div>
@@ -55,11 +57,11 @@ function PostedJobsTop(props: { titleName: string | number | boolean | ReactElem
           >
             <FilterListIcon /> Filters
           </Button>
-          
+
           <Menu
-          className="filterBtns"
+            className="filterBtns"
             id="basic-menu"
-            anchorEl={anchorEl}
+            anchorEl={filterBtn}
             open={open}
             onClose={handleClose}
             MenuListProps={{

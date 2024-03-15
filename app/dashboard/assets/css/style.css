@@ -69,7 +69,7 @@ maintop sliders
 .projectText p{
     font-size: 20px;
     color: var(--darkColor);
-    font-family: Poppins-Medium;
+    font-family: Poppins-Regular;
     margin-bottom: 10px;
 }
 .deshboard_Menu{
@@ -452,4 +452,62 @@ left: -10px;
   font-size: 20px !important;
   font-family: Poppins-Medium !important;
   color: var(--darkColor) !important;
+}
+
+.historyTable td, .historyTable th{
+  color: var(--darkColor);
+  padding: 8px 6px;
+  border: none;
+}
+
+.historyTable th{
+  border-bottom: 1px solid #ddd;
+}
+
+.tableMenuBtn .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+  transform-origin: left top;
+  border: 1px solid #D6E5EE ;
+  top: 50px;
+  right:  auto;
+  left: 0px;
+  border-radius: 0px !important;
+  overflow: visible;
+  box-shadow: 0px 0px 8px 0px rgb(245, 245, 245);
+}
+.tableMenuBtn .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper::before{
+  background: white;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid #D6E5EE;
+  border-top: 1px solid #D6E5EE;
+  border-right: 1px solid transparent;
+  content: '';
+  display: block;
+  height: 17px;
+  /* left: -8px; */
+  position: absolute;
+  top: -9px;
+  transform: rotate(45deg);
+  width: 17px;
+  left: 23px;
+}
+
+.requestBoradTable.css-az8st9-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderDraggableContainer, .requestBoradTable.css-az8st9-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderTitleContainer{
+  justify-content: start;
+  padding: 0px 8px;
+}
+.requestBoradTable .css-gl260s-MuiDataGrid-columnHeadersInner{
+background-color: #F5F5F5;
+}
+
+.requestBoradTable .btn-sm{
+  padding: 0px 8px !important;
+  height: 30px !important;
+}
+.requesttableTabs .css-19kzrtu{
+padding: 20px 10px;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  text-transform: capitalize;
+  font-size: 16px;
+  color: var(--darkColor);
 }

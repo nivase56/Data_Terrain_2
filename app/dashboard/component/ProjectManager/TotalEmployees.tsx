@@ -23,7 +23,7 @@ function TotalEmployees() {
                     <div className="col-6 flex align-middle">
                         <div className="text-center w-[147px]">
                         <TotalEmployeesGraph totalEmloyeesCount={72} count={40} color={'#0B74AD'} />
-                        <i className="fa fa-square" aria-hidden="true" style={man}></i> Man
+                        <i className="fa fa-square" aria-hidden="true" style={man}></i> Men
 
                         </div>
                     </div>

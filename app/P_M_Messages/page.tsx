@@ -25,8 +25,8 @@ function Message(props) {
                 <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
                     <p className='text-[10px]'>{props.time}</p>
                     {props.count &&
-                        <div className=" text-white px-2 py-1 text-[10px] rounded bg-blue d-inline-block">
-                            <h6 className="text-[10px]">{props.count}</h6>
+                        <div className="  d-inline-block">
+                            <h6 className="text-[10px] text-white px-2 py-1 rounded bg-blue">{props.count}</h6>
                         </div>
                     }
                 </div>

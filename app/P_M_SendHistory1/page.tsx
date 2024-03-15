@@ -5,15 +5,67 @@ import Activity from "../dashboard/component/ProjectManager/Activity"
 import CalendarProject from "../dashboard/component/ProjectManager/CalendarProject"
 import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandidates"
 import SideMenu from "../dashboard/component/SideMenu"
-import * as React from 'react';
+
 import Link from 'next/link';
-import HistoryTab from '../dashboard/component/ProjectManager/HistoryTab';
 import DateRangeIcon from '@mui/icons-material/DateRange';
+import React, { useState } from 'react';
+
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Checkbox from '@mui/material/Checkbox';
+import AlarmOnIcon from '@mui/icons-material/AlarmOn';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+// table data
+function createData(
+    name: string,
+    calories: number,
+    fat: number,
+    carbs: number,
+    protein: number,
+) {
+    return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+    createData('Frozen yoghurt', '10.15 A.M', 'Python developer job descriptions', 'Python developers are professionals who specialize in using the Python programming......', 4.0),
+];
+// table data end
+
 
 function P_M_SendHistory1(params: type) {
+
+    // dropdown menu
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+    // end
+
 
     return (
         <section className="">
@@ -50,10 +102,14 @@ function P_M_SendHistory1(params: type) {
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="text-[22px] text-[#091316] font-family: Poppins-Medium">History</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">Job Descriptions Assets</Link>
+                                                <Link href='/'>
+                                                    <DeleteIcon className='text-red-500 mx-2' />
+                                                </Link>
+                                            </h6>
                                         </div>
 
-                                        <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
+                                        <div className="col-md-5 col-8 col-lg-5 ms-auto ps-lg-5">
                                             <div className="position-relative PostedInput">
                                                 <input className="form-control border-0 rouned-2" type="text" placeholder='Search.......' />
                                                 <button className="PostedSearch p-0"> <img src="image/search.png" alt="" /></button>
@@ -70,11 +126,69 @@ function P_M_SendHistory1(params: type) {
                                         </div>
                                     </div>
 
+                                    <div className='p-3 m-3 shadow'>
+                                        <TableContainer className='shadow-none' component={Paper}>
+                                            <Table className='historyTable' sx={{ minWidth: 650 }} aria-label="simple table">
+                                                <TableHead>
+                                                    <TableRow>
+                                                        <TableCell>
+                                                            <Checkbox {...label} defaultChecked />
+                                                        </TableCell>
+                                                        <TableCell colSpan={2} align="left">Today - Monday, February 07, 2024</TableCell>
+                                                        <TableCell align="left"></TableCell>
+                                                        <TableCell align="center">Actions</TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {rows.map((row) => (
+                                                        <TableRow
+                                                            key={row.name}
+                                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                                        >
+                                                            <TableCell align="left" scope="row">
+                                                                <Checkbox {...label} />
+                                                            </TableCell>
+                                                            <TableCell className='w-[150px]' align="left">
+                                                                <AlarmOnIcon className='text-[15px] me-1' />
+                                                                {row.calories}</TableCell>
+                                                            <TableCell align="left">{row.fat}</TableCell>
+                                                            <TableCell align="left">{row.carbs}</TableCell>
+                                                            <TableCell align="center">
 
-<div className='p-3 m-3'>
 
-</div>
+                                                                <Button
+                                                                    id="basic-button"
+                                                                    aria-controls={open ? 'basic-menu' : undefined}
+                                                                    aria-haspopup="true"
+                                                                    aria-expanded={open ? 'true' : undefined}
+                                                                    onClick={handleClick}
+                                                                    className='text-dark'
+                                                                >
+                                                                    <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                </Button>
+                                                                <Menu
+                                                                    className='tableMenuBtn'
+                                                                    id="basic-menu"
+                                                                    anchorEl={anchorEl}
+                                                                    open={open}
+                                                                    onClose={handleClose}
+                                                                    MenuListProps={{
+                                                                        'aria-labelledby': 'basic-button',
+                                                                    }}
+                                                                >
+                                                                    <MenuItem onClick={handleClose}>Demo 1</MenuItem>
+                                                                    <MenuItem onClick={handleClose}>Demo 1</MenuItem>
+                                                                    <MenuItem onClick={handleClose}>Demo 1</MenuItem>
+                                                                </Menu>
 
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+
+                                    </div>
                                 </div>
                             </div>
 

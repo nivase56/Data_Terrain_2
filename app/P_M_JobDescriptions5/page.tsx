@@ -73,7 +73,7 @@ function P_M_JobDescriptionsFive(params: type) {
                                                             <i className="fa fa-close"></i>
                                                         </button>
                                                     </div>
-                                                    <div className="row">
+                                                    <div className="row mt-5">
                                                     <div className="col-lg-6 col-12 col-md-6">
                                                             <div className='blueBorder p-3'>
                                                                 <div className='flex justify-between'>
