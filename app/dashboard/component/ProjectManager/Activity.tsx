@@ -49,7 +49,7 @@ export default function Activity() {
 
             <div className="flex justify-between align-items-center ">
                 <h5>Activity</h5>
-                <Link className='text-blue text-[14px]' href="#">
+                <Link className='text-blue text-[14px]' href="/P_M_Activity">
                     <u>View All</u>
                 </Link>
             </div>

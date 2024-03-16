@@ -12,11 +12,12 @@ function TodayInterviews() {
 
                             <div className="row w-100 mx-0 border-top mt-3 ">
                                 <div className="col-lg-6 py-3  border-end px-1 text-center col-6">
-                                    <img className="mx-auto" src="image/watch.png" alt="" />
+                                <img className="mx-auto" src="image/date.png" alt="" />
                                     <h5 className="text-blue text-[10px] mt-2">19th Feb 2024</h5>
                                 </div>
                                 <div className="col-lg-6 px-1 py-3 text-center col-6">
-                                    <img className="mx-auto" src="image/date.png" alt="" />
+                                   
+                                    <img className="mx-auto" src="image/watch.png" alt="" />
                                     <h5 className="text-blue text-[10px] mt-2">10.30 A.M</h5>
                                 </div>
                             </div>

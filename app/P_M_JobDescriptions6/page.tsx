@@ -72,9 +72,8 @@ function P_M_JobDescriptions10(params: type) {
                                                 <div className=" bg-white col-lg-12 col-xl-11 m-auto p-3">
                                                     <div className="flex justify-between items-center border-bottom mb-4 pb-3">
                                                         <h2 className="text-[18px] Poppins-Medium">Talent Acquisition</h2>
-                                                        <button className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center">
-                                                            <i className="fa fa-close"></i>
-                                                        </button>
+                                                        <Link href="/" className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"> <i className="fa fa-close"></i></Link>
+
                                                     </div>
 
 

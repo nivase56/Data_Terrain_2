@@ -9,7 +9,7 @@ import Upcomings from '../dashboard/component/ProjectManager/Upcomings';
 import Activity from '../dashboard/component/ProjectManager/Activity';
 import HiringCandidates from '../dashboard/component/ProjectManager/HiringCandidates';
 import Link from 'next/link';
-
+import SendIcon from '@mui/icons-material/Send';
 
 function Message(props) {
     return (
@@ -191,7 +191,7 @@ export default function ProjectManagerMessages() {
                                             </div>
                                             <div className="position-absolute bottom-0 right-0 left-0">
                                                 <input type="text" className="form-control rounted-0 pe-5 text-[12px] h-[70px] rounded-0" placeholder="Applicant Tracking Dashboard" />
-                                               <Link href=""> <i className="fa fa-paper-plane text-[#4CAE4E] text-[20px] position-absolute top-[24px] right-[20px]" aria-hidden="true"></i></Link>
+                                               <Link href=""> <SendIcon className="fa fa-paper-plane text-[#4CAE4E] text-[20px] position-absolute top-[24px] right-[20px]" aria-hidden="true"/></Link>
                                             </div>
                                         </div>
                                     </div>

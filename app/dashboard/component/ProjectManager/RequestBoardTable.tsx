@@ -6,12 +6,12 @@ import CloseIcon from '@mui/icons-material/Close';
 // Define column definitions
 const columns: GridColDef[] = [
     { field: 'employeeId', headerName: 'Employee ID', width: 100 },
-    { field: 'teamLeaderName', headerName: 'Team Leader Name', width: 170 },
+    { field: 'teamLeaderName', headerName: 'Team Leader Name', width: 173 },
     { field: 'team', headerName: 'Team', },
     {
         field: 'jobPosition', headerName: 'Job Position', type: 'number',
         align: 'left',
-        width: 140,
+        width: 160,
     },
     { field: 'CreationDate', headerName: 'Creation Date', type: 'number', width: 160, align: 'left', },
     {
@@ -32,10 +32,10 @@ const columns: GridColDef[] = [
         renderCell: (params) => (
             <div>
                 <button className="btn btnOutlineblue btn-sm mx-1 px-1" onClick={(e) => e.stopPropagation()}>
-                    <CheckIcon className='text-lg' />
+                    <CheckIcon className='text-[16px]' />
                 </button>
                 <button className=" btn btn-blue btn-sm px-1 mx-1" onClick={(e) => e.stopPropagation()}>
-                    <CloseIcon className='text-lg' />
+                    <CloseIcon className='text-[16px]' />
                 </button>
             </div>
         )
@@ -71,9 +71,7 @@ export default function DataTable() {
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
             />
-            <div className='md:mt-[-50px] text-center mx-auto d-flex justify-center w-[200px] z-10 position-relative d-inline-block'>
-                <button className="btn btn-blue" onClick={(e) => e.stopPropagation()}>Next Page</button>
-            </div>
+           
         </div>
     );
 }

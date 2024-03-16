@@ -9,7 +9,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import StraightIcon from '@mui/icons-material/Straight';
 import HistoryTab from '../dashboard/component/ProjectManager/HistoryTab';
-
+import EditIcon from '@mui/icons-material/Edit';
 function ProjectManagerJobDescriptionsTwo(params: type) {
     return (
         <section className="">
@@ -71,7 +71,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
 
                                                         </button>
                                                         <button className="px-2">
-                                                            <i className="text-[#0B74AD] fa fa-pencil" aria-hidden="true"></i>
+                                                            <EditIcon className="text-[#0B74AD]"/>
                                                         </button>
                                                         <button className="px-2">
                                                             <i className="fa fa-share text-blue" aria-hidden="true"></i>

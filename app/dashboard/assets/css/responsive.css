@@ -10,9 +10,25 @@
        transform: translate(-50%, 0%);
     }
   }
+  
+  @media screen and (max-width: 900px) {
+    .mobileMenu button {
+       padding: 0px;
+    }
+    .mobileMenu .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+      margin: 0px 14px;
+    }
+  }
   @media screen and (max-width: 767px) {
     .logo-top {
       height: 100%;
+    }
+    .projectText p{
+      line-height: 28px;
+    }
+    .caledarFilter{
+      flex-direction: column;
+      padding: 15px 10px;
     }
   }
 
@@ -27,5 +43,8 @@
     .col-lg-1.leftMenuWidth{
       flex: 0 0 auto;
       width: 7.7%;
+  }
+  .headerDropdwon .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+    top: 50px !important;
   }
   }

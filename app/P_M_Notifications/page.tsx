@@ -169,8 +169,6 @@ export default function ProjectManagerNotifications() {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>

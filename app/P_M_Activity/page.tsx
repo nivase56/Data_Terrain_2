@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import HeadersTop from '../dashboard/common/HeadersTop'
 import SideMenu from '../dashboard/component/SideMenu';
 
@@ -48,7 +49,7 @@ function ProjectManagerActivity() {
             <div className="shadow p-3">
               <div className="flex justify-between items-center border-bottom mb-4 pb-3">
                 <h2 className="text-[22px] Poppins-Medium">Recent Activity’s</h2>
-                <button className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center"> <i className="fa fa-close"></i></button>
+                <Link href="/" className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"> <i className="fa fa-close"></i></Link>
               </div>
 
               <UserActivity

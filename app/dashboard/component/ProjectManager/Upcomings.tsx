@@ -55,7 +55,7 @@ export default function AppointmentsPage() {
 
             <div className="flex justify-between align-items-center ">
                 <h5>Upcomings</h5>
-                <Link className='text-blue text-[14px]' href="#">
+                <Link className='text-blue text-[14px]' href="/P_M_Upcomings">
                     <u>View All</u>
                 </Link>
             </div>

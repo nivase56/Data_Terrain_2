@@ -133,22 +133,17 @@ const SideMenu = () => {
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="">
-                Dashboard
+              <Link href="/P_M_JobDescriptions1">
+              Job Descriptions
               </Link>
             </li>
 
             <li className="subSideMenu">
               <Link href="">
-                Project Manager
-              </Link>
+              TL Requests             
+               </Link>
             </li>
 
-            <li className="subSideMenu">
-              <Link href="">
-                Today Interviews
-              </Link>
-            </li>
           </ul>
         </li>
 
