@@ -560,3 +560,11 @@ padding: 20px 10px;
   position: relative;
 }
 
+.small_historyText{
+  font-size: 22px;
+  color: var(--darkColor);
+  font-family: Poppins-Medium !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  font-size: 15px !important;
+}

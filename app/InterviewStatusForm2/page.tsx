@@ -44,34 +44,19 @@ function P_M_JobDescriptionsSix(params: type) {
 
                         <div className="row">
                             <div className="col-lg-9">
-                                <div className="shadow bg-white mt-4 rounded-3 pb-3">
-                                    <div className="row justify-between align-items-center p-3">
-                                        <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
-                                            <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
-                                        </div>
-
-                                        <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
-                                            <div className="position-relative PostedInput">
-                                                <input className="form-control border-0 rouned-2" type="text" placeholder='Search.......' />
-                                                <button className="PostedSearch p-0"> <img src="image/search.png" alt="" /></button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="shadow bg-white mt-4 rounded-3 p-3">
+                                 
 
                                     <div className='row mt-3'>
-                                        <div className='col-lg-3 col-md-4'>
-                                            <HistoryTab />
-                                        </div>
-
-                                        <div className='col-lg-9 col-md-8'>
-                                            <div className='bg-[#F9F9F9] h-100 px-3 py-4 mx-3 flex align-center'>
+                               
+                                        <div className='col-lg-12 col-md-12'>
+                                            <div className='bg-[#F9F9F9] h-100 px-3 py-5 mx-3 flex align-center'>
                                                 <div className=" bg-white col-lg-10 col-xl-9 m-auto px-3 py-5">
                                                     <div className='text-center'>
                                                         <img src="image/Successfully.png" alt="" />
                                                     </div>
                                                     <h3 className='text-[20px] my-4 text-center'>Successfully shared your job descriptions</h3>
-                                                    <div className="mt-4 flex justify-center"><button className="btn btn-blue px-3">Go to Dashboard</button></div>
+                                                    <div className="mt-4 flex justify-center"><Link href="/" className="btn btn-blue px-3">Go to Dashboard</Link></div>
                                                 </div>
                                             </div>
                                         </div>

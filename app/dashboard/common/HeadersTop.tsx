@@ -205,6 +205,9 @@ function HeadersTop() {
       <MenuItem onClick={handleOneMenuClose}>
         <Link className="text-[14px]" href="/InterviewStatusForm1">InterviewStatusForm1...</Link>
       </MenuItem>
+      <MenuItem onClick={handleOneMenuClose}>
+        <Link className="text-[14px]" href="/InterviewStatusForm2">InterviewStatusForm2...</Link>
+      </MenuItem>
 
 
     </Menu>

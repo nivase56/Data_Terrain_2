@@ -101,7 +101,7 @@ function P_M_SendHistory1(params: type) {
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
-                                            <h4 className="text-[22px] text-[#091316] font-family: Poppins-Medium">History</h4>
+                                            <h4 className="small_historyText">History</h4>
                                             <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">Job Descriptions Assets</Link>
                                                 <Link href='/'>
                                                     <DeleteIcon className='text-red-500 mx-2' />
