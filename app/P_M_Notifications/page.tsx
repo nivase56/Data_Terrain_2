@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import Link from 'next/link';
 
 export default function ProjectManagerNotifications() {
 
@@ -114,10 +115,10 @@ export default function ProjectManagerNotifications() {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
                                     JD Assets
-                                </button>
-                                <button className="btn btn-blue">Create New JD</button>
+                                </Link>
+                                <Link href="P_M_JobDescriptions4" className="btn btn-blue">Create New JD</Link>
                             </div>
                         </div>
 
@@ -131,8 +132,8 @@ export default function ProjectManagerNotifications() {
                                         </div>
 
                                         <button className='btn'>
-                                        <i className="fa fa-trash  text-red-700" aria-hidden="true"></i>    
-                                         </button>
+                                            <i className="fa fa-trash  text-red-700" aria-hidden="true"></i>
+                                        </button>
                                     </div>
 
 

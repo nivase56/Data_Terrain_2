@@ -35,17 +35,20 @@ function P_M_JobDescriptionsFive(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                            <button className="btn btn-light me-3 mx-lg-2">JD Assets</button>
+                              
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
+                                    JD Assets
+                                </Link>
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-lg-9">
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
-                                <div className="row justify-between align-items-center p-3">
+                                    <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 
                                         <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
@@ -58,7 +61,7 @@ function P_M_JobDescriptionsFive(params: type) {
 
                                     <div className='row mt-3'>
                                         <div className='col-lg-3 col-md-4'>
-                                        <HistoryTab/>
+                                            <HistoryTab />
                                         </div>
 
                                         <div className='col-lg-9 col-md-8'>
@@ -72,7 +75,7 @@ function P_M_JobDescriptionsFive(params: type) {
                                                         <Link href="/" className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"> <i className="fa fa-close"></i></Link>
                                                     </div>
                                                     <div className="row mt-5">
-                                                    <div className="col-lg-6 col-12 col-md-6">
+                                                        <div className="col-lg-6 col-12 col-md-6">
                                                             <div className='blueBorder p-3'>
                                                                 <div className='flex justify-between'>
                                                                     <p className='text-blue text-[13px] Poppins-Regular'><img src="image/question.png" alt="" /> Ask your Questions</p>

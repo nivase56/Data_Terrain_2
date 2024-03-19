@@ -30,7 +30,7 @@ function PostedJobsTop(props: { titleName: string | number | boolean | ReactElem
       <div className={`row justify-between align-items-center p-3  ${props.className}`}>
         <div className="col-md-5 col-12 col-lg-4 d-flex mb-3 mb-md-0 justify-between align-items-center ">
           <h4 className={`small_historyText  ${props.classTitle}`}>{props.titleName}</h4>
-          <h6><Link className={`text-blue text-[14px]  ${props.classSamll}`} href="/">{props.samllText}</Link></h6>
+          <h6><Link className={`text-blue text-[14px]  ${props.classSamll}`} href="/P_M_SendHistory1">{props.samllText}</Link></h6>
         </div>
 
         <div className="col-md-5 col-8 col-lg-5 ms-auto ps-lg-5">

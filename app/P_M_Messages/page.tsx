@@ -59,10 +59,10 @@ export default function ProjectManagerMessages() {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
                                     JD Assets
-                                </button>
-                                <button className="btn btn-blue">Create New JD</button>
+                                </Link>
+                                <Link href="P_M_JobDescriptions4" className="btn btn-blue">Create New JD</Link>
                             </div>
                         </div>
 
@@ -191,14 +191,14 @@ export default function ProjectManagerMessages() {
                                             </div>
                                             <div className="position-absolute bottom-0 right-0 left-0">
                                                 <input type="text" className="form-control rounted-0 pe-5 text-[12px] h-[70px] rounded-0" placeholder="Applicant Tracking Dashboard" />
-                                               <Link href=""> <SendIcon className="fa fa-paper-plane text-[#4CAE4E] text-[20px] position-absolute top-[24px] right-[20px]" aria-hidden="true"/></Link>
+                                                <Link href=""> <SendIcon className="fa fa-paper-plane text-[#4CAE4E] text-[20px] position-absolute top-[24px] right-[20px]" aria-hidden="true" /></Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="col-lg-12 text-center mt-4 mb-3">
-                                    <button className='btnOutlineBlack btn'>Previous Screen</button>
+                                    <Link href="/" className='btnOutlineBlack btn'>Previous Screen</Link>
                                 </div>
                             </div>
 

@@ -22,6 +22,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import React, { useState } from 'react';
+import Link from "next/link";
 
 
 export default function Home() {
@@ -131,10 +132,10 @@ export default function Home() {
               </div>
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
-                <button className="btn btn-light me-3 mx-lg-2">
+                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
                   JD Assets
-                </button>
-                <button className="btn btn-blue bg-[#0a66c2!important]">Create New JD</button>
+                </Link>
+                <Link href="P_M_JobDescriptions4" className="btn btn-blue bg-[#0a66c2!important]">Create New JD</Link>
               </div>
             </div>
 

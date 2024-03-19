@@ -85,7 +85,7 @@ maintop sliders
 }
 
 .deshboard_Menu .ListSideMEnu{
-    padding: 12px 30px;
+    padding: 13px 30px;
     text-align: center;
    position: relative;
    margin-bottom: 5px;
@@ -106,7 +106,7 @@ maintop sliders
     padding: 2px;
     font-size: 13px;
     left: 100%;
-   border: 1px solid #ddd;
+   border: 1px solid #D6E5EE;
    display: none;
     top: 0px;
   }
@@ -118,20 +118,23 @@ maintop sliders
   }
   .subMainSideMenu a{
     display: block;
-    padding: 5px 8px;
+    padding: 6px 12px;
     white-space: nowrap;
     text-align: left;
+    z-index: 1;
+    position: relative;
+    font-size: 15px;
   }
   .subMainSideMenu::after {
-    background: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
+    background: #fff;
+    border-bottom: 1px solid #D6E5EE;
+    border-left: 1px solid #D6E5EE;
     content: '';
     display: block;
     height: 17px;
     left: -8px;
     position: absolute;
-    top: 17px;
+    top: 26%;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     width: 17px;
@@ -509,15 +512,24 @@ padding: 20px 10px;
   text-transform: capitalize;
   font-size: 16px;
   color: var(--darkColor);
+  
+}
+
+.totalEmployeeTab .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  text-transform: capitalize;
+  font-size: 18px;
+  color: var(--darkColor);
+  padding: 10px 7px;
 }
 
 .requestBoradTable.css-az8st9-MuiDataGrid-root{
   border: none;
 }
-.requestBoradTable .css-204u17-MuiDataGrid-main{
+.requestBoradTable .css-204u17-MuiDataGrid-main, .jobApplicationTable .css-204u17-MuiDataGrid-main{
   border: 1px solid #ddd;
   border-bottom: none;
 }
+
 .caledarFilter{
   position: absolute;
   box-shadow: 0px 0px 17px 0px #9f9f9f;
@@ -567,4 +579,29 @@ padding: 20px 10px;
 }
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
   font-size: 15px !important;
+}
+
+.jobApplicationTable.css-az8st9-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderDraggableContainer, .jobApplicationTable.css-az8st9-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderTitleContainer{
+  justify-content: center;
+  padding: 0px 8px;
+}
+.jobApplicationTable .css-1iyq7zh-MuiDataGrid-columnHeaders{
+background-color: #F5F5F5;
+}
+
+.jobApplicationTable .btn-sm{
+  padding: 0px 8px !important;
+  height: 30px !important;
+}
+
+.jobApplicationTable .css-t89xny-MuiDataGrid-columnHeaderTitle, .requestBoradTable .css-t89xny-MuiDataGrid-columnHeaderTitle{
+  font-family: Poppins-Medium !important;
+}
+
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
+  background-color: #D6E5EE;
+  color: black;
+  border-radius: 0px;
+  margin: 0px 4px;
+  padding: 5px 5px;
 }

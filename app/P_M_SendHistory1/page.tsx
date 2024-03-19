@@ -89,10 +89,10 @@ function P_M_SendHistory1(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
                                     JD Assets
-                                </button>
-                                <button className="btn btn-blue bg-[#0a66c2!important]">Create New JD</button>
+                                </Link>
+                                <Link href="P_M_JobDescriptions4" className="btn btn-blue">Create New JD</Link>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ function P_M_SendHistory1(params: type) {
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">History</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">Job Descriptions Assets</Link>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">Job Descriptions Assets</Link>
                                                 <Link href='/'>
                                                     <DeleteIcon className='text-red-500 mx-2' />
                                                 </Link>

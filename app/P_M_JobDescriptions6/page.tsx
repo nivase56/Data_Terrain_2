@@ -38,17 +38,20 @@ function P_M_JobDescriptions10(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">JD Assets</button>
+                            
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
+                                    JD Assets
+                                </Link>
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-lg-9">
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
-                                <div className="row justify-between align-items-center p-3">
+                                    <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 
                                         <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
@@ -61,7 +64,7 @@ function P_M_JobDescriptions10(params: type) {
 
                                     <div className='row mt-3'>
                                         <div className='col-lg-3 col-md-4'>
-                                        <HistoryTab/>
+                                            <HistoryTab />
                                         </div>
 
                                         <div className='col-lg-9 col-md-8'>
@@ -89,7 +92,7 @@ function P_M_JobDescriptions10(params: type) {
 
                                                         <div className="mt-4 flex justify-between" >
                                                             <button className="btn btnOutlineblue w-[100px]">ADD</button>
-                                                            <button className="btn btn-blue px-3  w-[100px]">SEND</button></div>
+                                                            <Link href="/P_M_JobDescriptions9" className="btn btn-blue px-3  w-[100px]">SEND</Link></div>
                                                     </div>
 
                                                 </div>

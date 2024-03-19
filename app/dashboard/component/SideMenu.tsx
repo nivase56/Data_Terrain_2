@@ -36,7 +36,7 @@ const SideMenu = () => {
     >
 
       <div className="p-3">
-      <img src="image/logo.png"/>
+        <img src="image/logo.png" />
       </div>
       <Accordion className="LargeDrawer" onClick={(e) => e.stopPropagation()}>
         <AccordionSummary
@@ -109,7 +109,7 @@ const SideMenu = () => {
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="">
+              <Link href="/">
                 Dashboard
               </Link>
             </li>
@@ -121,7 +121,7 @@ const SideMenu = () => {
             </li>
 
             <li className="subSideMenu">
-              <Link href="">
+              <Link href="/InterviewStatusForm1">
                 Today Interviews
               </Link>
             </li>
@@ -134,14 +134,14 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link href="/P_M_JobDescriptions1">
-              Job Descriptions
+                Job Descriptions
               </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="">
-              TL Requests             
-               </Link>
+              <Link href="/P_M_RequestStatus1">
+                TL Requests
+              </Link>
             </li>
 
           </ul>
@@ -153,19 +153,19 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link href="">
-                Dashboard
+                Calendar
               </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="">
-                Project Manager
+              <Link href="/P_M_Messages">
+                Messages
               </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link className="" href="">
-                Today Interviewdds
+              <Link className="" href="/P_M_Notifications">
+                Notifications
               </Link>
             </li>
           </ul>
@@ -174,21 +174,17 @@ const SideMenu = () => {
         <li className="ListSideMEnu">
           <img src="image/user1.png" alt="" />
           <ul className="subMainSideMenu">
+
+
             <li className="subSideMenu">
-              <Link href="">
-                Dashboard
+              <Link href="/JobApplication0">
+                Total Applications
               </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="">
-                Project Manager
-              </Link>
-            </li>
-
-            <li className="subSideMenu">
-              <Link href="">
-                Today Interviews
+              <Link href="/JobApplication0">
+                Hired Applications
               </Link>
             </li>
           </ul>
@@ -196,6 +192,16 @@ const SideMenu = () => {
 
         <li className="ListSideMEnu">
           <img src="image/Vector.png" alt="" />
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link href="/TotalEmployee0">
+              Employee’s
+              </Link>
+            </li>
+
+
+
+          </ul>
         </li>
 
 
@@ -212,6 +218,16 @@ const SideMenu = () => {
 
         <li className="ListSideMEnu">
           <img src="image/filter.png" alt="" />
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link href="/P_M_Profile">
+                Setting
+              </Link>
+            </li>
+
+
+
+          </ul>
         </li>
       </ul>
 

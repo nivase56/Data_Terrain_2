@@ -47,7 +47,7 @@ function P_M_JobDescriptions9(params: type) {
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 
                                         <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
@@ -124,7 +124,7 @@ function P_M_JobDescriptions9(params: type) {
 
 
                                                     <div className="mt-4 flex justify-center">
-                                                        <button className="btn btn-blue px-3  w-[100px]">SEND</button>
+                                                        <Link href="/P_M_JobDescriptions10" className="btn btn-blue px-3  w-[100px]">SEND</Link>
                                                         </div>
 
                                                 </div>

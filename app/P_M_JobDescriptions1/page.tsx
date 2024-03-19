@@ -41,8 +41,7 @@ function ProjectManagerJobDescriptions(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-
-                                <button className="btn btn-blue">Create New JD</button>
+                            <Link href="P_M_JobDescriptions4" className="btn btn-blue">Create New JD</Link>
                             </div>
                         </div>
 

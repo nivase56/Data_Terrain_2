@@ -133,7 +133,7 @@ function CandidateStatus() {
 
                 <td>
                   <button className="btn">
-                    <i className="fa fa-eye" aria-hidden="true"></i>
+                    <i className="fa fa-eye text-muted" aria-hidden="true"></i>
                   </button>
                 </td>
               </tr>

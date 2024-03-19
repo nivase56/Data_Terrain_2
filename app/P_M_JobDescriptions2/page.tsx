@@ -33,8 +33,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-
-                                <button className="btn btn-blue">Create New JD</button>
+                            <Link href="P_M_JobDescriptions4" className="btn btn-blue">Create New JD</Link>
                             </div>
                         </div>
 
@@ -44,7 +43,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/">History</Link></h6>
+                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 
                                         <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
@@ -73,10 +72,10 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                                         <button className="px-2">
                                                             <EditIcon className="text-[#0B74AD]"/>
                                                         </button>
-                                                        <button className="px-2">
+                                                        <Link href="/P_M_JobDescriptions6" className="px-2">
                                                             <i className="fa fa-share text-blue" aria-hidden="true"></i>
 
-                                                        </button>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                                 <p className='mb-3 text-[13px] Poppins-Regular'>Job descriptions for Python developers can vary depending on the specific role and responsibilities within a company. Here's a general outline of what you might find in a job description for a Python developer:</p>

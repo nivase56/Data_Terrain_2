@@ -19,7 +19,7 @@ const columns: GridColDef[] = [
         headerName: 'View',
         width: 70,
         renderCell: (params) => (
-            <button className='hover:text-blue-500' onClick={(e) => e.stopPropagation()}>
+            <button className='hover:text-blue-500 text-muted' onClick={(e) => e.stopPropagation()}>
                 <i className="fa fa-eye"></i>
             </button>
         )

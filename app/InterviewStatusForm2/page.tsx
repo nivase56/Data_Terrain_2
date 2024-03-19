@@ -38,17 +38,19 @@ function P_M_JobDescriptionsSix(params: type) {
                             </div>
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                                <button className="btn btn-light me-3 mx-lg-2">JD Assets</button>
+                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
+                                    JD Assets
+                                </Link>
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-lg-9">
-                                <div className="shadow bg-white mt-4 rounded-3 p-3">
-                                 
+                                <div className="shadow bg-white mt-4 rounded-3 px-3 py-4">
 
-                                    <div className='row mt-3'>
-                               
+
+                                    <div className='row'>
+
                                         <div className='col-lg-12 col-md-12'>
                                             <div className='bg-[#F9F9F9] h-100 px-3 py-5 mx-3 flex align-center'>
                                                 <div className=" bg-white col-lg-10 col-xl-9 m-auto px-3 py-5">
