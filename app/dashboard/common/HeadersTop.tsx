@@ -12,13 +12,11 @@ import {
 } from "@mui/material";
 
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
@@ -33,10 +31,7 @@ import HeaderSearch from "./HeaderSearch";
 
 
 function HeadersTop() {
-
-
   // modal end code
-
   const [profileMenu, setProfileMenu] = React.useState<null | HTMLElement>(null);
   const [mobileMore, setMobileMore] =
     React.useState<null | HTMLElement>(null);
@@ -47,11 +42,9 @@ function HeadersTop() {
     setNotification(event.currentTarget);
   };
 
-
   const isprofileMenu = Boolean(profileMenu);
   const isNotificationMenu = Boolean(notificationMenu);
   const isMobileMenuOpen = Boolean(mobileMore);
-
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setProfileMenu(event.currentTarget);
   };
@@ -73,8 +66,6 @@ function HeadersTop() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMore(event.currentTarget);
   };
-
-
 
 
   const menuId = "primary-search-account-menu";
@@ -103,7 +94,16 @@ function HeadersTop() {
       <MenuItem onClick={handleMenuTwoClose}>
         <Link className="text-[14px]" href="/">Sign Out</Link>
       </MenuItem>
- 
+
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/PostedJobs5">PostedJobs5</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/teamMember03">teamMember03</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/CandidatesStatus0">CandidatesStatus0</Link>
+      </MenuItem>
     </Menu>
   );
 
@@ -219,7 +219,6 @@ function HeadersTop() {
             <p className="text-[12px]">Dark</p>
           </IconButton>
         </Link>
-
       </MenuItem>
 
       <MenuItem>
@@ -268,8 +267,6 @@ function HeadersTop() {
           <p className="text-[12px]">Profile</p>
         </IconButton>
       </MenuItem>
-
-
     </Menu>
   );
 

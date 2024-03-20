@@ -28,14 +28,7 @@ import Link from "next/link";
 export default function Home() {
   // Define an array of data objects representing each card's content
   const jobsData = [
-    {
-      title: "Python Developer",
-      category: "Senior Developers",
-      number: "303",
-      percentage: "22%",
-      time: "6 mins ago",
-      imageSrc: "image/python.png",
-    },
+
     {
       title: "Angular Developers",
       category: "Senior Developers",
@@ -43,6 +36,7 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/Angularicon.png",
+      bgColor:'#73A1FB'
     },
 
     {
@@ -52,6 +46,7 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/graphic.png",
+      bgColor:'#2F73A0'
     },
     {
       title: "UX|UI Designers",
@@ -60,7 +55,19 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/java.png",
+      bgColor:'#D6D6D6'
     },
+
+    {
+        title: "Python Developer",
+        category: "Senior Developers",
+        number: "303",
+        percentage: "22%",
+        time: "6 mins ago",
+        imageSrc: "image/python.png",
+      bgColor:'#5E6A72'
+      },
+      
 
     // Add more job data objects as needed
   ];
@@ -79,7 +86,6 @@ export default function Home() {
 
     return (
       <div
-     
         role="tabpanel"
         hidden={value !== index}
         id={`simple-tabpanel-${index}`}
@@ -234,7 +240,7 @@ export default function Home() {
               </div>
 
               <div className="col-lg-3 mt-4">
-                <div className="overflow-hidden d-flex justify-center">
+                <div className="overflow-hidden d-flex justify-center ">
                   <CalendarProject />
                 </div>
                 <div className="mt-5">
