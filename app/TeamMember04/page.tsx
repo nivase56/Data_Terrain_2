@@ -147,39 +147,42 @@ export default function teamMember03() {
                           needleColor="#2D2C73"
                           needleBaseColor="#2D2C73"
                           hideText={true}
+                          className="mt-5"
                         />
-                        <h6 className="px-[10px!important] text-[11px] mx-1 mt-2">
-                          <i
-                            className="fa fa-square"
-                            aria-hidden="true"
-                            style={Poor}
-                          ></i>{" "}
-                          Poor
-                        </h6>
-                        <h6 className="px-[10px!important] text-[11px] mx-1 mt-2">
-                          <i
-                            className="fa fa-square"
-                            aria-hidden="true"
-                            style={Normal}
-                          ></i>{" "}
-                          Normal
-                        </h6>
-                        <h6 className="px-[10px!important] text-[11px] mx-1 mt-2">
-                          <i
-                            className="fa fa-square"
-                            aria-hidden="true"
-                            style={Medium}
-                          ></i>{" "}
-                          Medium
-                        </h6>
-                        <h6 className="px-[10px!important] text-[11px] mx-1 mt-2">
-                          <i
-                            className="fa fa-square"
-                            aria-hidden="true"
-                            style={Good}
-                          ></i>{" "}
-                          Good
-                        </h6>
+                        <div className="d-flex justify-content-center">
+                          <div className="px-[4px!important] text-[11px] mx-1 mt-2 d-flex align-items-center">
+                            <i
+                              className="fa fa-square mr-1"
+                              aria-hidden="true"
+                              style={Poor}
+                            ></i>{" "}
+                            Poor
+                          </div>
+                          <div className="px-[4px!important] text-[11px] mx-1 mt-2 d-flex align-items-center">
+                            <i
+                              className="fa fa-square mr-1"
+                              aria-hidden="true"
+                              style={Normal}
+                            ></i>{" "}
+                            Normal
+                          </div>
+                          <div className="px-[4px!important] text-[11px] mx-1 mt-2 d-flex align-items-center">
+                            <i
+                              className="fa fa-square mr-1"
+                              aria-hidden="true"
+                              style={Medium}
+                            ></i>{" "}
+                            Medium
+                          </div>
+                          <div className="px-[4px!important] text-[11px] mx-1 mt-2 d-flex align-items-center">
+                            <i
+                              className="fa fa-square mr-1"
+                              aria-hidden="true"
+                              style={Good}
+                            ></i>{" "}
+                            Good
+                          </div>
+                        </div>
                       </div>
                       <div className="col-lg-8 px-4 py-3">
                         <table className="">
