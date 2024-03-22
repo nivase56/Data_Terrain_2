@@ -10,50 +10,55 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import Paper from '@mui/material/Paper';
+import Avatar from '@mui/material/Avatar';
 
 import { visuallyHidden } from '@mui/utils';
 
 interface Data {
-  id: number;
-  calories: number;
-  carbs: number;
-  fat: number;
+  id: Number;
+  EmpName: string;
+  gender: string;
+  designation: string;
   name: string;
-  protein: number;
+  projectManager: string;
+  joiningDate: string;
 }
 
 function createData(
-  id: number,
+  id: Number,
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  EmpName: string,
+  designation: string,
+  gender: string,
+  joiningDate: string,
+  projectManager: string,
+
 ): Data {
   return {
     id,
     name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    EmpName,
+    designation,
+    gender,
+    joiningDate,
+    projectManager,
   };
 }
 
 const rows = [
-  createData(1, 'Cupcake', 305, 3.7, 67, 4.3),
-  createData(2, 'Donut', 452, 25.0, 51, 4.9),
-  createData(3, 'Eclair', 262, 16.0, 24, 6.0),
-  createData(4, 'Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData(5, 'Gingerbread', 356, 16.0, 49, 3.9),
-  createData(6, 'Honeycomb', 408, 3.2, 87, 6.5),
-  createData(7, 'Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData(8, 'Jelly Bean', 375, 0.0, 94, 0.0),
-  createData(9, 'KitKat', 518, 26.0, 65, 7.0),
-  createData(10, 'Lollipop', 392, 0.2, 98, 0.0),
-  createData(11, 'Marshmallow', 318, 0, 81, 2.0),
-  createData(12, 'Nougat', 360, 19.0, 9, 37.0),
-  createData(13, 'Oreo', 437, 18.0, 63, 4.0),
+  createData(1, '#EMP001', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(2, '#EMP002', 'Jhon Smith', 'Senior Developer', 'female', '13 Feb 2024', 'John Smith',),
+  createData(3, '#EMP003', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(4, '#EMP004', 'Jhon Smith', 'Senior Developer', 'female', '13 Feb 2024', 'John Smith',),
+  createData(5, '#EMP005', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(6, '#EMP006', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(7, '#EMP007', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(8, '#EMP008', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(9, '#EMP009', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(10, '#EMP010', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(11, '#EMP011', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(12, '#EMP012', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
+  createData(13, '#EMP013', 'Jhon Smith', 'Senior Developer', 'Male', '13 Feb 2024', 'John Smith',),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -107,33 +112,48 @@ const headCells: readonly HeadCell[] = [
   {
     id: 'name',
     numeric: false,
-    disablePadding: true,
-    label: 'Dessert (100g serving)',
+    disablePadding: false,
+    label: 'Emp ID',
   },
   {
-    id: 'calories',
-    numeric: true,
+    id: 'EmpName',
+    numeric: false,
     disablePadding: false,
-    label: 'Calories',
+    label: 'Emp Name',
   },
   {
-    id: 'fat',
-    numeric: true,
+    id: 'designation',
+    numeric: false,
     disablePadding: false,
-    label: 'Fat (g)',
+    label: 'Designation',
   },
   {
-    id: 'carbs',
-    numeric: true,
+    id: 'gender',
+    numeric: false,
     disablePadding: false,
-    label: 'Carbs (g)',
+    label: 'Gender',
   },
   {
-    id: 'protein',
+    id: 'projectManager',
+    numeric: false,
+    disablePadding: false,
+    label: 'Project Manager',
+  },
+  {
+    id: 'joiningDate',
+    numeric: false,
+    disablePadding: false,
+    label: 'Joining Date',
+  },
+
+
+  {
+    id: 'projectManager',
     numeric: true,
     disablePadding: false,
-    label: 'Protein (g)',
+    label: 'Actions',
   },
+
 ];
 
 interface EnhancedTableProps {
@@ -154,7 +174,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     };
 
   return (
-    <TableHead>
+    <TableHead sx={{ backgroundColor: '#F5F5F5' }}>
       <TableRow>
 
         {headCells.map((headCell) => (
@@ -163,6 +183,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
+            sx={{ whiteSpace: 'nowrap' }} // Apply white-space: nowrap; to table header cells
+
           >
             <TableSortLabel
               active={orderBy === headCell.id}
@@ -285,21 +307,43 @@ export default function TeamM_ProfileTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
+                    sx={{ whiteSpace: 'nowrap' }} // Apply white-space: nowrap; to table rows
+                    // sx={{ cursor: 'pointer' }}
+                    onMouseDown={(e) => e.preventDefault()} // Disable row selection on mouse down
                   >
 
                     <TableCell
                       component="th"
                       id={labelId}
                       scope="row"
-                      padding="none"
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="left">
+                      <Box  sx={{ display: 'flex', alignItems: 'center', padding:0 }}>
+                        <Avatar
+                          alt={row.name}
+                          src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" // Replace with the actual path to your profile image
+                          sx={{
+                            width: 32,
+                            height: 32,
+                            marginRight: 1,
+                            border: '1px solid #000', // Border color and width
+                            borderRadius: '50%', // Rounded border
+                          }}
+                        />
+                        {row.EmpName}
+                      </Box>
+                    </TableCell>
+                    <TableCell align="left">{row.designation}</TableCell>
+                    <TableCell align="left">{row.gender}</TableCell>
+                    <TableCell align="left">{row.projectManager}</TableCell>
+                    <TableCell align="left">{row.joiningDate}</TableCell>
+                    <TableCell align="center">
+                      <button className='hover:text-blue-500 text-muted' onClick={(e) => e.stopPropagation()}>
+                        <i className="fa fa-eye"></i>
+                      </button>
+                    </TableCell>
                   </TableRow>
                 );
               })}
@@ -315,11 +359,9 @@ export default function TeamM_ProfileTable() {
             </TableBody>
           </Table>
         </TableContainer>
-        <div className='flex justify-between align-item-center'>
-          <div className="text-center m-2">
-            <button className="btn btnOutlineBlack mx-1">Previous Page</button>
-            <button className="btn btn-blue mx-1">Next Page</button>
-          </div>
+        <div className='d-lg-flex justify-between align-item-center'>
+        
+          
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
@@ -329,6 +371,10 @@ export default function TeamM_ProfileTable() {
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
+          <div className="text-center m-2 order-lg-first">
+            <button className="btn btnOutlineBlack mx-1">Previous Page</button>
+            <button className="btn btn-blue mx-1">Next Page</button>
+          </div>
         </div>
       </Paper>
 

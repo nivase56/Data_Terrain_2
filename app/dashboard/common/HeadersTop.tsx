@@ -1,4 +1,3 @@
-
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -22,21 +21,22 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import MailOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import HeaderSearch from "./HeaderSearch";
 
-
 function HeadersTop() {
   // modal end code
-  const [profileMenu, setProfileMenu] = React.useState<null | HTMLElement>(null);
-  const [mobileMore, setMobileMore] =
-    React.useState<null | HTMLElement>(null);
+  const [profileMenu, setProfileMenu] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [mobileMore, setMobileMore] = React.useState<null | HTMLElement>(null);
 
-  const [notificationMenu, setNotification] = React.useState<null | HTMLElement>(null);
+  const [notificationMenu, setNotification] =
+    React.useState<null | HTMLElement>(null);
 
   const handleNotification = (event: React.MouseEvent<HTMLElement>) => {
     setNotification(event.currentTarget);
@@ -67,7 +67,6 @@ function HeadersTop() {
     setMobileMore(event.currentTarget);
   };
 
-
   const menuId = "primary-search-account-menu";
   const menu_IdTwo = "primary-search-account-menu";
   const renderMenu = (
@@ -88,25 +87,44 @@ function HeadersTop() {
       onClose={handleOneMenuClose}
     >
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/P_M_Profile">Profile</Link>
+        <Link className="text-[14px]" href="/P_M_Profile">
+          Profile
+        </Link>
       </MenuItem>
 
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/">Sign Out</Link>
+        <Link className="text-[14px]" href="/">
+          Sign Out
+        </Link>
       </MenuItem>
 
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/PostedJobs5">PostedJobs5</Link>
+        <Link className="text-[14px]" href="/PostedJobs5">
+          PostedJobs5
+        </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/teamMember03">teamMember03</Link>
+        <Link className="text-[14px]" href="/TeamMember03">
+          TeamMember03
+        </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/CandidatesStatus0">CandidatesStatus0</Link>
+        <Link className="text-[14px]" href="/TeamMember04">
+          TeamMember04
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_Todo0">
+          P_M_Todo0
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/CandidatesStatus0">
+          CandidatesStatus0
+        </Link>
       </MenuItem>
     </Menu>
   );
-
 
   const render_MenuTwo = (
     <Menu
@@ -125,22 +143,28 @@ function HeadersTop() {
       open={isNotificationMenu}
       onClose={handleMenuTwoClose}
     >
-
       <MenuItem className="w-auto" onClick={handleOneMenuClose}>
-
         <div>
           <h5 className="text-center">Notifications</h5>
-          <p className="text-center text-[10px]">You have Received in 20 notifications</p>
+          <p className="text-center text-[10px]">
+            You have Received in 20 notifications
+          </p>
           <hr className="my-1" />
           <Link href="/P_M_Notifications">
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
-                  <img className="w-[35px] rounded-full h-[35px]" src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png" alt="" />
+                  <img
+                    className="w-[35px] rounded-full h-[35px]"
+                    src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
+                    alt=""
+                  />
                 </div>
                 <div className="col-lg-6 pe-0 ps-1 col-6">
                   <h6 className="text-[10px]">Johan</h6>
-                  <p className="text-[9px] line-clamp-1">Hi, Angela, What......</p>
+                  <p className="text-[9px] line-clamp-1">
+                    Hi, Angela, What......
+                  </p>
                 </div>
                 <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
                   <p className="text-[10px]">2.00 A.M</p>
@@ -156,11 +180,17 @@ function HeadersTop() {
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
-                  <img className="w-[35px] rounded-full h-[35px]" src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png" alt="" />
+                  <img
+                    className="w-[35px] rounded-full h-[35px]"
+                    src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
+                    alt=""
+                  />
                 </div>
                 <div className="col-lg-6 pe-0 ps-1 col-6">
                   <h6 className="text-[10px]">Johan</h6>
-                  <p className="text-[9px] line-clamp-1">Hi, Angela, What......</p>
+                  <p className="text-[9px] line-clamp-1">
+                    Hi, Angela, What......
+                  </p>
                 </div>
                 <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
                   <p className="text-[10px]">2.00 A.M</p>
@@ -173,22 +203,16 @@ function HeadersTop() {
           </Link>
         </div>
       </MenuItem>
-
-
-      {/* <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/P_M_JobDescriptions2">P_M_JobDescrp2...</Link>
-      </MenuItem> */}
-
-
       <MenuItem onClick={handleOneMenuClose}>
-        <Link className="text-[14px]" href="/P_M_RequestStatus1">P_M_RequestStatus1...</Link>
+        <Link className="text-[14px]" href="/P_M_RequestStatus1">
+          P_M_RequestStatus1...
+        </Link>
       </MenuItem>
       <MenuItem onClick={handleOneMenuClose}>
-        <Link className="text-[14px]" href="/InterviewStatusForm1">InterviewStatusForm1...</Link>
+        <Link className="text-[14px]" href="/InterviewStatusForm1">
+          InterviewStatusForm1...
+        </Link>
       </MenuItem>
- 
-
-
     </Menu>
   );
 
@@ -210,11 +234,13 @@ function HeadersTop() {
       open={isMobileMenuOpen}
       onClose={handleMobileOneMenuClose}
     >
-
-
       <MenuItem>
         <Link href="/P_M_Messages">
-          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
             <LightModeOutlinedIcon className="w-[30px] text-[20px] me-1" />
             <p className="text-[12px]">Dark</p>
           </IconButton>
@@ -223,14 +249,17 @@ function HeadersTop() {
 
       <MenuItem>
         <Link href="/P_M_Messages">
-          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
             <Badge badgeContent={4} color="error">
               <MailIcon className="w-[30px] text-[20px] me-1" />
             </Badge>
             <p className="text-[12px]">Messages</p>
           </IconButton>
         </Link>
-
       </MenuItem>
       <MenuItem onClick={handleNotification}>
         <IconButton
@@ -275,7 +304,6 @@ function HeadersTop() {
       <Box className="navbarTop bg-white" sx={{ flexGrow: 1 }}>
         <AppBar top={0} position="fixed">
           <Toolbar>
-
             <Typography
               variant="h6"
               noWrap
@@ -291,7 +319,10 @@ function HeadersTop() {
             <HeaderSearch />
 
             <Box sx={{ flexGrow: 1 }} />
-            <Box className="headerTopIcon" sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box
+              className="headerTopIcon"
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
               <IconButton
                 className="mx-lg-3"
                 size="large"
@@ -305,15 +336,12 @@ function HeadersTop() {
                 size="large"
                 aria-label="show 17 new notifications"
                 color="inherit"
-
               >
-
                 <Link href="/P_M_Messages">
                   <Badge badgeContent={17} color="error">
                     <MailOutlinedIcon />
                   </Badge>
                 </Link>
-
               </IconButton>
 
               <IconButton
@@ -326,20 +354,13 @@ function HeadersTop() {
                 onClick={handleNotification}
                 color="inherit"
               >
-
                 <Badge badgeContent={4} color="error">
                   <NotificationsIcon />
                 </Badge>
-
               </IconButton>
-              <IconButton
-                className="mx-lg-3"
-                size="large"
-                edge="end"
-              >
+              <IconButton className="mx-lg-3" size="large" edge="end">
                 <SettingsOutlinedIcon />
               </IconButton>
-
 
               <IconButton
                 className="mx-lg-3"
@@ -372,7 +393,6 @@ function HeadersTop() {
         {renderMenu}
         {render_MenuTwo}
       </Box>
-
     </>
   );
 }

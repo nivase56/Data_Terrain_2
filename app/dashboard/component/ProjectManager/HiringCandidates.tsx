@@ -51,7 +51,7 @@ export default function HiringCandidates() {
 
             <div className="flex justify-between align-items-center ">
                 <h5>Hiring Candidates</h5>
-                <Link className='text-blue text-[14px]' href="#">
+                <Link className='text-blue text-[14px]' href="/HiringCandidates">
                     <u>View All</u>
                 </Link>
             </div>

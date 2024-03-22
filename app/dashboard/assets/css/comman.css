@@ -71,27 +71,34 @@
 	font-family: Poppins-Light;
 	src: url('../fonts/Poppins-Light.ttf');
 	}
-	.Poppins-Bold{
-	font-family: Poppins-Bold;
-	}
-	.Poppins-SemiBold{
-	font-family: Poppins-SemiBold;}
+		.Poppins-Bold{
+		font-family: Poppins-Bold;
+		}
+		/* Bold 700 */
 
-	.Poppins-Light{
-	font-family: Poppins-Light !important;
-	}
+		.Poppins-SemiBold{
+		font-family: Poppins-SemiBold;}
+		/* SemiBold 600 */
 
-	.Poppins-Regular{
-	font-family: Poppins-Regular !important;
-	}
-	.Poppins-Medium{
+		.Poppins-Medium{
 		font-family: Poppins-Medium !important;
 		}
+		/* 500 */
 
-	
-	.text-blue{
+		.Poppins-Regular{
+		font-family: Poppins-Regular !important;
+		}
+		/* 400 regular */
+
+		.Poppins-Light{
+		font-family: Poppins-Light !important;
+		}
+		/* Light 300 */
+
+		.text-blue{
 		color: var(--royalBlue);
-	}
+		}
+		
 
 	body {font-size: 15px;background: #F8F8F8;color: var(--blackColor);font-family: Poppins-Medium;}
 	ol, ul{padding: 0px;}

@@ -6,7 +6,7 @@ import CalendarProject from "../dashboard/component/ProjectManager/CalendarProje
 import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandidates"
 import SideMenu from "../dashboard/component/SideMenu"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
@@ -22,7 +22,11 @@ import Link from 'next/link';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-function TotalEmployee0(params: type) {
+function TotalEmployee0(_params: type) {
+
+    useEffect(()=>{
+        
+    },[])
 
     // filter btn
     const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
