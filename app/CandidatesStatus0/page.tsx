@@ -14,6 +14,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 import * as React from 'react';
+import InterviewCandidateTable from './InterviewCandidateTable';
 
 
 
@@ -111,6 +112,10 @@ export default function CandidatesStatus0() {
 
                                     
                                     </div>
+
+                                   <div className='p-3'>
+                                   <InterviewCandidateTable/>
+                                   </div>
                                 </div>
                             </div>
 

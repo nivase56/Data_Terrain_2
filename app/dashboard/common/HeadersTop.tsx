@@ -37,13 +37,18 @@ function HeadersTop() {
 
   const [notificationMenu, setNotification] =
     React.useState<null | HTMLElement>(null);
+  const [messagesMenu, setMessages] = React.useState<null | HTMLElement>(null);
 
   const handleNotification = (event: React.MouseEvent<HTMLElement>) => {
     setNotification(event.currentTarget);
   };
+  const handleMessages = (event: React.MouseEvent<HTMLElement>) => {
+    setMessages(event.currentTarget);
+  };
 
   const isprofileMenu = Boolean(profileMenu);
   const isNotificationMenu = Boolean(notificationMenu);
+  const isMessagesMenu = Boolean(messagesMenu);
   const isMobileMenuOpen = Boolean(mobileMore);
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setProfileMenu(event.currentTarget);
@@ -63,13 +68,19 @@ function HeadersTop() {
     handleMobileOneMenuClose();
   };
 
+  const handleChatMenuClose = () => {
+    setMessages(null);
+    handleMobileOneMenuClose();
+  };
+
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMore(event.currentTarget);
   };
 
-  const menuId = "primary-search-account-menu";
-  const menu_IdTwo = "primary-search-account-menu";
-  const renderMenu = (
+  const profileMenuId = "primary-search-account-menu";
+  const notificationMenuId = "primary-search-account-menu";
+  const chatMenuId = "primary-search-account-menu";
+  const renderProfileMenu = (
     <Menu
       className="headerDropdwon"
       anchorEl={profileMenu}
@@ -77,7 +88,7 @@ function HeadersTop() {
         vertical: "top",
         horizontal: "right",
       }}
-      id={menuId}
+      id={profileMenuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
@@ -126,7 +137,7 @@ function HeadersTop() {
     </Menu>
   );
 
-  const render_MenuTwo = (
+  const renderNotificationsMenu = (
     <Menu
       className="headerDropdwon"
       anchorEl={notificationMenu}
@@ -134,7 +145,7 @@ function HeadersTop() {
         vertical: "top",
         horizontal: "right",
       }}
-      id={menu_IdTwo}
+      id={notificationMenuId}
       keepMounted
       transformOrigin={{
         vertical: "top",
@@ -163,7 +174,7 @@ function HeadersTop() {
                 <div className="col-lg-6 pe-0 ps-1 col-6">
                   <h6 className="text-[10px]">Johan</h6>
                   <p className="text-[9px] line-clamp-1">
-                    Hi, Angela, What......
+                    Hi, Hanif, What......
                   </p>
                 </div>
                 <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
@@ -216,6 +227,86 @@ function HeadersTop() {
     </Menu>
   );
 
+  const render_ChatsMenu = (
+    <Menu
+      className="headerDropdwon"
+      anchorEl={messagesMenu}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      id={chatMenuId}
+      keepMounted
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={isMessagesMenu}
+      onClose={handleChatMenuClose}
+    >
+      <MenuItem className="w-auto" onClick={handleChatMenuClose}>
+        <div>
+          <h5 className="text-center">Chats</h5>
+          <p className="text-center text-[10px]">
+            You have Received in 17 notifications
+          </p>
+          <hr className="my-1" />
+          <Link href="/P_M_Messages">
+            <div className="notification_Menu">
+              <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
+                <div className="col-lg-3 col-3 ps-2 pe-0">
+                  <img
+                    className="w-[35px] rounded-full h-[35px]"
+                    src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
+                    alt=""
+                  />
+                </div>
+                <div className="col-lg-6 pe-0 ps-1 col-6">
+                  <h6 className="text-[10px]">Johan</h6>
+                  <p className="text-[9px] line-clamp-1">
+                    Hi, Hanif, What......
+                  </p>
+                </div>
+                <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
+                  <p className="text-[10px]">2.00 A.M</p>
+                  <div className="px-2 py-1 rounded bg-blue d-inline-block">
+                    <h6 className="text-[8px] text-white">2</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/P_M_Messages">
+            <div className="notification_Menu">
+              <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
+                <div className="col-lg-3 col-3 ps-2 pe-0">
+                  <img
+                    className="w-[35px] rounded-full h-[35px]"
+                    src="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
+                    alt=""
+                  />
+                </div>
+                <div className="col-lg-6 pe-0 ps-1 col-6">
+                  <h6 className="text-[10px]">Johan</h6>
+                  <p className="text-[9px] line-clamp-1">
+                    Hi, Angela, What......
+                  </p>
+                </div>
+                <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
+                  <p className="text-[10px]">2.00 A.M</p>
+                  <div className=" px-2 py-1 rounded bg-blue d-inline-block">
+                    <h6 className="text-[8px] text-white">2</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </MenuItem>
+    </Menu>
+  );
+
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -261,7 +352,7 @@ function HeadersTop() {
           </IconButton>
         </Link>
       </MenuItem>
-      <MenuItem onClick={handleNotification}>
+      <MenuItem onClick={handleMessages}>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -334,10 +425,14 @@ function HeadersTop() {
               <IconButton
                 className="mx-lg-3"
                 size="large"
+                edge="end"
                 aria-label="show 17 new notifications"
                 color="inherit"
+                onClick={handleMessages}
+                aria-controls={chatMenuId}
+                aria-haspopup="true"
               >
-                <Link href="/P_M_Messages">
+                <Link href="#">
                   <Badge badgeContent={17} color="error">
                     <MailOutlinedIcon />
                   </Badge>
@@ -348,8 +443,8 @@ function HeadersTop() {
                 className="mx-lg-3"
                 size="large"
                 edge="end"
-                aria-label="account of current user"
-                aria-controls={menu_IdTwo}
+                aria-label="show 17 new notifications"
+                aria-controls={notificationMenuId}
                 aria-haspopup="true"
                 onClick={handleNotification}
                 color="inherit"
@@ -367,7 +462,7 @@ function HeadersTop() {
                 size="large"
                 edge="end"
                 aria-label="account of current user"
-                aria-controls={menuId}
+                aria-controls={profileMenuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 color="inherit"
@@ -390,8 +485,9 @@ function HeadersTop() {
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
-        {renderMenu}
-        {render_MenuTwo}
+        {renderProfileMenu}
+        {renderNotificationsMenu}
+        {render_ChatsMenu}
       </Box>
     </>
   );

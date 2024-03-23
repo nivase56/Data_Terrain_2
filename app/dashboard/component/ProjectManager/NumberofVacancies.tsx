@@ -22,7 +22,7 @@ function NumberofVacancies() {
               </h4>
               <div className="d-flex justify-content-between mt-3">
                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">
-                  18
+                  9
                 </h5>
                 <img src="image/python.png" alt="" />
               </div>
@@ -35,7 +35,7 @@ function NumberofVacancies() {
               </h4>
               <div className="d-flex justify-content-between mt-3">
                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">
-                  18
+                  9
                 </h5>
                 <img src="image/java.png" alt="" />
               </div>
@@ -48,7 +48,7 @@ function NumberofVacancies() {
               </h4>
               <div className="d-flex justify-content-between mt-3">
                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">
-                  18
+                  9
                 </h5>
                 <img src="image/Angularicon.png" alt="" />
               </div>
@@ -61,7 +61,7 @@ function NumberofVacancies() {
               </h4>
               <div className="d-flex justify-content-between mt-3">
                 <h5 className="text-[25px] md:text-[29px] Poppins-SemiBold">
-                  18
+                  9
                 </h5>
                 <img src="image/graphic.png" alt="" />
               </div>

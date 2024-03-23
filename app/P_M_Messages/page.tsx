@@ -12,21 +12,25 @@ import Link from 'next/link';
 import SendIcon from '@mui/icons-material/Send';
 
 function Message(props) {
+    // Extract props
+    const { className, imageSrc, name, message, time, count, onClickName } = props;
+
     return (
-        <div className={props.className}>
+        <div className={className}>
             <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-2 col-3 ps-2 pe-0">
-                    <img className="w-[50px] rounded-full h-[50px]" src={props.imageSrc} alt="" />
+                    <img className="w-[50px] rounded-full h-[50px]" src={imageSrc} alt="" />
                 </div>
                 <div className="col-lg-7 col-6">
-                    <h6 className='text-[15px]'>{props.name}</h6>
-                    <p className='text-[12px] line-clamp-1'>{props.message}</p>
+                    {/* Add onClick event to the name */}
+                    <h6 className='text-[15px]' onClick={onClickName}>{name}</h6>
+                    <p className='text-[12px] line-clamp-1'>{message}</p>
                 </div>
                 <div className="col-lg-3 col-3 pe-2 ps-0 text-end">
-                    <p className='text-[10px]'>{props.time}</p>
-                    {props.count &&
+                    <p className='text-[10px]'>{time}</p>
+                    {count &&
                         <div className="  d-inline-block">
-                            <h6 className="text-[10px] text-white px-2 py-1 rounded bg-blue">{props.count}</h6>
+                            <h6 className="text-[10px] text-white px-2 py-1 rounded bg-blue">{count}</h6>
                         </div>
                     }
                 </div>
@@ -34,7 +38,6 @@ function Message(props) {
         </div>
     );
 }
-
 export default function ProjectManagerMessages() {
     //tab end
     return (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import { DataGrid, GridColDef, } from '@mui/x-data-grid';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
@@ -56,22 +56,23 @@ const rows = [
 ];
 
 // Define the DataTable component
-export default function DataTable() {
+const  DataTable=({handleRowSelection}:any)=> {
     return (
         <div style={{ width: '100%' }}>
-            <DataGrid
+             <DataGrid
                 className='text-start requestBoradTable'
                 rows={rows}
                 columns={columns}
+                pageSizeOptions={[5, 10]}
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 5 },
                     },
                 }}
-                pageSizeOptions={[5, 10]}
                 checkboxSelection
+                onRowSelectionModelChange={handleRowSelection}
             />
-           
         </div>
     );
 }
+export default DataTable

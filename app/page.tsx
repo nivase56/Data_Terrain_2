@@ -1,5 +1,7 @@
 
 "use client"
+import React, { useState, useEffect } from 'react';
+
 import HeadersTop from "./dashboard/common/HeadersTop";
 import ApplicationsReceived from "./dashboard/component/ProjectManager/ApplicationsReceived";
 
@@ -21,11 +23,23 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import React, { useState } from 'react';
 import Link from "next/link";
+import Loader from './dashboard/common/Loader';
 
 
 export default function Home() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Set the loading state to false after 2 seconds (you can adjust this delay)
+
+    // Clear the timer on component unmount
+    return () => clearTimeout(timer);
+  }, []);
   // Define an array of data objects representing each card's content
   const jobsData = [
 
@@ -83,7 +97,7 @@ export default function Home() {
 
   function CustomTabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
-
+    
     return (
       <div
         role="tabpanel"
@@ -114,6 +128,10 @@ export default function Home() {
     setValue(newValue);
   };
 
+
+  if (loading) {
+    return <Loader />
+  }
 
   //tab end
   return (
