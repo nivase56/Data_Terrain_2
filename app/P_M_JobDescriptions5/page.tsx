@@ -27,7 +27,7 @@ function P_M_JobDescriptionsFive(params: type) {
                     <div className="col-lg-11 pe-lg-4 ps-lg-0">
                         <div className="row justify-content-between  align-items-center">
                             <div className="col-lg-8 projectText">
-                                <h1>Job Descriptions Chat Bot</h1>
+                                <h1>Job Descriptions ChatBot</h1>
                                 <p className="mt-3">
                                     Enjoy your selecting potential candidates Tracking and
                                     Management System.
@@ -47,7 +47,7 @@ function P_M_JobDescriptionsFive(params: type) {
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
-                                            <h4 className="small_historyText">Job Descriptions Chat Bot</h4>
+                                            <h4 className="small_historyText">Job Descriptions ChatBot</h4>
                                             <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 

@@ -8,6 +8,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'24/40',
       status: "Hired",
       action: "fa fa-eye",
     },
@@ -19,6 +20,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'...',
       status: "Active",
       action: "fa fa-eye",
     },
@@ -30,6 +32,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'24/40',
       status: "Hired",
       action: "fa fa-eye",
     },
@@ -41,6 +44,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'24/40',
       status: "active",
       action: "fa fa-eye",
     },
@@ -52,6 +56,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'24/40',
       status: "hired",
       action: "fa fa-eye",
     },
@@ -63,6 +68,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'24/40',
       status: "Reject",
       action: "fa fa-eye",
     },
@@ -74,6 +80,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
+      totalMarks:'...',
       status: "Reject",
       action: "fa fa-eye",
     },
@@ -93,6 +100,7 @@ function CandidateStatus() {
               <th scope="col">2nd Level</th>
               <th scope="col">3rd Level</th>
               <th scope="col">4th Level</th>
+              <th scope="col">Total Marks</th>
               <th scope="col">Status</th>
               <th scope="col">Actions</th>
             </tr>
@@ -107,6 +115,7 @@ function CandidateStatus() {
                 <td>{list?.secondLevel}</td>
                 <td>{list?.thirdLevel}</td>
                 <td>{list?.fourLevel}</td>
+                <td>{list?.totalMarks}</td>
                 {list?.status === "Hired" || list?.status === "hired" ? (
                   <td>
                     <button className="bg-[#cbffd7] rounded-2 px-2 py-1 text-green-700">
@@ -133,7 +142,8 @@ function CandidateStatus() {
 
                 <td>
                   <button className="btn">
-                    <i className="fa fa-eye text-muted" aria-hidden="true"></i>
+                  <img src="image/eye.png" alt="" className="text-muted text-dark"  />
+                    {/* <i className="fa fa-eye text-muted" aria-hidden="true"></i> */}
                   </button>
                 </td>
               </tr>

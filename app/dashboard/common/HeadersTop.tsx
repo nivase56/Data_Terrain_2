@@ -1,16 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  Button,
-  Modal,
-  TextField,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import React from "react";
+import dynamic from 'next/dynamic';
 
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -26,9 +18,21 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import HeaderSearch from "./HeaderSearch";
+
+const HeaderSearch = dynamic(() => import('./HeaderSearch'));
+
+// import { toggleTheme } from '../../../store/actions/themeActions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { RootState } from '../../../store/reducers';
+
 
 function HeadersTop() {
+  // const dispatch = useDispatch();
+  // const darkMode = useSelector((state: RootState) => state.theme.darkMode);
+
+  // const handleThemeToggle = () => {
+  //   dispatch(toggleTheme());
+  // };
   // modal end code
   const [profileMenu, setProfileMenu] = React.useState<null | HTMLElement>(
     null
@@ -161,7 +165,7 @@ function HeadersTop() {
             You have Received in 20 notifications
           </p>
           <hr className="my-1" />
-          <Link href="/P_M_Notifications">
+          <Link href="/P_M_Notifications" prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -187,7 +191,7 @@ function HeadersTop() {
             </div>
           </Link>
 
-          <Link href="/P_M_Notifications">
+          <Link href="/P_M_Notifications" prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -224,6 +228,10 @@ function HeadersTop() {
           InterviewStatusForm1...
         </Link>
       </MenuItem>
+      <MenuItem onClick={handleOneMenuClose}>
+        <Link className="text-[14px]" href="/CandidatesStatus3">
+        CandidatesStatus3        </Link>
+      </MenuItem>
     </Menu>
   );
 
@@ -251,7 +259,7 @@ function HeadersTop() {
             You have Received in 17 notifications
           </p>
           <hr className="my-1" />
-          <Link href="/P_M_Messages">
+          <Link href="/P_M_Messages" prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -277,7 +285,7 @@ function HeadersTop() {
             </div>
           </Link>
 
-          <Link href="/P_M_Messages">
+          <Link href="/P_M_Messages" prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -326,7 +334,7 @@ function HeadersTop() {
       onClose={handleMobileOneMenuClose}
     >
       <MenuItem>
-        <Link href="/P_M_Messages">
+        <Link href="/P_M_Messages" prefetch>
           <IconButton
             size="large"
             aria-label="show 4 new mails"
@@ -339,7 +347,7 @@ function HeadersTop() {
       </MenuItem>
 
       <MenuItem>
-        <Link href="/P_M_Messages">
+        <Link href="/P_M_Messages" prefetch>
           <IconButton
             size="large"
             aria-label="show 4 new mails"
@@ -401,7 +409,7 @@ function HeadersTop() {
               component="div"
               sx={{ display: { xs: "block", sm: "block" } }}
             >
-              <Link href="/">
+              <Link href="/" prefetch>
                 {" "}
                 <img className="logo-top" src="image/logo.png" alt="Logo" />
               </Link>

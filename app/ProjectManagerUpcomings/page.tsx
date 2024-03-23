@@ -13,7 +13,7 @@ function ProjectManagerUpcomings() {
           <div className="col-lg-7 mx-auto">
             <div className="shadow p-3">
               <div className="flex justify-between items-center border-bottom pb-3">
-                <h2 className="text-[22px] Poppins-Medium">Upcoming’ s</h2>
+                <h2 className="text-[22px] Poppins-Medium"></h2>
                 <button className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center"> <i className="fa fa-close"></i></button>
               </div>
               

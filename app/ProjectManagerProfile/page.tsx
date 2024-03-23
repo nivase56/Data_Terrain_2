@@ -24,7 +24,9 @@ function ProjectManagerProfile() {
 
                             <div className="col-xl-4 col-lg-5 mt-3 mt-lg-0 text-start text-lg-end">
                                 <Link href="/" className="btn btn-white">
-                                   <ReplyIcon/> Go Back
+                                <img src="image/back.png" alt="" className="h-[24px]" /> Go Back
+
+                                   {/* <ReplyIcon/> Go Back */}
                                 </Link>
                               
                             </div>

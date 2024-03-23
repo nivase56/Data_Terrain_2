@@ -173,7 +173,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                     <div className="col-lg-11 pe-lg-4 ps-lg-0">
                         <div className="row justify-content-between  align-items-center">
                             <div className="col-lg-8 projectText">
-                                <h1>Job Descriptions Chat Bot</h1>
+                                <h1>Job Descriptions ChatBot</h1>
                                 <p className="mt-3">
                                     Enjoy your selecting potential candidates Tracking and
                                     Management System.

@@ -1,6 +1,5 @@
-
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 import HeadersTop from "./dashboard/common/HeadersTop";
 import ApplicationsReceived from "./dashboard/component/ProjectManager/ApplicationsReceived";
@@ -19,16 +18,17 @@ import Activity from "./dashboard/component/ProjectManager/Activity";
 import HiringCandidates from "./dashboard/component/ProjectManager/HiringCandidates";
 import ScheduledInterviewsGraph from "./dashboard/component/ProjectManager/ScheduledInterviewsGraph";
 import CalendarProject from "./dashboard/component/ProjectManager/CalendarProject";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import Link from "next/link";
-import Loader from './dashboard/common/Loader';
+import Loader from "./dashboard/common/Loader";
 
+import { Provider } from "react-redux";
+import { store } from "../store/store"; // Import your Redux store
 
 export default function Home() {
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,7 +42,6 @@ export default function Home() {
   }, []);
   // Define an array of data objects representing each card's content
   const jobsData = [
-
     {
       title: "Angular Developers",
       category: "Senior Developers",
@@ -50,7 +49,8 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/Angularicon.png",
-      bgColor:'#73A1FB'
+      bgColor: "#D9E4EF",
+      textColor: "#0A66C2",
     },
 
     {
@@ -60,7 +60,8 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/graphic.png",
-      bgColor:'#2F73A0'
+      bgColor: "#73A1FB",
+      textColor: "#FFFFFF",
     },
     {
       title: "UX|UI Designers",
@@ -69,26 +70,25 @@ export default function Home() {
       percentage: "18%",
       time: "8 mins ago",
       imageSrc: "image/java.png",
-      bgColor:'#D6D6D6'
+      bgColor: "#2F73A0",
+      textColor: "#FFFFFF",
     },
 
     {
-        title: "Python Developer",
-        category: "Senior Developers",
-        number: "303",
-        percentage: "22%",
-        time: "6 mins ago",
-        imageSrc: "image/python.png",
-      bgColor:'#5E6A72'
-      },
-      
+      title: "Python Developer",
+      category: "Senior Developers",
+      number: "303",
+      percentage: "22%",
+      time: "6 mins ago",
+      imageSrc: "image/python.png",
+      bgColor: "#0A66C2",
+      textColor: "#FFFFFF",
+    },
 
     // Add more job data objects as needed
   ];
 
-
-
-  // tab start 
+  // tab start
   interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -97,7 +97,7 @@ export default function Home() {
 
   function CustomTabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
-    
+
     return (
       <div
         role="tabpanel"
@@ -118,7 +118,7 @@ export default function Home() {
   function a11yProps(index: number) {
     return {
       id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
     };
   }
 
@@ -128,14 +128,13 @@ export default function Home() {
     setValue(newValue);
   };
 
-
   if (loading) {
-    return <Loader />
+    return <Loader />;
   }
 
   //tab end
   return (
-
+    // <Provider store={store}>
     <main className="">
       <HeadersTop />
 
@@ -156,10 +155,18 @@ export default function Home() {
               </div>
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
-                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
+                <Link
+                  href="/P_M_JobDescriptions1"
+                  className="btn btn-light me-3 mx-lg-2"
+                >
                   JD Assets
                 </Link>
-                <Link href="P_M_JobDescriptions4" className="btn btn-blue bg-[#0a66c2!important]">Create New JD</Link>
+                <Link
+                  href="P_M_JobDescriptions4"
+                  className="btn btn-blue bg-[#0a66c2!important]"
+                >
+                  Create New JD
+                </Link>
               </div>
             </div>
 
@@ -210,7 +217,12 @@ export default function Home() {
                 {/* new section */}
 
                 <div className="shadow bg-white mt-4">
-                  <PostedJobsTop titleName="Posted Jobs"  classTitle="" classSamll="text-underline" samllText="View All"/>
+                  <PostedJobsTop
+                    titleName="Posted Jobs"
+                    classTitle=""
+                    classSamll="text-underline"
+                    samllText="View All"
+                  />
 
                   {/* <div className="ol-lg-12 px-3">
                     <ul className="d-flex">
@@ -220,15 +232,26 @@ export default function Home() {
                    
                   </div> */}
 
-                  <Box sx={{ width: '100%' }}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                      <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                        <Tab className="postedTab" label="Active Jobs" {...a11yProps(0)} />
-                        <Tab className="postedTab"  label="Inactive Jobs" {...a11yProps(1)} />
-
+                  <Box sx={{ width: "100%" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                      <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="basic tabs example"
+                      >
+                        <Tab
+                          className="postedTab"
+                          label="Active Jobs"
+                          {...a11yProps(0)}
+                        />
+                        <Tab
+                          className="postedTab"
+                          label="Inactive Jobs"
+                          {...a11yProps(1)}
+                        />
                       </Tabs>
                     </Box>
-                    <hr className="mt-0"/>
+                    <hr className="mt-0" />
                     <CustomTabPanel className="p-0" value={value} index={0}>
                       <div className="row px-3 pb-3">
                         {jobsData.map((job, index) => (
@@ -236,23 +259,27 @@ export default function Home() {
                         ))}
                       </div>
                     </CustomTabPanel>
-                    <CustomTabPanel className="p-0 bg-dark" value={value} index={1}>
+                    <CustomTabPanel
+                      className="p-0 bg-dark"
+                      value={value}
+                      index={1}
+                    >
                       <div className="row px-3 pb-3">
-                        
                         {jobsData.map((job, index) => (
                           <PostedJobsCard key={index} {...job} />
                         ))}
                       </div>
                     </CustomTabPanel>
-
                   </Box>
-
-
                 </div>
 
                 {/* new sections */}
                 <div className="shadow bg-white mt-4">
-                  <PostedJobsTop titleName="Candidate Status"  classSamll="text-underline"  samllText="View All" />
+                  <PostedJobsTop
+                    titleName="Candidate Status"
+                    classSamll="text-underline"
+                    samllText="View All"
+                  />
                   <CandidateStatus />
                 </div>
               </div>
@@ -278,6 +305,6 @@ export default function Home() {
         </div>
       </section>
     </main>
-
+    // </Provider>
   );
 }
