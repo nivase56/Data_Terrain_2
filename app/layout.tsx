@@ -1,12 +1,14 @@
 import { Inter } from "next/font/google";
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import "../app/dashboard/assets/css/bootstrap.min.css"; 
-import "../app/dashboard/assets/css/globals.css"; 
-import "../app/dashboard/assets/css/comman.css"; 
-import "../app/dashboard/assets/css/style.css"; 
-import "../app/dashboard/assets/css/responsive.css"; 
-
+import "../app/dashboard/assets/css/bootstrap.min.css";
+import "../app/dashboard/assets/css/globals.css";
+import "../app/dashboard/assets/css/comman.css";
+import "../app/dashboard/assets/css/style.css";
+import "../app/dashboard/assets/css/responsive.css";
+import { ReduxProvider } from "./StoreProvider";
+import {MuiThemeProvider} from "./MuiThemeProvider";
+import HeadersTop from "./dashboard/common/HeadersTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{paddingTop:50}} className={inter.className}>{children}</body>
+      <body style={{ paddingTop: 50 }} className={inter.className}>
+        <ReduxProvider>
+          <HeadersTop/>
+          {/* <MuiThemeProvider> */}
+            {children}
+            {/* </MuiThemeProvider> */}
+        </ReduxProvider>
+      </body>
     </html>
   );
 }
-

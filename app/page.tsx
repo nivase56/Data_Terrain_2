@@ -25,9 +25,6 @@ import Box from "@mui/material/Box";
 import Link from "next/link";
 import Loader from "./dashboard/common/Loader";
 
-import { Provider } from "react-redux";
-import { store } from "../store/store"; // Import your Redux store
-
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -134,9 +131,8 @@ export default function Home() {
 
   //tab end
   return (
-    // <Provider store={store}>
     <main className="">
-      <HeadersTop />
+      {/* <HeadersTop /> */}
 
       <section className="container-fluid my-md-5 my-4">
         <div className="row">
@@ -305,6 +301,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-    // </Provider>
   );
 }

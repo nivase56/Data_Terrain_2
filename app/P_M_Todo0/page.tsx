@@ -2,20 +2,43 @@
 import HeadersTop from "../dashboard/common/HeadersTop";
 import SideMenu from "../dashboard/component/SideMenu";
 import Link from "next/link";
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import {
+  Calendar,
+  momentLocalizer,
+  dateFnsLocalizer,
+} from "react-big-calendar";
+import { format, parse, startOfWeek, getDay } from "date-fns";
+
 import moment from "moment";
+import "./style.css";
+// import 'react-big-calendar/lib/sass/styles.scss';
+
 import "react-big-calendar/lib/css/react-big-calendar.css"; // Import the calendar styles
+import { enUS } from "date-fns/locale";
 
 import React, { useState } from "react";
 
 // Import DnD addon styles if using drag and drop functionality
-import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
+// import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 
-const localizer = momentLocalizer(moment);
+// const localizer = momentLocalizer(moment);
+const locales = {
+  "en-US": enUS,
+};
+
+const localizer = dateFnsLocalizer({
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales,
+});
 
 export default function P_M_Todo0() {
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
+  const [activeEventModal, setActiveEventModal] = useState();
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   // Define months and years
   const months = [
@@ -55,36 +78,108 @@ export default function P_M_Todo0() {
 
   const myEventsList = [
     {
-      id: 1,
-      title: "Testing Event",
-      start: new Date(2024, 3, 22, 10, 0), // Date and time for start
-      end: new Date(2024, 3, 22, 12, 0), // Date and time for end
+      title: "Event 1",
+      start: new Date(),
+      end: new Date(new Date().setHours(new Date().getHours() + 1)),
     },
-    {
-      id: 2,
-      title: "Testing Event 2",
-      start: new Date(2024, 3, 23, 10, 0), // Date and time for start
-      end: new Date(2024, 3, 23, 12, 0), // Date and time for end
-    },
-    {
-      id: 3,
-      title: "Testing Event 3",
-      start: new Date(2024, 3, 24, 10, 0), // Date and time for start
-      end: new Date(2024, 3, 24, 12, 0), // Date and time for end
-    },
-    {
-      id: 4,
-      title: "Testing Event 4",
-      start: new Date(2024, 3, 25, 10, 0), // Date and time for start
-      end: new Date(2024, 3, 25, 12, 0), // Date and time for end
-    },
-    // Add more events as needed
   ];
+  const [events, setEvents] = useState(myEventsList);
+
+  const handleSelectSlot = (event: any) => {
+    if (typeof event.start === "string") {
+      event.start = new Date(event.start);
+    }
+
+    if (typeof event.end === "string") {
+      event.end = new Date(event.end);
+    }
+
+    // const save = window.confirm(
+    //   `Add availability on ${format(start, "EEEE")} from ${format(
+    //     start,
+    //     "h:mma"
+    //   )} to ${format(end, "h:mm")}?`
+    // );
+    setActiveEventModal(event);
+    // if (save) {
+    //   // setEvents([
+    //   //   ...events,
+    //   //   {
+    //   //     start: new FossilizedDate(
+    //   //       start.getDay(),
+    //   //       start.getHours(),
+    //   //       start.getMinutes()
+    //   //     ),
+    //   //     end: new FossilizedDate(
+    //   //       end.getDay(),
+    //   //       end.getHours(),
+    //   //       end.getMinutes()
+    //   //     ),
+    //   //     title: "",
+    //   //   },
+    //   // ]);
+    // }
+  };
+
+  const handleSelect = (event: any, e) => {
+    const { start, end } = event;
+    // const del = window.confirm(
+    //   `Delete availability on ${format(start, "EEEE")} from ${format(
+    //     start,
+    //     "h:mma"
+    //   )} to ${format(end, "h:mm")}?`
+    // );
+    console.log(event, event);
+    setActiveEventModal(event);
+    setPosition({ x: e.clientX, y: e.clientY });
+
+    // if (del) {
+    //   const index = events.findIndex((e) => e.id === event.id);
+    //   setEvents([...events.slice(0, index), ...events.slice(index + 1)]);
+    // }
+  };
+
+  const EventDetailModal = () => {
+    return (
+      <>
+        {activeEventModal?.title && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              backgroundColor: "white",
+              border: "1px solid black",
+              padding: "10px",
+              color: "blue",
+              height: "100%",
+              zIndex: 1000,
+            }}
+          >
+            {activeEventModal?.title}
+          </div>
+        )}
+      </>
+    );
+  };
+
+  // Custom Event Component
+  const CustomEvent = ({ event }: any) => {
+    return (
+      <>
+        <div className="shadow bg-white" style={{ position: "relative" }}>
+          <strong className="text-black">{event.title}</strong>
+          <p>{event.start.toLocaleString()}</p>
+        </div>
+        {activeEventModal && <EventDetailModal />}
+      </>
+    );
+  };
 
   return (
     <section className="">
       <HeadersTop />
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
@@ -141,20 +236,27 @@ export default function P_M_Todo0() {
                   </div>
                 </div>
               </div>
-              <hr className="my-2" />
-              <div className="d-none d-lg-block " style={{ width: "100%" }}>
+              <div
+                className="d-none d-lg-block "
+                style={{ width: "100%", position: "relative" }}
+              >
                 <Calendar
+                  selectable
                   localizer={localizer}
-                  events={myEventsList}
+                  events={events}
                   startAccessor="start"
                   endAccessor="end"
-                  style={{ height: 500 }}
+                  style={{ height: 600 }}
+                  defaultView={"week"}
+                  timeslots={4} // number of per section
+                  step={15}
                   views={{ month: true, week: true, day: true }} // Show only month, week, and day views
-                  //   toolbar={false} // Hide the default toolbar
-                   components={{
-                     event: CustomEvent,
-                  //   toolbar: CustomToolbar,
-                   }}
+                  components={{ event: CustomEvent }}
+                  formats={{
+                    dayFormat: "EEEE", // day labels
+                  }}
+                  onSelectSlot={handleSelectSlot}
+                  onSelectEvent={handleSelect}
                 />
               </div>
             </div>
@@ -165,16 +267,12 @@ export default function P_M_Todo0() {
   );
 }
 
-// Custom Event Component
-const CustomEvent = ({ event }: any) => {
-  return (
-    <div className="custom-event shadow bg-white">
-      <strong>{event.title}</strong>
-      <p>{event.start.toLocaleString()}</p>
-    </div>
-  );
-};
-
+// const CustomEvent = (event:any) => {
+//   console.log(event,"sadfsdfsd")
+//   return (
+//     <span> <strong> {event.title} </strong> </span>
+//   )
+// }
 // Custom Toolbar Component
 const CustomToolbar = ({ label }: any) => {
   return (

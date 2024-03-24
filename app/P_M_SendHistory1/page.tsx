@@ -131,6 +131,11 @@ function P_M_SendHistory1(params: type) {
   };
   // end
 
+
+  const today = new Date();
+  const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+  const formattedDate = today.toLocaleDateString('en-US', options);
+
   return (
     <section className="">
       <HeadersTop />
@@ -223,10 +228,10 @@ function P_M_SendHistory1(params: type) {
                               <Checkbox {...label} defaultChecked />
                             </TableCell>
                             <TableCell colSpan={2} align="left">
-                              Today - Monday, February 07, 2024
+                            Today - {formattedDate}
                             </TableCell>
                             <TableCell align="left"></TableCell>
-                            <TableCell align="center">Actions</TableCell>
+                            <TableCell align="center">Action</TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>

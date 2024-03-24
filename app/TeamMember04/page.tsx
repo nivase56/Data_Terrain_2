@@ -148,6 +148,8 @@ export default function teamMember03() {
                           needleBaseColor="#2D2C73"
                           hideText={true}
                           className="mt-5"
+                          arcWidth={0.6}
+                          cornerRadius={0}
                         />
                         <div className="d-flex justify-content-center">
                           <div className="px-[4px!important] text-[11px] mx-1 mt-2 d-flex align-items-center">

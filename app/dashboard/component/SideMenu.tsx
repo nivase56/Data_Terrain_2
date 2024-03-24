@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import Link from "next/link";
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -17,9 +16,12 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { usePathname } from "next/navigation";
+import "./style.css";
 
 const SideMenu = () => {
   const [open, setOpen] = React.useState<boolean>(false);
+  const pathname = usePathname();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -97,12 +99,12 @@ const SideMenu = () => {
       {/* laptop size code start */}
       <ul className="d-none d-lg-block deshboard_Menu shadow">
         <li className="ListSideMEnu">
-          <Link href="common/ProjectManagerUpcomings">
+          <Link href="/" className={pathname === "/"?"active":""}>
             <img src="image/menuData.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/">Dashboard</Link>
+              <Link className={pathname === "/"?"active":""} href="/">Dashboard</Link>
             </li>
 
             <li className="subSideMenu">

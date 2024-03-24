@@ -1,11 +1,16 @@
-import { createStore, applyMiddleware, Store } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer, { RootState } from './reducers';
+"use client"
+import rootReducer from "./reducers/theme";
+import { configureStore } from "@reduxjs/toolkit";
 
-
-const store: Store<RootState> = createStore(
-  rootReducer,
-  applyMiddleware(thunk)
-);
+const store = configureStore({
+  devTools: process.env.NODE_ENV !== "production",
+  reducer: {
+    rootReducer: rootReducer,
+  },
+  middleware: (getDefaultMiddlleware) =>
+    getDefaultMiddlleware({
+      serializableCheck: false,
+    }),
+});
 
 export default store;

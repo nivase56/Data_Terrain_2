@@ -14,9 +14,9 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import * as React from "react";
-import InterviewCandidateTable from "./InterviewCandidateTable";
+import TicketTable from "./TicketTable";
 
-export default function CandidatesStatus0() {
+export default function P_M_HelpDeskSupport() {
   // filter btn
   const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
   const open = Boolean(filterBtn);
@@ -41,7 +41,7 @@ export default function CandidatesStatus0() {
           <div className="col-lg-11 pe-lg-4 ps-lg-0">
             <div className="row justify-content-between  align-items-center">
               <div className="col-lg-8 projectText">
-                <h1>Candidates</h1>
+                <h1>Help Desk Support</h1>
                 <p className="mt-3">
                   Enjoy your selecting potential candidates Tracking and
                   Management System.
@@ -50,7 +50,7 @@ export default function CandidatesStatus0() {
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                 <button className="btn btn-blue bg-[#0a66c2!important]">
-                  Assign Tasks
+                Create Ticket
                 </button>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function CandidatesStatus0() {
                   <div className="row justify-between align-items-center p-3">
                     <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                       <h4 className="small_historyText">
-                        Interview Candidate Status
+                      Ticket List
                       </h4>
                       <Link href="/" className="mx-4">
                         <img src="image/edit.png" alt="" className="h-[24px]" />
@@ -112,7 +112,7 @@ export default function CandidatesStatus0() {
                   </div>
 
                   <div className="p-3">
-                    <InterviewCandidateTable />
+                    <TicketTable />
                   </div>
                 </div>
               </div>
@@ -139,4 +139,4 @@ export default function CandidatesStatus0() {
       </div>
     </section>
   );
-}
+};

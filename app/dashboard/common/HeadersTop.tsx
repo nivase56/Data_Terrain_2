@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -18,21 +18,22 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "@/store/reducers/theme";
 
-const HeaderSearch = dynamic(() => import('./HeaderSearch'));
+const HeaderSearch = dynamic(() => import("./HeaderSearch"));
 
 // import { toggleTheme } from '../../../store/actions/themeActions';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { RootState } from '../../../store/reducers';
 
-
 function HeadersTop() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const darkMode = useSelector((state: RootState) => state.theme.darkMode);
 
-  // const handleThemeToggle = () => {
-  //   dispatch(toggleTheme());
-  // };
+  const handleThemeToggle = () => {
+    dispatch(toggleTheme());
+  };
   // modal end code
   const [profileMenu, setProfileMenu] = React.useState<null | HTMLElement>(
     null
@@ -106,13 +107,11 @@ function HeadersTop() {
           Profile
         </Link>
       </MenuItem>
-
       <MenuItem onClick={handleMenuTwoClose}>
         <Link className="text-[14px]" href="/">
           Sign Out
         </Link>
       </MenuItem>
-
       <MenuItem onClick={handleMenuTwoClose}>
         <Link className="text-[14px]" href="/PostedJobs5">
           PostedJobs5
@@ -136,6 +135,26 @@ function HeadersTop() {
       <MenuItem onClick={handleMenuTwoClose}>
         <Link className="text-[14px]" href="/CandidatesStatus0">
           CandidatesStatus0
+        </Link>
+      </MenuItem>{" "}
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_HelpDeskSupport">
+          P_M_HelpDeskSupport
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/P_M_RequestStatus1">
+          P_M_RequestStatus1...
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/InterviewStatusForm1">
+          InterviewStatusForm1...
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/CandidatesStatus3">
+          CandidatesStatus3{" "}
         </Link>
       </MenuItem>
     </Menu>
@@ -217,20 +236,6 @@ function HeadersTop() {
             </div>
           </Link>
         </div>
-      </MenuItem>
-      <MenuItem onClick={handleOneMenuClose}>
-        <Link className="text-[14px]" href="/P_M_RequestStatus1">
-          P_M_RequestStatus1...
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleOneMenuClose}>
-        <Link className="text-[14px]" href="/InterviewStatusForm1">
-          InterviewStatusForm1...
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleOneMenuClose}>
-        <Link className="text-[14px]" href="/CandidatesStatus3">
-        CandidatesStatus3        </Link>
       </MenuItem>
     </Menu>
   );
@@ -316,6 +321,7 @@ function HeadersTop() {
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
+
   const renderMobileMenu = (
     <Menu
       className="headerDropdwon mobileMenu"
@@ -400,8 +406,8 @@ function HeadersTop() {
 
   return (
     <>
-      <Box className="navbarTop bg-white" sx={{ flexGrow: 1 }}>
-        <AppBar top={0} position="fixed">
+      <Box className="navbarTop bg-primaryOne" sx={{ flexGrow: 1 }}>
+        <AppBar top={0} position="fixed" >
           <Toolbar>
             <Typography
               variant="h6"
@@ -427,6 +433,7 @@ function HeadersTop() {
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
+                onClick={handleThemeToggle}
               >
                 <LightModeOutlinedIcon />
               </IconButton>
