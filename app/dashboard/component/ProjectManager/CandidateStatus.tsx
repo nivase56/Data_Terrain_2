@@ -142,7 +142,7 @@ function CandidateStatus() {
 
                 <td>
                   <button className="btn">
-                  <img src="image/eye.png" alt="" className="text-muted text-dark"  />
+                  <img src="image/eye-black.png" alt="" className="text-muted text-dark"  />
                     {/* <i className="fa fa-eye text-muted" aria-hidden="true"></i> */}
                   </button>
                 </td>

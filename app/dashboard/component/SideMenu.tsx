@@ -117,7 +117,7 @@ const SideMenu = () => {
           </ul>
         </li>
         <li className="ListSideMEnu">
-          <Link href="common/ProjectManagerUpcomings">
+          <Link href="" >
             <img src="image/noteIcon.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">

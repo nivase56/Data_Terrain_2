@@ -11,12 +11,33 @@ import StraightIcon from "@mui/icons-material/Straight";
 import HistoryTab from "../dashboard/component/ProjectManager/HistoryTab";
 import EditIcon from "@mui/icons-material/Edit";
 import Bookmark from "@mui/icons-material/Bookmark";
-import Modal from "react-modal";
+// import Modal from "react-modal";
 import Checkbox from "@mui/material/Checkbox";
+
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "60%",
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function ProjectManagerJobDescriptionsTwo(params: type) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const [edit, setEdit] = useState(true);
   const [talentAcquisitionModal, setTalentAcquisitionModal] = useState(false);
   const [
@@ -147,7 +168,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                             <Link
                               href="#"
                               className="px-2"
-                              onClick={openTalentAcquisitionModal}
+                              onClick={handleOpen}
                             >
                               <i
                                 className="fa fa-share text-blue"
@@ -222,57 +243,62 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                       </div>
 
                       {/* Talent Acquisition Modal component */}
+
                       <Modal
-                        isOpen={talentAcquisitionModal}
-                        onRequestClose={closeTalentAcquisitionModal}
-                        contentLabel="Example Modal"
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
                       >
-                        <div className=" bg-white col-lg-12 col-xl-11 m-auto p-3">
-                          <div className="flex justify-between items-center border-bottom mb-4 pb-3">
-                            <h2 className="text-[18px] Poppins-Medium">
-                              Talent Acquisition
-                            </h2>
-                            <Link
-                              href="/"
-                              className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
-                            >
-                              {" "}
-                              <i className="fa fa-close"></i>
-                            </Link>
-                          </div>
-
-                          <div className="blueBorder rounded p-3">
-                            <div className="flex">
-                              <p className="bg-[#DBEAF3] px-3 py-3 rounded-1 text-[13px]">
-                                Python Developer [#PYJD001]
-                              </p>
-                              <p className="bg-[#DBEAF3] px-3 py-3 rounded-1 text-[13px] ms-2">
-                                Python Developer [#PYJD001]
-                              </p>
-                            </div>
-
-                            <textarea
-                              className="form-control mt-[100px] bg-[#F9F9F9!important]"
-                              rows={5}
-                              placeholder="Enter your comments"
-                            ></textarea>
-
-                            <div className="mt-4 flex justify-between">
-                              <button className="btn btnOutlineblue w-[100px]">
-                                ADD
-                              </button>
+                        <Box sx={style}>
+                          <div className=" bg-white col-lg-12 col-xl-11 m-auto p-3">
+                            <div className="flex justify-between items-center border-bottom mb-4 pb-3">
+                              <h2 className="text-[18px] Poppins-Medium">
+                                Talent Acquisition
+                              </h2>
                               <Link
                                 href="#"
-                                className="btn btn-blue px-3  w-[100px]"
-                                onClick={
-                                  openShareViaTalentAcquisitionJDBoardModal
-                                }
+                                onClick={handleClose}
+                                className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
                               >
-                                SEND
+                                {" "}
+                                <i className="fa fa-close"></i>
                               </Link>
                             </div>
+
+                            <div className="blueBorder rounded p-3">
+                              <div className="flex">
+                                <p className="bg-[#DBEAF3] px-3 py-3 rounded-1 text-[13px]">
+                                  Python Developer [#PYJD001]
+                                </p>
+                                <p className="bg-[#DBEAF3] px-3 py-3 rounded-1 text-[13px] ms-2">
+                                  Python Developer [#PYJD001]
+                                </p>
+                              </div>
+
+                              <textarea
+                                className="form-control mt-[100px] bg-[#F9F9F9!important]"
+                                rows={5}
+                                placeholder="Enter your comments"
+                              ></textarea>
+
+                              <div className="mt-4 flex justify-between">
+                                <button className="btn btnOutlineblue w-[100px]">
+                                  ADD
+                                </button>
+                                <Link
+                                  href="#"
+                                  className="btn btn-blue px-3  w-[100px]"
+                                  onClick={
+                                    openShareViaTalentAcquisitionJDBoardModal
+                                  }
+                                >
+                                  SEND
+                                </Link>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </Box>
                       </Modal>
                       {/* share Via Talent Acquisition JD Board Modal component */}
                       <Modal
