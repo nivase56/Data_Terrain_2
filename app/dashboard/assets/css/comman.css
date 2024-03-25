@@ -26,6 +26,9 @@
 	.text-dark{
 		color: var(--darkColor);
 	}
+	.bg-gray{
+		background-color: #efefef;
+	}
 
 	/*ALL FONT FACE*/
 	@font-face {
@@ -96,7 +99,7 @@
 		/* Light 300 */
 
 		.text-blue{
-		color: var(--royalBlue);
+		color: var(--royalBlue) !important;
 		}
 		
 

@@ -598,10 +598,46 @@ background-color: #F5F5F5;
   font-family: Poppins-Medium !important;
 }
 
-.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
+.tabSetting.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
   background-color: #D6E5EE;
   color: black;
   border-radius: 0px;
   margin: 0px 4px;
   padding: 5px 5px;
+}
+.tabSetting .css-ejke05-MuiButtonBase-root-MuiTab-root.Mui-selected, .tabSetting .css-ejke05-MuiButtonBase-root-MuiTab-root:hover{
+  box-shadow: 0px 0px 10px 0px #ddd;
+}
+.tabSetting .css-ejke05-MuiButtonBase-root-MuiTab-root.Mui-selected p{
+  color: var(--royalBlue) !important;
+}
+
+.tabSetting .css-ejke05-MuiButtonBase-root-MuiTab-root.Mui-selected img{
+  filter: brightness(9) invert(3) sepia(1) saturate(9000%) hue-rotate(232deg);
+}
+.tabSetting .css-ejke05-MuiButtonBase-root-MuiTab-root{
+  flex-direction: row !important;
+  justify-content: flex-start;
+  min-height: auto;
+  margin: 13px 0px;
+  border-radius: 34px;
+  text-transform: capitalize;
+  align-items: center;
+  font-size: 17px !important;
+}
+
+.tabSetting .css-1cgx7kx-MuiTabs-scroller{
+  padding: 0px 14px;
+}
+
+.customModal{
+  position: absolute; 
+  top: 50%; left: 50%;
+   transform: translate(-50%, -50%); 
+   
+   background-color: #ffffff; 
+   border: 2px solid;
+   border-color: var(--royalBlue); 
+   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.25); 
+   padding: 16px;
 }
