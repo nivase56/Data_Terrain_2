@@ -430,7 +430,7 @@ export default function TicketTable() {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
           <div className="text-center m-2 order-lg-first">
-            <button className="btn btnOutlineBlack mx-1">Previous Page</button>
+            <button className="btn btnOutlineBlack mx-1 ">Previous Page</button>
             <button className="btn btn-blue mx-1">Next Page</button>
           </div>
         </div>

@@ -138,8 +138,13 @@ function HeadersTop() {
         </Link>
       </MenuItem>{" "}
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link className="text-[14px]" href="/P_M_HelpDeskSupport">
-          P_M_HelpDeskSupport
+        <Link className="text-[14px]" href="/HelpDeskSupport1">
+        HelpDeskSupport1
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuTwoClose}>
+        <Link className="text-[14px]" href="/HelpDeskSupport2">
+        HelpDeskSupport2
         </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuTwoClose}>

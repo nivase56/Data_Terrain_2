@@ -23,6 +23,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import CreateTicketModal from './CreateTicketModal';
 
 
 export default function CandidatesStatus0() {
@@ -48,6 +52,13 @@ export default function CandidatesStatus0() {
         setCalendarVisible(!isCalendarVisible);
     };
     // calendar filter js end
+
+
+    // ticketModal
+
+    const [openTicketListModal, setTicketList] = React.useState(false);
+    const Ticket_ListOpenModal = () => setTicketList(true);
+    const handleTicketModalClose = () => setTicketList(false);
 
 
     return (
@@ -81,14 +92,14 @@ export default function CandidatesStatus0() {
                                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
-                                            <h4 className="small_historyText">Ticket List</h4>
+                                            <h4 className="small_historyText">Ticket List <button className="btn-blue px-1" onClick={Ticket_ListOpenModal}>openmodal</button></h4>
                                             <Link href='/' className='mx-4'>
                                                 <img src="image/edit.png" alt="" className="h-[24px]" />
                                             </Link>
 
                                             <div>
                                                 <button type="button" onClick={toggleCalendar} className="mx-2">
-                                                <img src="image/calendar.png" alt="" className="h-[24px]" />
+                                                    <img src="image/calendar.png" alt="" className="h-[24px]" />
                                                 </button>
 
                                                 {isCalendarVisible && (
@@ -124,14 +135,14 @@ export default function CandidatesStatus0() {
                                                         </LocalizationProvider>
 
                                                         <button type="button" className="btn p-0" onClick={toggleCalendar}>
-                                                            <img  className='h-[20px]' src="image/calendarnext.png" alt="" />
+                                                            <img className='h-[20px]' src="image/calendarnext.png" alt="" />
                                                         </button>
                                                     </div>
                                                 )}
                                             </div>
 
 
-                                            
+
 
                                         </div>
 
@@ -170,12 +181,12 @@ export default function CandidatesStatus0() {
                                             </Menu>
                                         </div>
 
-                                    
+
                                     </div>
 
-                                   <div className='p-3'>
-                                   <TicketTable/>
-                                   </div>
+                                    <div className='p-3'>
+                                        <TicketTable />
+                                    </div>
                                 </div>
                             </div>
 
@@ -199,6 +210,28 @@ export default function CandidatesStatus0() {
                     </div>
                 </div>
             </div>
+
+
+            <Modal
+                open={openTicketListModal}
+                onClose={handleTicketModalClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className="customModal shadow bg-white mt-4 rounded-3 pb-3 col-lg-7">
+                    <div className='d-flex justify-content-between mb-3 align-items-center '>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                            <h4 className="small_historyText">
+                                Create Ticket
+                            </h4>
+                        </Typography>
+                        <button onClick={handleTicketModalClose}>
+                            <img className='h-[30px]' src="image/closeModal.png" alt="" />
+                        </button>
+                    </div>
+                    <CreateTicketModal />
+                </Box>
+            </Modal>
 
         </section >
     )
