@@ -99,12 +99,14 @@ const SideMenu = () => {
       {/* laptop size code start */}
       <ul className="d-none d-lg-block deshboard_Menu shadow">
         <li className="ListSideMEnu">
-          <Link href="/" className={pathname === "/"?"active":""}>
+          <Link href="/" className={pathname === "/" ? "active" : ""}>
             <img src="image/menuData.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link className={pathname === "/"?"active":""} href="/">Dashboard</Link>
+              <Link className={pathname === "/" ? "active" : ""} href="/">
+                Dashboard
+              </Link>
             </li>
 
             <li className="subSideMenu">
@@ -117,7 +119,7 @@ const SideMenu = () => {
           </ul>
         </li>
         <li className="ListSideMEnu">
-          <Link href="" >
+          <Link href="">
             <img src="image/noteIcon.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
@@ -164,48 +166,95 @@ const SideMenu = () => {
         </li>
 
         <li className="ListSideMEnu">
-          <img src="image/Vector.png" alt="" />
+          <Link
+            href="/TotalEmployee0"
+            className={pathname === "/TotalEmployee0" ? "active" : ""}
+          >
+            <img src="image/Vector.png" alt="" />
+          </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/TotalEmployee0">Employee’s</Link>
+              <Link
+                href="/TotalEmployee0"
+                className={pathname === "/TotalEmployee0" ? "active" : ""}
+              >
+                Employee’s
+              </Link>
             </li>
           </ul>
         </li>
 
         <li className="ListSideMEnu">
-          <img src="image/shoping.png" alt="" />
+          <Link
+            href="/PostedJobs5"
+            className={pathname === "/PostedJobs5" ? "active" : ""}
+          >
+            <img src="image/shoping.png" alt="" />
+          </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="#">Posted Jobs</Link>
-            </li>
-          </ul>  
-        </li>
-
-        <li className="ListSideMEnu">
-          <img src="image/Frame.png" alt="" />
-          <ul className="subMainSideMenu">
-            <li className="subSideMenu">
-              <Link href="#">Candidate Status</Link>
-            </li>
-          </ul>
-          
-        </li>
-        <li className="ListSideMEnu">
-          <img src="image/help.png" alt="" />
-          <ul className="subMainSideMenu">
-            <li className="subSideMenu">
-              <Link href="#">Help Desk</Link>
+              <Link
+                href="/PostedJobs5"
+                className={pathname === "/PostedJobs5" ? "active" : ""}
+              >
+                Posted Jobs
+              </Link>
             </li>
           </ul>
         </li>
 
         <li className="ListSideMEnu">
-        <Link href="/P_M_Settings0" className={pathname === "/P_M_Settings0"?"active":""}>
-           <img src="image/filter.png" alt="" />
-           </Link>
+          <Link
+            href="/CandidatesStatus0"
+            className={pathname === "/CandidatesStatus0" ? "active" : ""}
+          >
+            <img src="image/Frame.png" alt="" />
+          </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/P_M_Settings0" className={pathname === "/P_M_Settings0"?"active":""}>Setting</Link>
+              <Link
+                href="/CandidatesStatus0"
+                className={pathname === "/CandidatesStatus0" ? "active" : ""}
+              >
+                Candidate Status
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li className="ListSideMEnu">
+          <Link
+            href="/HelpDeskSupport1"
+            className={pathname === "/HelpDeskSupport1" ? "active" : ""}
+          >
+            <img src="image/help.png" alt="" />
+          </Link>
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link
+                href="/HelpDeskSupport1"
+                className={pathname === "/HelpDeskSupport1" ? "active" : ""}
+              >
+                Help Desk
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li className="ListSideMEnu">
+          <Link
+            href="/P_M_Settings0"
+            className={pathname === "/P_M_Settings0" ? "active" : ""}
+          >
+            <img src="image/filter.png" alt="" />
+          </Link>
+          <ul className="subMainSideMenu">
+            <li className="subSideMenu">
+              <Link
+                href="/P_M_Settings0"
+                className={pathname === "/P_M_Settings0" ? "active" : ""}
+              >
+                Setting
+              </Link>
             </li>
           </ul>
         </li>

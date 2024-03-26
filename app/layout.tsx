@@ -7,6 +7,7 @@ import "../app/dashboard/assets/css/responsive.css";
 import { ReduxProvider } from "./StoreProvider";
 import HeadersTop from "./dashboard/common/HeadersTop";
 import { Metadata } from "next";
+import SideMenu from "./dashboard/component/SideMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ paddingTop: 50 }} className={inter.className}>
         <ReduxProvider>
+          
           <HeadersTop />
-          {/* <MuiThemeProvider> */}
           {children}
-          {/* </MuiThemeProvider> */}
         </ReduxProvider>
       </body>
     </html>

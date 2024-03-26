@@ -1,18 +1,19 @@
-import * as React from 'react';
-import { alpha } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
-import Paper from '@mui/material/Paper';
-import Avatar from '@mui/material/Avatar';
+import * as React from "react";
+import { alpha } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import Paper from "@mui/material/Paper";
+import Avatar from "@mui/material/Avatar";
 
-import { visuallyHidden } from '@mui/utils';
+import { visuallyHidden } from "@mui/utils";
+import Link from "next/link";
 
 interface Data {
   jobId: Number;
@@ -22,9 +23,9 @@ interface Data {
   A2stLevel: Number;
   A3stLevel: Number;
   A4stLevel: Number;
-  TotalMarks: string,
+  TotalMarks: string;
   Status: string;
-  Actions: string
+  Actions: string;
 }
 
 function createData(
@@ -54,19 +55,136 @@ function createData(
 }
 
 const rows = [
-  createData('#001', 'Jhon Smith', 'Designer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#002', 'Jhon Smith', 'Angular Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#003', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#004', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#005', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#006', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#007', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#008', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#009', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#010', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#011', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#012', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
-  createData('#013', 'Jhon Smith', 'Senior Developer', '0/1', '0/2', '0/3', '0/4', '13 Feb 2024',),
+  createData(
+    "#001",
+    "Jhon Smith",
+    "Designer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#002",
+    "Jhon Smith",
+    "Angular Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#003",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#004",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#005",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#006",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#007",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#008",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#009",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#010",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#011",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#012",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
+  createData(
+    "#013",
+    "Jhon Smith",
+    "Senior Developer",
+    "0/1",
+    "0/2",
+    "0/3",
+    "0/4",
+    "13 Feb 2024"
+  ),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -79,16 +197,16 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   return 0;
 }
 
-type Order = 'asc' | 'desc';
+type Order = "asc" | "desc";
 
 function getComparator<Key extends keyof any>(
   order: Order,
-  orderBy: Key,
+  orderBy: Key
 ): (
   a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string },
+  b: { [key in Key]: number | string }
 ) => number {
-  return order === 'desc'
+  return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -97,7 +215,10 @@ function getComparator<Key extends keyof any>(
 // stableSort() brings sort stability to non-modern browsers (notably IE11). If you
 // only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
 // with exampleArray.slice().sort(exampleComparator)
-function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
+function stableSort<T>(
+  array: readonly T[],
+  comparator: (a: T, b: T) => number
+) {
   const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);
@@ -118,75 +239,75 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: 'jobId',
+    id: "jobId",
     numeric: false,
     disablePadding: false,
-    label: 'Job ID',
+    label: "Job ID",
   },
   {
-    id: 'Name',
+    id: "Name",
     numeric: false,
     disablePadding: false,
-    label: 'Name',
+    label: "Name",
   },
   {
-    id: 'Position',
+    id: "Position",
     numeric: false,
     disablePadding: false,
-    label: 'Position',
+    label: "Position",
   },
   {
-    id: 'A1stLevel',
+    id: "A1stLevel",
     numeric: false,
     disablePadding: false,
-    label: '1st Level',
+    label: "1st Level",
   },
   {
-    id: 'A2stLevel',
+    id: "A2stLevel",
     numeric: false,
     disablePadding: false,
-    label: '2st Level',
+    label: "2st Level",
   },
   {
-    id: 'A3stLevel',
+    id: "A3stLevel",
     numeric: false,
     disablePadding: false,
-    label: '3st Level',
+    label: "3st Level",
   },
   {
-    id: 'A4stLevel',
+    id: "A4stLevel",
     numeric: false,
     disablePadding: false,
-    label: '4st Level',
+    label: "4st Level",
   },
 
   {
-    id: 'TotalMarks',
+    id: "TotalMarks",
     numeric: false,
     disablePadding: false,
-    label: 'TotalMarks',
+    label: "TotalMarks",
   },
   {
-    id: 'Status',
+    id: "Status",
     numeric: false,
     disablePadding: false,
-    label: 'Status',
+    label: "Status",
   },
 
   {
-    id: 'Actions',
+    id: "Actions",
     numeric: false,
     disablePadding: false,
-    label: 'Actions',
+    label: "Actions",
   },
-
-
-
 ];
 
 interface EnhancedTableProps {
   numSelected: number;
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
+  onRequestSort: (
+    event: React.MouseEvent<unknown>,
+    property: keyof Data
+  ) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
@@ -194,35 +315,39 @@ interface EnhancedTableProps {
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
-    props;
+  const {
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+  } = props;
   const createSortHandler =
     (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
   return (
-    <TableHead sx={{ backgroundColor: '#F5F5F5' }}>
+    <TableHead sx={{ backgroundColor: "#F5F5F5" }}>
       <TableRow>
-
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
+            align={headCell.numeric ? "right" : "left"}
+            padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
-            sx={{ whiteSpace: 'nowrap' }} // Apply white-space: nowrap; to table header cells
-
+            sx={{ whiteSpace: "nowrap" }} // Apply white-space: nowrap; to table header cells
           >
             <TableSortLabel
               active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : 'asc'}
+              direction={orderBy === headCell.id ? order : "asc"}
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
               {orderBy === headCell.id ? (
                 <Box component="span" sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                  {order === "desc" ? "sorted descending" : "sorted ascending"}
                 </Box>
               ) : null}
             </TableSortLabel>
@@ -234,8 +359,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 }
 
 export default function InterviewCandidateTable() {
-  const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
+  const [order, setOrder] = React.useState<Order>("asc");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("calories");
   const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -243,10 +368,10 @@ export default function InterviewCandidateTable() {
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
-    property: keyof Data,
+    property: keyof Data
   ) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
 
@@ -272,7 +397,7 @@ export default function InterviewCandidateTable() {
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
     setSelected(newSelected);
@@ -282,11 +407,12 @@ export default function InterviewCandidateTable() {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
 
   const isSelected = (id: number) => selected.indexOf(id) !== -1;
 
@@ -298,20 +424,19 @@ export default function InterviewCandidateTable() {
     () =>
       stableSort(rows, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage,
+        page * rowsPerPage + rowsPerPage
       ),
-    [order, orderBy, page, rowsPerPage],
+    [order, orderBy, page, rowsPerPage]
   );
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2, }}>
-
+    <Box sx={{ width: "100%" }}>
+      <Paper sx={{ width: "100%", mb: 2 }}>
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
+            size={dense ? "small" : "medium"}
           >
             <EnhancedTableHead
               numSelected={selected.length}
@@ -335,16 +460,11 @@ export default function InterviewCandidateTable() {
                     tabIndex={-1}
                     key={row.id}
                     selected={isItemSelected}
-                    sx={{ whiteSpace: 'nowrap' }} // Apply white-space: nowrap; to table rows
+                    sx={{ whiteSpace: "nowrap" }} // Apply white-space: nowrap; to table rows
                     // sx={{ cursor: 'pointer' }}
                     onMouseDown={(e) => e.preventDefault()} // Disable row selection on mouse down
                   >
-
-                    <TableCell
-                      component="th"
-                      id={labelId}
-                      scope="row"
-                    >
+                    <TableCell component="th" id={labelId} scope="row">
                       {row.jobId}
                     </TableCell>
                     <TableCell align="left"> {row.Name}</TableCell>
@@ -356,14 +476,15 @@ export default function InterviewCandidateTable() {
                     <TableCell align="left">{row.TotalMarks}</TableCell>
                     <TableCell align="left">
                       {row.Status}
-                      <button className='hover:bg-[#1d7b1c26] text-[#108F0E] px-2 py-1 rounded bg-[#0EAD0B26]'>
+                      <button className="hover:bg-[#1d7b1c26] text-[#108F0E] px-2 py-1 rounded bg-[#0EAD0B26]">
                         Hired
                       </button>
                     </TableCell>
                     <TableCell align="center">
-                      <button className='hover:text-blue-500 text-muted' onClick={(e) => e.stopPropagation()}>
+                      <Link href="/CandidatesStatus3">
                         <i className="fa fa-eye"></i>
-                      </button>
+                      </Link>
+                      
                     </TableCell>
                   </TableRow>
                 );
@@ -381,9 +502,7 @@ export default function InterviewCandidateTable() {
             </TableBody>
           </Table>
         </TableContainer>
-        <div className='d-lg-flex justify-between align-item-center'>
-
-
+        <div className="d-lg-flex justify-between align-item-center">
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
@@ -399,7 +518,6 @@ export default function InterviewCandidateTable() {
           </div>
         </div>
       </Paper>
-
     </Box>
   );
 }
