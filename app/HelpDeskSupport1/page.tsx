@@ -55,7 +55,6 @@ export default function CandidatesStatus0() {
 
   return (
     <section className="">
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
@@ -96,7 +95,7 @@ export default function CandidatesStatus0() {
                           openmodal
                         </button> */}
                       </h4>
-                      <Link href="/" className="mx-4">
+                      <Link href="/" prefetch className="mx-4">
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
 

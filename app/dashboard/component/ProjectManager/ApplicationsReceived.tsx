@@ -31,7 +31,7 @@ function ApplicationsReceived() {
               src="image/computerwork.png"
               alt=""
             />
-            <Link href="/JobApplication0">
+            <Link prefetch href="/JobApplication0">
               <button className="btn btn-white btn-sm text-[10px] lg:text-[16px] btn-sm mt-3">
                 View Details
               </button>

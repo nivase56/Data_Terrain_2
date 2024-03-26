@@ -10,7 +10,7 @@ function ActivityItem(props) {
 
             <div className="col-9 pe-0">
                 <h6 className="text-[12px] Poppins-Medium">{props.title}<span className='text-blue'> [Python Developer]</span></h6>
-                <h6 className="text-[11px] mt-1">Created by <Link href="/">{props.creator}</Link></h6>
+                <h6 className="text-[11px] mt-1">Created by <Link href="/" prefetch>{props.creator}</Link></h6>
                 <h6 className="text-[9px] text-muted mt-1">{props.time}</h6>
             </div>
         </div>
@@ -49,7 +49,7 @@ export default function Activity() {
 
             <div className="flex justify-between align-items-center ">
                 <h5>Activity</h5>
-                <Link className='text-blue text-[14px]' href="/P_M_Activity">
+                <Link prefetch className='text-blue text-[14px]' href="/P_M_Activity">
                     <u>View All</u>
                 </Link>
             </div>

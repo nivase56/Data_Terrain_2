@@ -51,6 +51,7 @@ function PostedJobsTop(props: {
             <Link
               className={`text-blue text-[14px]  ${props.classSamll}`}
               href="/P_M_SendHistory1"
+              prefetch
             >
               {props.samllText}
             </Link>

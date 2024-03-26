@@ -347,7 +347,7 @@ export default function PostedJobs5() {
                   <div className="row justify-between align-items-center p-3">
                     <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                       <h4 className="small_historyText">Posted Your Jobs</h4>
-                      <Link href="/" className="mx-4">
+                      <Link href="/" className="mx-4" prefetch>
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
 
@@ -482,7 +482,7 @@ export default function PostedJobs5() {
                           </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                        <div className="row pb-3">
+                          <div className="row pb-3">
                             {jobsData.map((job, index) => (
                               <PostedJobsCard key={index} {...job} />
                             ))}

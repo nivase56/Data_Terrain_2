@@ -48,7 +48,7 @@ export default function P_M_HelpDeskSupport() {
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                 <button className="btn btn-blue bg-[#0a66c2!important]">
-                Create Ticket
+                  Create Ticket
                 </button>
               </div>
             </div>
@@ -58,10 +58,8 @@ export default function P_M_HelpDeskSupport() {
                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                   <div className="row justify-between align-items-center p-3">
                     <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
-                      <h4 className="small_historyText">
-                      Ticket List
-                      </h4>
-                      <Link href="/" className="mx-4">
+                      <h4 className="small_historyText">Ticket List</h4>
+                      <Link href="/" className="mx-4" prefetch>
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
                     </div>
@@ -137,4 +135,4 @@ export default function P_M_HelpDeskSupport() {
       </div>
     </section>
   );
-};
+}

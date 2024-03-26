@@ -235,7 +235,11 @@ export default function P_M_RequestStatus1() {
                               Successfully shared your job descriptions
                             </h3>
                             <div className="mt-4 flex justify-center">
-                              <Link href="/" className="btn btn-blue px-3">
+                              <Link
+                                prefetch
+                                href="/"
+                                className="btn btn-blue px-3"
+                              >
                                 Go to Dashboard
                               </Link>
                             </div>

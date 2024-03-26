@@ -38,7 +38,7 @@ function P_M_JobDescriptions10(params: type) {
 
                             <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                             
-                                <Link href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
+                                <Link prefetch href="/P_M_JobDescriptions1" className="btn btn-light me-3 mx-lg-2">
                                     JD Assets
                                 </Link>
                             </div>
@@ -50,7 +50,7 @@ function P_M_JobDescriptions10(params: type) {
                                     <div className="row justify-between align-items-center p-3">
                                         <div className="col-md-7 col-12 col-lg-7 d-flex align-items-center  mb-3 mb-md-0 ">
                                             <h4 className="small_historyText">Job Descriptions ChatBot</h4>
-                                            <h6 className='ms-4'><Link className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
+                                            <h6 className='ms-4'><Link prefetch className="text-blue text-[14px]" href="/P_M_SendHistory1">History</Link></h6>
                                         </div>
 
                                         <div className="col-md-5 col-12 col-lg-5 ms-auto ps-lg-5">
@@ -74,7 +74,7 @@ function P_M_JobDescriptions10(params: type) {
                                                 {/* <div className=" bg-white col-lg-12 col-xl-11 m-auto p-3">
                                                     <div className="flex justify-between items-center border-bottom mb-4 pb-3">
                                                         <h2 className="text-[18px] Poppins-Medium">Talent Acquisition</h2>
-                                                        <Link href="/" className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"> <i className="fa fa-close"></i></Link>
+                                                        <Link prefetch href="/" className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"> <i className="fa fa-close"></i></Link>
 
                                                     </div>
 
@@ -91,7 +91,7 @@ function P_M_JobDescriptions10(params: type) {
 
                                                         <div className="mt-4 flex justify-between" >
                                                             <button className="btn btnOutlineblue w-[100px]">ADD</button>
-                                                            <Link href="/P_M_JobDescriptions9" className="btn btn-blue px-3  w-[100px]">SEND</Link></div>
+                                                            <Link prefetch href="/P_M_JobDescriptions9" className="btn btn-blue px-3  w-[100px]">SEND</Link></div>
                                                     </div>
 
                                                 </div> */}

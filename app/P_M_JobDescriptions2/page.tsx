@@ -99,7 +99,11 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
               </div>
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                <Link href="P_M_JobDescriptions4" className="btn btn-blue">
+                <Link
+                  prefetch
+                  href="P_M_JobDescriptions4"
+                  className="btn btn-blue"
+                >
                   Create New JD
                 </Link>
               </div>
@@ -115,6 +119,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                       </h4>
                       <h6 className="ms-4">
                         <Link
+                          prefetch
                           className="text-blue text-[14px]"
                           href="/P_M_SendHistory1"
                         >
@@ -165,6 +170,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                               )}
                             </button>
                             <Link
+                              prefetch
                               href="#"
                               className="px-2"
                               onClick={handleOpen}
@@ -256,6 +262,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                 Talent Acquisition
                               </h2>
                               <Link
+                                prefetch
                                 href="#"
                                 onClick={handleClose}
                                 className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
@@ -286,6 +293,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                   ADD
                                 </button>
                                 <Link
+                                  prefetch
                                   href="#"
                                   className="btn btn-blue px-3  w-[100px]"
                                   onClick={
@@ -315,6 +323,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                   Share Via Talent Acquisition JD Board
                                 </h2>
                                 <Link
+                                  prefetch
                                   href="/"
                                   className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
                                 >
@@ -381,6 +390,7 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
 
                               <div className="mt-4 flex justify-center">
                                 <Link
+                                  prefetch
                                   onClick={openSuccessfullyModal}
                                   href="#"
                                   className="btn btn-blue px-3  w-[100px]"
@@ -408,7 +418,11 @@ function ProjectManagerJobDescriptionsTwo(params: type) {
                                 Successfully shared your job descriptions
                               </h3>
                               <div className="mt-4 flex justify-center">
-                                <Link href="/" className="btn btn-blue px-3">
+                                <Link
+                                  prefetch
+                                  href="/"
+                                  className="btn btn-blue px-3"
+                                >
                                   Go to Dashboard
                                 </Link>
                               </div>

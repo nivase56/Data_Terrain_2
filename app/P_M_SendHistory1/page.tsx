@@ -131,10 +131,14 @@ function P_M_SendHistory1(params: type) {
   };
   // end
 
-
   const today = new Date();
-  const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-  const formattedDate = today.toLocaleDateString('en-US', options);
+  const options = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  };
+  const formattedDate = today.toLocaleDateString("en-US", options);
 
   return (
     <section className="">
@@ -160,10 +164,15 @@ function P_M_SendHistory1(params: type) {
                 <Link
                   href="/P_M_JobDescriptions1"
                   className="btn btn-light me-3 mx-lg-2"
+                  prefetch
                 >
                   JD Assets
                 </Link>
-                <Link href="P_M_JobDescriptions4" className="btn btn-blue">
+                <Link
+                  prefetch
+                  href="P_M_JobDescriptions4"
+                  className="btn btn-blue"
+                >
                   Create New JD
                 </Link>
               </div>
@@ -177,12 +186,13 @@ function P_M_SendHistory1(params: type) {
                       <h4 className="small_historyText">History</h4>
                       <h6 className="ms-4">
                         <Link
+                          prefetch
                           className="text-blue text-[14px]"
                           href="/P_M_SendHistory1"
                         >
                           Job Descriptions Assets
                         </Link>
-                        {/* <Link href="/"> */}
+                        {/* <Link href="/" prefetch> */}
                         {selectedRows.length > 0 && (
                           <DeleteIcon className="text-red-500 mx-2" />
                         )}
@@ -227,7 +237,7 @@ function P_M_SendHistory1(params: type) {
                               <Checkbox {...label} defaultChecked />
                             </TableCell>
                             <TableCell colSpan={2} align="left">
-                            Today - {formattedDate}
+                              Today - {formattedDate}
                             </TableCell>
                             <TableCell align="left"></TableCell>
                             <TableCell align="center">Action</TableCell>

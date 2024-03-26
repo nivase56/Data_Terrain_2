@@ -15,7 +15,7 @@ function AppointmentItem({ date, title, creator, time, colorName }: any) {
         <h6 className="text-[12px] Poppins-Medium">{title}</h6>
         <h6 className="text-[11px] mt-1">
           Created by{" "}
-          <Link className="text-blue" href="/">
+          <Link className="text-blue" href="/" prefetch>
             {creator}
           </Link>
         </h6>
@@ -61,7 +61,7 @@ export default function AppointmentsPage() {
     <div>
       <div className="flex justify-between align-items-center ">
         <h5>Upcomings</h5>
-        <Link className="text-blue text-[14px]" href="/P_M_Upcomings">
+        <Link className="text-blue text-[14px]" href="/P_M_Upcomings" prefetch>
           <u>View All</u>
         </Link>
       </div>

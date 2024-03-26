@@ -57,9 +57,7 @@ export default function InterviewForm01() {
                 <div className="shadow bg-white mt-4 rounded-3 pb-3">
                   <div className="row justify-between align-items-center p-3 ">
                     <div className="col-md-5 col-12 col-lg-8 d-flex align-items-center  mb-3 mb-md-0 ">
-                      <h4 className="small_historyText">
-                      Interview Mark Form
-                      </h4>
+                      <h4 className="small_historyText">Interview Mark Form</h4>
                     </div>
 
                     <div className="col-lg-2 col-4 col-md-2 text-end">
@@ -171,22 +169,22 @@ export default function InterviewForm01() {
                             </div>
 
                             <div className="col-lg-6 col-md-6 mb-4">
-                          <TextField
-                            className="w-100"
-                            required
-                            id="CandidateName"
-                            label="Enter your Mark 4 (Optional)"
-                          />
-                        </div>
+                              <TextField
+                                className="w-100"
+                                required
+                                id="CandidateName"
+                                label="Enter your Mark 4 (Optional)"
+                              />
+                            </div>
 
-                        <div className="col-lg-6 col-md-4 mb-4">
-                          <TextField
-                            className="w-100"
-                            required
-                            id="CandidateName"
-                            label="Enter your Mark 5 (Optional)"
-                          />
-                        </div>
+                            <div className="col-lg-6 col-md-4 mb-4">
+                              <TextField
+                                className="w-100"
+                                required
+                                id="CandidateName"
+                                label="Enter your Mark 5 (Optional)"
+                              />
+                            </div>
                           </div>
                         </div>
                         <div className="col-lg-4 col-md-4 mb-4">
@@ -200,17 +198,15 @@ export default function InterviewForm01() {
                           />
                         </div>
                       </div>
-
-                    
                     </div>
                     <div className="col-lg-12 col-md-12 text-center mb-4">
-                          <button
-                            className="btn btn-blue py-3 h-100"
-                            onClick={openModal}
-                          >
-                            SUBMIT YOUR INPUTS
-                          </button>
-                        </div>
+                      <button
+                        className="btn btn-blue py-3 h-100"
+                        onClick={openModal}
+                      >
+                        SUBMIT YOUR INPUTS
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -234,7 +230,11 @@ export default function InterviewForm01() {
                               Successfully shared your job descriptions
                             </h3>
                             <div className="mt-4 flex justify-center">
-                              <Link href="/" className="btn btn-blue px-3">
+                              <Link
+                                href="/"
+                                prefetch
+                                className="btn btn-blue px-3"
+                              >
                                 Go to Dashboard
                               </Link>
                             </div>

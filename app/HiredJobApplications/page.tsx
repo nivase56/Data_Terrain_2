@@ -74,9 +74,9 @@ export default function JobApplication0() {
                   <div className="row justify-between align-items-center p-3">
                     <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                       <h4 className="small_historyText">
-                      Hired Job Applications
+                        Hired Job Applications
                       </h4>
-                      <Link href="/" className="mx-4">
+                      <Link href="/" prefetch className="mx-4">
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
                       <div>

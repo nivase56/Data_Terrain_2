@@ -25,9 +25,16 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ paddingTop: 50 }} className={inter.className}>
         <ReduxProvider>
-          
           <HeadersTop />
           {children}
+          {/* <div className="container-fluid my-md-5 my-4">
+            <div className="row">
+              <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
+                <SideMenu />
+              </div>
+              <div className="col-lg-11 pe-lg-4 ps-lg-0">{children}</div>
+            </div>
+          </div> */}
         </ReduxProvider>
       </body>
     </html>

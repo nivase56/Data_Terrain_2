@@ -53,7 +53,11 @@ function ProjectManagerJobDescriptions(params: type) {
               </div>
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
-                <Link href="P_M_JobDescriptions4" className="btn btn-blue">
+                <Link
+                  href="P_M_JobDescriptions4"
+                  prefetch
+                  className="btn btn-blue"
+                >
                   Create New JD
                 </Link>
               </div>
@@ -86,7 +90,7 @@ function ProjectManagerJobDescriptions(params: type) {
                           <div className="border p-2 hover:shadow-lg">
                             <div className="d-flex justify-content-between align-items-center border-bottom pb-1">
                               <p className="text-[13px]">ID: {dataItem.id}</p>
-                              <Link href="/P_M_JobDescriptions2">
+                              <Link prefetch href="/P_M_JobDescriptions2">
                                 <img src={dataItem.imagePath} alt="" />
                               </Link>
                             </div>
@@ -117,7 +121,7 @@ function ProjectManagerJobDescriptions(params: type) {
                           <div className="border p-2 hover:shadow-lg">
                             <div className="d-flex justify-content-between align-items-center border-bottom pb-1">
                               <p className="text-[13px]">ID: {dataItem.id}</p>
-                              <Link href="">
+                              <Link href="" prefetch>
                                 <img src={dataItem.imagePath} alt="" />
                               </Link>
                             </div>
@@ -148,7 +152,7 @@ function ProjectManagerJobDescriptions(params: type) {
                           <div className="border p-2 hover:shadow-lg">
                             <div className="d-flex justify-content-between align-items-center border-bottom pb-1">
                               <p className="text-[13px]">ID: {dataItem.id}</p>
-                              <Link href="">
+                              <Link href="" prefetch>
                                 <img src={dataItem.imagePath} alt="" />
                               </Link>
                             </div>

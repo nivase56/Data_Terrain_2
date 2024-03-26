@@ -14,7 +14,7 @@ function TotalEmployees() {
       <div className="TotalEmployees shadow bg-white rounded-3 p-3 d-flex flex-column justify-content-between h-100">
         <div className="flex align-items-center border-bottom">
           <h3 className="projectManHeading">Total Employees</h3>
-          <Link href={"/TotalEmployee0"}>
+          <Link href={"/TotalEmployee0"} prefetch>
             <img className="h-5 ml-5" src="image/eyeicon.png" alt="" />
           </Link>
           <div className="ml-auto">

@@ -99,36 +99,48 @@ const SideMenu = () => {
       {/* laptop size code start */}
       <ul className="d-none d-lg-block deshboard_Menu shadow">
         <li className="ListSideMEnu">
-          <Link href="/" className={pathname === "/" ? "active" : ""}>
+          <Link prefetch href="/" className={pathname === "/" ? "active" : ""}>
             <img src="image/menuData.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link className={pathname === "/" ? "active" : ""} href="/">
+              <Link
+                prefetch
+                className={pathname === "/" ? "active" : ""}
+                href="/"
+              >
                 Dashboard
               </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="">Project Manager</Link>
+              <Link prefetch href="">
+                Project Manager
+              </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="/InterviewStatusForm1">Today Interviews</Link>
+              <Link prefetch href="/InterviewStatusForm1">
+                Today Interviews
+              </Link>
             </li>
           </ul>
         </li>
         <li className="ListSideMEnu">
-          <Link href="">
+          <Link prefetch href="">
             <img src="image/noteIcon.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/P_M_JobDescriptions1">Job Descriptions</Link>
+              <Link prefetch href="/P_M_JobDescriptions1">
+                Job Descriptions
+              </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="/P_M_RequestStatus1">TL Requests</Link>
+              <Link prefetch href="/P_M_RequestStatus1">
+                TL Requests
+              </Link>
             </li>
           </ul>
         </li>
@@ -137,15 +149,19 @@ const SideMenu = () => {
           <img src="image/menuSElect.png" alt="" />
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/P_M_Todo0">Calendar</Link>
+              <Link prefetch href="/P_M_Todo0">
+                Calendar
+              </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="/P_M_Messages">Messages</Link>
+              <Link prefetch href="/P_M_Messages">
+                Messages
+              </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link className="" href="/P_M_Notifications">
+              <Link prefetch className="" href="/P_M_Notifications">
                 Notifications
               </Link>
             </li>
@@ -156,17 +172,22 @@ const SideMenu = () => {
           <img src="image/user1.png" alt="" />
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/JobApplication0">Total Applications</Link>
+              <Link prefetch href="/JobApplication0">
+                Total Applications
+              </Link>
             </li>
 
             <li className="subSideMenu">
-              <Link href="/HiredJobApplications">Hired Applications</Link>
+              <Link prefetch href="/HiredJobApplications">
+                Hired Applications
+              </Link>
             </li>
           </ul>
         </li>
 
         <li className="ListSideMEnu">
           <Link
+            prefetch
             href="/TotalEmployee0"
             className={pathname === "/TotalEmployee0" ? "active" : ""}
           >
@@ -175,6 +196,7 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link
+                prefetch
                 href="/TotalEmployee0"
                 className={pathname === "/TotalEmployee0" ? "active" : ""}
               >
@@ -186,6 +208,7 @@ const SideMenu = () => {
 
         <li className="ListSideMEnu">
           <Link
+            prefetch
             href="/PostedJobs5"
             className={pathname === "/PostedJobs5" ? "active" : ""}
           >
@@ -194,6 +217,7 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link
+                prefetch
                 href="/PostedJobs5"
                 className={pathname === "/PostedJobs5" ? "active" : ""}
               >
@@ -205,6 +229,7 @@ const SideMenu = () => {
 
         <li className="ListSideMEnu">
           <Link
+            prefetch
             href="/CandidatesStatus0"
             className={pathname === "/CandidatesStatus0" ? "active" : ""}
           >
@@ -213,6 +238,7 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link
+                prefetch
                 href="/CandidatesStatus0"
                 className={pathname === "/CandidatesStatus0" ? "active" : ""}
               >
@@ -223,6 +249,7 @@ const SideMenu = () => {
         </li>
         <li className="ListSideMEnu">
           <Link
+            prefetch
             href="/HelpDeskSupport1"
             className={pathname === "/HelpDeskSupport1" ? "active" : ""}
           >
@@ -231,6 +258,7 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link
+                prefetch
                 href="/HelpDeskSupport1"
                 className={pathname === "/HelpDeskSupport1" ? "active" : ""}
               >
@@ -242,6 +270,7 @@ const SideMenu = () => {
 
         <li className="ListSideMEnu">
           <Link
+            prefetch
             href="/P_M_Settings0"
             className={pathname === "/P_M_Settings0" ? "active" : ""}
           >
@@ -250,6 +279,7 @@ const SideMenu = () => {
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
               <Link
+                prefetch
                 href="/P_M_Settings0"
                 className={pathname === "/P_M_Settings0" ? "active" : ""}
               >

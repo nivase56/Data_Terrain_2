@@ -56,12 +56,17 @@ function CandidatesStatus3(_params: type) {
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                 <Link
+                  prefetch
                   href="/P_M_JobDescriptions1"
                   className="btn btn-light me-3 mx-lg-2"
                 >
                   JD Assets
                 </Link>
-                <Link href="P_M_JobDescriptions4" className="btn btn-blue">
+                <Link
+                  prefetch
+                  href="P_M_JobDescriptions4"
+                  className="btn btn-blue"
+                >
                   Create New JD
                 </Link>
               </div>

@@ -110,7 +110,6 @@ export default function P_M_RequestStatus1() {
 
   return (
     <section className="">
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
@@ -140,7 +139,7 @@ export default function P_M_RequestStatus1() {
                   <div className="row justify-between align-items-center p-3">
                     <div className="col-md-5 col-12 col-lg-5 d-flex align-items-center  mb-3 mb-md-0 ">
                       <h4 className="small_historyText">TL Requests</h4>
-                      <Link href="/" className="mx-4">
+                      <Link href="/" prefetch className="mx-4">
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
 
@@ -304,7 +303,7 @@ export default function P_M_RequestStatus1() {
                           />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                        <RequestBoard />
+                          <RequestBoard />
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={2}>
                           <RequestBoard />

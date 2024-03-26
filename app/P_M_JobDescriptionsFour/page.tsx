@@ -218,49 +218,49 @@ function P_M_JobDescriptionsFour(params: type) {
 
                                                 <ul className='list-unstyled mt-3'>
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
                                                     </li>
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
-                                                    </li>
-
-
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
                                                     </li>
 
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
                                                     </li>
 
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
-                                                    </li>
-
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
-                                                    </li>
-
-                                                    <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
                                                     </li>
 
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    </li>
+
+                                                    <li className="py-2">
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                    </li>
+
+                                                    <li className="py-2">
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Java Developers</Link>
                                                     </li>
 
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">UX|UI Designer</Link>
                                                     </li>
 
 
                                                     <li className="py-2">
-                                                        <Link className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">SEO Specialist</Link>
+                                                    </li>
+
+
+                                                    <li className="py-2">
+                                                        <Link prefetch className='Poppins-Light text-[15px]' href="/">Python Developers</Link>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -63,6 +63,7 @@ function HiringCandidates() {
                   Hiring Candidates
                 </h2>
                 <Link
+                  prefetch
                   href="/"
                   className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
                 >

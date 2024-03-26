@@ -76,7 +76,7 @@ export default function JobApplication0() {
                       <h4 className="small_historyText">
                         Received Job Applications
                       </h4>
-                      <Link href="/" className="mx-4">
+                      <Link prefetch href="/" className="mx-4">
                         <img src="image/edit.png" alt="" className="h-[24px]" />
                       </Link>
                       <div>

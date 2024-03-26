@@ -132,7 +132,6 @@ export default function Home() {
   //tab end
   return (
     <main className="">
-
       <section className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
@@ -151,12 +150,14 @@ export default function Home() {
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
                 <Link
+                  prefetch
                   href="/P_M_JobDescriptions1"
                   className="btn btn-light me-3 mx-lg-2"
                 >
                   JD Assets
                 </Link>
                 <Link
+                  prefetch
                   href="P_M_JobDescriptions4"
                   className="btn btn-blue bg-[#0a66c2!important]"
                 >

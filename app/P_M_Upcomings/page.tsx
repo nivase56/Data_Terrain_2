@@ -14,6 +14,7 @@ function ProjectManagerUpcomings() {
               <div className="flex justify-between items-center border-bottom pb-3">
                 <h2 className="text-[22px] Poppins-Medium">Upcoming’ s</h2>
                 <Link
+                  prefetch
                   href="/"
                   className="btn btn-blue w-[30px] h-[30px!important] !rounded-[50%] p-0 align-items-center justify-content-center leading-[28px!important]"
                 >
@@ -36,8 +37,7 @@ function ProjectManagerUpcomings() {
                     <button className="btn btnOutlineblue">
                       Resume.docx
                       {/* <i className="fa fa-eye mx-2"></i> */}
-                      <img src="image/eye.png" alt="" className="mx-2"  />
-
+                      <img src="image/eye.png" alt="" className="mx-2" />
                       <i className="fa fa-download"></i>
                     </button>
                   </div>

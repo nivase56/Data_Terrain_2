@@ -481,10 +481,9 @@ export default function InterviewCandidateTable() {
                       </button>
                     </TableCell>
                     <TableCell align="center">
-                      <Link href="/CandidatesStatus3">
+                      <Link prefetch href="/CandidatesStatus3">
                         <i className="fa fa-eye"></i>
                       </Link>
-                      
                     </TableCell>
                   </TableRow>
                 );

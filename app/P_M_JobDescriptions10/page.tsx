@@ -36,6 +36,7 @@ function P_M_JobDescriptionsSix(params: type) {
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                 <Link
                   href="/P_M_JobDescriptions1"
+                  prefetch
                   className="btn btn-light me-3 mx-lg-2"
                 >
                   JD Assets
@@ -54,6 +55,7 @@ function P_M_JobDescriptionsSix(params: type) {
                       <h6 className="ms-4">
                         <Link
                           className="text-blue text-[14px]"
+                          prefetch
                           href="/P_M_SendHistory1"
                         >
                           History
@@ -91,7 +93,11 @@ function P_M_JobDescriptionsSix(params: type) {
                             Successfully shared your job descriptions
                           </h3>
                           <div className="mt-4 flex justify-center">
-                            <Link href="/" className="btn btn-blue px-3">
+                            <Link
+                              href="/"
+                              prefetch
+                              className="btn btn-blue px-3"
+                            >
                               Go to Dashboard
                             </Link>
                           </div>

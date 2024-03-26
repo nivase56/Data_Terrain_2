@@ -12,7 +12,12 @@ import HistoryTab from "../dashboard/component/ProjectManager/HistoryTab";
 
 const JobDescription = ({ key, title, smallTitle }: any) => {
   return (
-    <Link href="/P_M_JobDescriptions5" key={key} className="col-lg-4 mt-3 px-1">
+    <Link
+      href="/P_M_JobDescriptions5"
+      key={key}
+      className="col-lg-4 mt-3 px-1"
+      prefetch
+    >
       <div className="border border-color-[red] bg-[#fff] hover:bg-blue-100 p-2">
         <p className="text-[11px] Poppins-SemiBold leading-[13px]">{title}</p>
         <p className="text-[10px] mt-2 Poppins-Light leading-[13px]">
@@ -80,6 +85,7 @@ function P_M_JobDescriptionsFour(params: type) {
               <div className="col-lg-4 mt-3 mt-lg-0 text-start text-lg-end">
                 <Link
                   href="/P_M_JobDescriptions1"
+                  prefetch
                   className="btn btn-light me-3 mx-lg-2"
                 >
                   JD Assets
@@ -98,6 +104,7 @@ function P_M_JobDescriptionsFour(params: type) {
                       <h6 className="ms-4">
                         <Link
                           className="text-blue text-[14px]"
+                          prefetch
                           href="/P_M_SendHistory1"
                         >
                           History
