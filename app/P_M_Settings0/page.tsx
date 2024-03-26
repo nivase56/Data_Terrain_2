@@ -3,16 +3,17 @@
 import HeadersTop from "../dashboard/common/HeadersTop";
 import SideMenu from "../dashboard/component/SideMenu";
 import React, { useState } from "react";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import HeadingText from "./HeadingText";
 import ProfileText from "./ProfileText";
 import GeneralInformation from "./GeneralInformation";
 import SecurityInformation from "./SecurityInformation";
 import AccountPreferences from "./AccountPreferences";
 import ManageAccount from "./ManageAccount";
+import NotificationInformation from "./NotificationInformation";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -42,10 +43,9 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
-
 
 export default function P_M_Settings() {
   const [value, setValue] = React.useState(0);
@@ -67,10 +67,10 @@ export default function P_M_Settings() {
               <div className="col-lg-8 projectText">
                 <h1>Settings</h1>
                 <p className="mt-3">
-                  Enjoy your selecting potential candidates Tracking and Management System.
+                  Enjoy your selecting potential candidates Tracking and
+                  Management System.
                 </p>
               </div>
-
             </div>
 
             <div className="row">
@@ -84,7 +84,7 @@ export default function P_M_Settings() {
                         value={value}
                         onChange={handleChange}
                         aria-label="Vertical tabs example"
-                        TabIndicatorProps={{ style: { display: 'none' } }} // hide the tab indicator
+                        TabIndicatorProps={{ style: { display: "none" } }} // hide the tab indicator
                         sx={{}}
                         ScrollButtonComponent="div" // remove scroll buttons
                         className="tabSetting"
@@ -92,33 +92,63 @@ export default function P_M_Settings() {
                         <Tab
                           label={<p>General Information</p>}
                           {...a11yProps(0)}
-                          icon={<img className="h-[20px]  mr-2" src={'image/GeneralInformation.png'} alt="User Icon" />}
-                          sx={{ display: 'flex', alignItems: 'center' }} // Align icon and text horizontally
+                          icon={
+                            <img
+                              className="h-[20px]  mr-2"
+                              src={"image/GeneralInformation.png"}
+                              alt="User Icon"
+                            />
+                          }
+                          sx={{ display: "flex", alignItems: "center" }} // Align icon and text horizontally
                         />
                         <Tab
                           label={<p>Security</p>}
                           {...a11yProps(2)}
-                          icon={<img className="h-[20px] mr-2" src={'image/Security.png'} alt="User Icon" />}
-                          sx={{ display: 'flex', alignItems: 'center' }} // Align icon and text horizontally
+                          icon={
+                            <img
+                              className="h-[20px] mr-2"
+                              src={"image/Security.png"}
+                              alt="User Icon"
+                            />
+                          }
+                          sx={{ display: "flex", alignItems: "center" }} // Align icon and text horizontally
                         />
                         <Tab
                           label={<p>Notifications</p>}
                           {...a11yProps(3)}
-                          icon={<img className="h-[20px]  mr-2" src={'image/Notifications.png'} alt="User Icon" />}
-                          sx={{ display: 'flex', alignItems: 'center' }} // Align icon and text horizontally
+                          icon={
+                            <img
+                              className="h-[20px]  mr-2"
+                              src={"image/Notifications.png"}
+                              alt="User Icon"
+                            />
+                          }
+                          sx={{ display: "flex", alignItems: "center" }} // Align icon and text horizontally
                         />
                         <Tab
                           label={<p>Account Preference</p>}
                           {...a11yProps(4)}
-                          icon={<img className="h-[20px]  mr-2" src={'image/AccountPreference.png'} alt="User Icon" />}
-                          sx={{ display: 'flex', alignItems: 'center' }} // Align icon and text horizontally
+                          icon={
+                            <img
+                              className="h-[20px]  mr-2"
+                              src={"image/AccountPreference.png"}
+                              alt="User Icon"
+                            />
+                          }
+                          sx={{ display: "flex", alignItems: "center" }} // Align icon and text horizontally
                         />
 
                         <Tab
                           label={<p>Manage Account</p>}
                           {...a11yProps(4)}
-                          icon={<img className="h-[20px] mr-2" src={'image/ManageAccount.png'} alt="User Icon" />}
-                          sx={{ display: 'flex', alignItems: 'center' }} // Align icon and text horizontally
+                          icon={
+                            <img
+                              className="h-[20px] mr-2"
+                              src={"image/ManageAccount.png"}
+                              alt="User Icon"
+                            />
+                          }
+                          sx={{ display: "flex", alignItems: "center" }} // Align icon and text horizontally
                         />
                       </Tabs>
                     </div>
@@ -127,43 +157,51 @@ export default function P_M_Settings() {
                         <TabPanel value={value} index={0}>
                           <HeadingText
                             mainHeadingtab="General Information"
+                            SaveButton={true}
+                            CancelButton={true}
                           />
                           <ProfileText />
                           <GeneralInformation />
                         </TabPanel>
                         <TabPanel value={value} index={1}>
                           <HeadingText
-                           mainHeadingtab="Security Information "
+                            mainHeadingtab="Security Information "
+                            SaveButton={false}
+                            CancelButton={false}
                           />
                           <SecurityInformation />
                         </TabPanel>
                         <TabPanel value={value} index={2}>
                           <HeadingText
-                          mainHeadingtab="Notifications"
+                            mainHeadingtab="Notifications"
+                            SaveButton={false}
+                            CancelButton={false}
                           />
+                          <NotificationInformation />
                         </TabPanel>
                         <TabPanel value={value} index={3}>
-                        <HeadingText
-                          mainHeadingtab="Account Preferences"
+                          <HeadingText
+                            mainHeadingtab="Account Preferences"
+                            SaveButton={true}
+                            CancelButton={true}
                           />
-                          <AccountPreferences/>
+                          <AccountPreferences />
                         </TabPanel>
-                        
+
                         <TabPanel value={value} index={4}>
-                        <HeadingText
+                          <HeadingText
                             mainHeadingtab="Manage Account"
+                            SaveButton={true}
+                            CancelButton={true}
                           />
                           <ProfileText />
-                          <ManageAccount/>
+                          <ManageAccount />
                         </TabPanel>
-                     
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>

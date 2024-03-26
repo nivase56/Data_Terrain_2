@@ -200,10 +200,12 @@ const SideMenu = () => {
         </li>
 
         <li className="ListSideMEnu">
-          <img src="image/filter.png" alt="" />
+        <Link href="/P_M_Settings0" className={pathname === "/P_M_Settings0"?"active":""}>
+           <img src="image/filter.png" alt="" />
+           </Link>
           <ul className="subMainSideMenu">
             <li className="subSideMenu">
-              <Link href="/P_M_Profile">Setting</Link>
+              <Link href="/P_M_Settings0" className={pathname === "/P_M_Settings0"?"active":""}>Setting</Link>
             </li>
           </ul>
         </li>
