@@ -4,7 +4,6 @@ function ProjectManagerUpcomings() {
 
   return (
     <>
-      <HeadersTop />
       <section className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 ps-0 position-relative">

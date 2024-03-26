@@ -110,7 +110,6 @@ export default function P_M_RequestStatus1() {
 
   return (
     <section className="">
-      <HeadersTop />
 
       <div className="container-fluid my-md-5 my-4">
         <div className="row">

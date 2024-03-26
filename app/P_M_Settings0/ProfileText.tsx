@@ -3,7 +3,7 @@ import Link from "next/link";
 function ProfileText(params: type) {
     return (
         <>
-            <div className="d-flex align-items-center \">
+            <div className="d-flex align-items-center py-3">
                 <div className="mr-3">
                     <img className="w-[50px] h-[50px] rounded-full" src="image/profileIcon.png" alt="" />
                 </div>

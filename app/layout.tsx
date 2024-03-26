@@ -24,10 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ paddingTop: 50 }} className={inter.className}>
         <ReduxProvider>
-          <HeadersTop/>
+          <HeadersTop />
           {/* <MuiThemeProvider> */}
-            {children}
-            {/* </MuiThemeProvider> */}
+          {children}
+          {/* </MuiThemeProvider> */}
         </ReduxProvider>
       </body>
     </html>

@@ -55,7 +55,6 @@ export default function CandidatesStatus0() {
 
   return (
     <section className="">
-      <HeadersTop />
 
       <div className="container-fluid my-md-5 my-4">
         <div className="row">

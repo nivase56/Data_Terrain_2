@@ -1,8 +1,8 @@
 "use client";
+
 import HeadersTop from "../dashboard/common/HeadersTop";
 import SideMenu from "../dashboard/component/SideMenu";
 import React, { useState } from "react";
-
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
@@ -10,6 +10,9 @@ import Box from '@mui/material/Box';
 import HeadingText from "./HeadingText";
 import ProfileText from "./ProfileText";
 import GeneralInformation from "./GeneralInformation";
+import SecurityInformation from "./SecurityInformation";
+import AccountPreferences from "./AccountPreferences";
+import ManageAccount from "./ManageAccount";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -53,8 +56,6 @@ export default function P_M_Settings() {
 
   return (
     <section className="">
-      <HeadersTop />
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
@@ -124,28 +125,38 @@ export default function P_M_Settings() {
                     <div className="col-lg-9">
                       <div className="bg-[#F9F9F9]">
                         <TabPanel value={value} index={0}>
-                          <HeadingText/>
-                          <ProfileText/>
-                          <GeneralInformation/>
+                          <HeadingText
+                            mainHeadingtab="General Information"
+                          />
+                          <ProfileText />
+                          <GeneralInformation />
                         </TabPanel>
                         <TabPanel value={value} index={1}>
-                          Item Two
+                          <HeadingText
+                           mainHeadingtab="Security Information "
+                          />
+                          <SecurityInformation />
                         </TabPanel>
                         <TabPanel value={value} index={2}>
-                          Item Three
+                          <HeadingText
+                          mainHeadingtab="Notifications"
+                          />
                         </TabPanel>
                         <TabPanel value={value} index={3}>
-                          Item Four
+                        <HeadingText
+                          mainHeadingtab="Account Preferences"
+                          />
+                          <AccountPreferences/>
                         </TabPanel>
+                        
                         <TabPanel value={value} index={4}>
-                          Item Five
+                        <HeadingText
+                            mainHeadingtab="Manage Account"
+                          />
+                          <ProfileText />
+                          <ManageAccount/>
                         </TabPanel>
-                        <TabPanel value={value} index={5}>
-                          Item Six
-                        </TabPanel>
-                        <TabPanel value={value} index={6}>
-                          Item Seven
-                        </TabPanel>
+                     
                       </div>
                     </div>
                   </div>

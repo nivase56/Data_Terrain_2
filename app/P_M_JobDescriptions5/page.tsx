@@ -15,7 +15,6 @@ function P_M_JobDescriptionsFive(params: type) {
 
     return (
         <section className="">
-            <HeadersTop />
             {/* ... rest of your component code */}
 
             <div className="container-fluid my-md-5 my-4">

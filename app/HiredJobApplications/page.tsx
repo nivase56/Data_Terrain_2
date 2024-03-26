@@ -45,8 +45,6 @@ export default function JobApplication0() {
 
   return (
     <section className="">
-      <HeadersTop />
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 leftMenuWidth ps-0 position-relative">

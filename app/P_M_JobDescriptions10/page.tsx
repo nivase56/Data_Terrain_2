@@ -15,7 +15,6 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 function P_M_JobDescriptionsSix(params: type) {
   return (
     <section className="">
-      <HeadersTop />
       {/* ... rest of your component code */}
 
       <div className="container-fluid my-md-5 my-4">

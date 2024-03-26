@@ -132,7 +132,6 @@ export default function Home() {
   //tab end
   return (
     <main className="">
-      {/* <HeadersTop /> */}
 
       <section className="container-fluid my-md-5 my-4">
         <div className="row">

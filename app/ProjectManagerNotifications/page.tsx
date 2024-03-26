@@ -12,8 +12,6 @@ export default function ProjectManagerMessages() {
   //tab end
   return (
     <section className="demo">
-      <HeadersTop />
-
       <div className="container-fluid my-md-5 my-4">
         <div className="row">
           <div className="col-lg-1 ps-0 position-relative">
