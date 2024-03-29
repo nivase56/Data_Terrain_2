@@ -90,7 +90,7 @@ function CandidatesStatus3(_params: type) {
                   <div className="border-t border-l border-b border-r border-[#0B74AD] rounded mt-4">
                     <div className="row mx-0">
                       <div className="col-lg-7 px-0  lg:border-r  border-[#0B74AD]">
-                        <table className="table">
+                        <table className="table h-100">
                           <tr>
                             <th className="px-3 py-2 text-[#0A66C2]  border-b border-r border-[#0B74AD] text-center">
                               Details #1
@@ -181,36 +181,45 @@ function CandidatesStatus3(_params: type) {
                       <div className="col-lg-5 px-0 text-center Details ">
                         <table className="table">
                           <tr>
-                            <th className="px-3 py-2 text-[#0A66C2] border-b border-[#0B74AD] text-center">
+                            <th className="px-3 py-[13px] text-[#0A66C2] border-b border-[#0B74AD] text-center">
                               Details #3
                             </th>
                           </tr>
                           <tr>
                             <td className="py-4 px-3">
-                              <div className="text-center w-[147px]">
-                                <TotalEmployeesGraph
-                                  totalEmloyeesCount={26}
-                                  count={2}
-                                  color={"#0B74AD"}
-                                />
-                                <i
-                                  className="fa fa-square"
-                                  aria-hidden="true"
-                                  style={TotalMarks}
-                                ></i>{" "}
-                                Total Marks
-                                <i
-                                  className="fa fa-square"
-                                  aria-hidden="true"
-                                  style={None}
-                                ></i>{" "}
-                                None
+                              <div className="text-center w-100">
+                                <div className="w-[180px] mx-auto">
+                                  <TotalEmployeesGraph
+                                    totalEmloyeesCount={16}
+                                    height={100}
+                                    width={100}
+                                    count={2}
+                                    color={"#0B74AD"}
+                                    className=" dddddddddd"
+                                  />
+                                </div>
+                                <div className="d-flex justify-content-center">
+                                  <div className="mx-2 px-[4px!important] text-[15px]"> <i
+                                    className="fa fa-square"
+                                    aria-hidden="true"
+                                    style={TotalMarks}
+                                  ></i>{" "}
+                                    Total Marks</div>
+                                  <div className="mx-2 px-[4px!important] text-[15px]">
+                                    <i
+                                      className="fa fa-square"
+                                      aria-hidden="true"
+                                      style={None}
+                                    ></i>{" "}
+                                    None
+                                  </div>
+                                </div>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td className=" border-t border-[#0B74AD] ">
-                              <div className="col-lg-10">
+                              <div className="col-lg-10 mx-auto">
                                 <GaugeChart
                                   colors={[
                                     "#C7E9FF",
@@ -226,10 +235,44 @@ function CandidatesStatus3(_params: type) {
                                   needleColor="#2D2C73"
                                   needleBaseColor="#2D2C73"
                                   hideText={true}
-                                  className="mt-5"
+                                  className="mt-2"
                                   arcWidth={0.6}
                                   cornerRadius={0}
                                 />
+                                <div className="d-flex justify-content-center">
+                                  <div className="px-[4px!important] text-[15px] mx-1 mt-2 d-flex align-items-center">
+                                    <i
+                                      className="fa fa-square mr-1"
+                                      aria-hidden="true"
+                                      style={Poor}
+                                    ></i>{" "}
+                                    Poor
+                                  </div>
+                                  <div className="px-[4px!important] text-[15px] mx-1 mt-2 d-flex align-items-center">
+                                    <i
+                                      className="fa fa-square mr-1"
+                                      aria-hidden="true"
+                                      style={Normal}
+                                    ></i>{" "}
+                                    Normal
+                                  </div>
+                                  <div className="px-[4px!important] text-[15px] mx-1 mt-2 d-flex align-items-center">
+                                    <i
+                                      className="fa fa-square mr-1"
+                                      aria-hidden="true"
+                                      style={Medium}
+                                    ></i>{" "}
+                                    Medium
+                                  </div>
+                                  <div className="px-[4px!important] text-[15px] mx-1 mt-2 d-flex align-items-center">
+                                    <i
+                                      className="fa fa-square mr-1"
+                                      aria-hidden="true"
+                                      style={Good}
+                                    ></i>{" "}
+                                    Good
+                                  </div>
+                                </div>
                               </div>
                             </td>
                           </tr>

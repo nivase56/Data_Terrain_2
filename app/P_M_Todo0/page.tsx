@@ -213,10 +213,10 @@ export default function P_M_Todo0() {
               </div>
             </div>
 
-            <div className="TotalEmployees shadow bg-white rounded-3 p-3 w-100">
+            <div className="TotalEmployees shadow bg-white rounded-3 p-3 w-100 mt-4">
               <div className="md:flex align-items-center">
                 <h3 className="projectManHeading">Your Todo’s</h3>
-                <div className="ml-auto d-flex">
+                <div className="ml-auto d-flex todoHeadingSelect">
                   <div className="month-year-picker">
                     <select value={selectedMonth} onChange={handleMonthChange}>
                       <option value="">Select Month</option>
@@ -241,7 +241,63 @@ export default function P_M_Todo0() {
                 className="d-none d-lg-block "
                 style={{ width: "100%", position: "relative" }}
               >
+
+                <div className="calendarTopSection top-[250px] left-[100px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
+
+                <div className="calendarTopSection top-[450px] left-[200px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
+
+                <div className="calendarTopSection top-[450px] left-[800px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
+
+
+                <div className="calendarTopSection top-[280px] left-[400px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
+
+                <div className="calendarTopSection top-[280px] left-[700px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
+
+                <div className="calendarTopSection top-[320px] left-[1000px]">
+                  <ul>
+                    <li className="text-[12px] py-1">Python Developer</li>
+                    <li className="text-[12px] py-1">Interviewer: Geetha</li>
+                    <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+                    <li className="text-[12px] py-1">Via : Google Voice</li>
+                  </ul>
+                </div>
                 <Calendar
+                  className="TodoDataTable"
                   selectable
                   localizer={localizer}
                   events={events}
