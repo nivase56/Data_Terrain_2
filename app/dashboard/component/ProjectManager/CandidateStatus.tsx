@@ -1,3 +1,8 @@
+"use client";
+import { dashboardSelector, getCandidateStatusList } from "@/store/reducers/dashboard";
+import { useEffect } from "react";
+import { useDispatch,useSelector } from "react-redux";
+
 function CandidateStatus() {
   const data = [
     {
@@ -8,7 +13,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'24/40',
+      totalMarks: '24/40',
       status: "Hired",
       action: "fa fa-eye",
     },
@@ -20,7 +25,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'...',
+      totalMarks: '...',
       status: "Active",
       action: "fa fa-eye",
     },
@@ -32,7 +37,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'24/40',
+      totalMarks: '24/40',
       status: "Hired",
       action: "fa fa-eye",
     },
@@ -44,7 +49,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'24/40',
+      totalMarks: '24/40',
       status: "active",
       action: "fa fa-eye",
     },
@@ -56,7 +61,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'24/40',
+      totalMarks: '24/40',
       status: "hired",
       action: "fa fa-eye",
     },
@@ -68,7 +73,7 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'24/40',
+      totalMarks: '24/40',
       status: "Reject",
       action: "fa fa-eye",
     },
@@ -80,13 +85,22 @@ function CandidateStatus() {
       secondLevel: "4/63",
       thirdLevel: "4/63",
       fourLevel: "4/63",
-      totalMarks:'...',
+      totalMarks: '...',
       status: "Reject",
       action: "fa fa-eye",
     },
   ];
 
   const slicedData = data.slice(0, 6);
+
+  const dispatch = useDispatch()
+  const candidates_list = useSelector(dashboardSelector)
+  console.log(candidates_list,"candidates_list")
+
+  useEffect(() => {
+    dispatch(getCandidateStatusList())
+  }, [])
+
   return (
     <div className=" bg-white p-3 table-responsive ">
       <div>
@@ -142,7 +156,7 @@ function CandidateStatus() {
 
                 <td>
                   <button className="btn">
-                  <img src="image/eye-black.png" alt="" className="text-muted text-dark"  />
+                    <img src="image/eye-black.png" alt="" className="text-muted text-dark" />
                     {/* <i className="fa fa-eye text-muted" aria-hidden="true"></i> */}
                   </button>
                 </td>

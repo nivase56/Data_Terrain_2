@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
-import HeadersTop from "./dashboard/common/HeadersTop";
 import ApplicationsReceived from "./dashboard/component/ProjectManager/ApplicationsReceived";
-
 import SideMenu from "./dashboard/component/SideMenu";
 import TotalEmployees from "./dashboard/component/ProjectManager/TotalEmployees";
 import NumberofVacancies from "./dashboard/component/ProjectManager/NumberofVacancies";
@@ -24,9 +21,30 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "next/link";
 import Loader from "./dashboard/common/Loader";
+import { GET_USER_HIERACHY_API } from "../utils/API";
+import { useDispatch } from "react-redux";
+import { getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings } from "@/store/reducers/dashboard";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [value, setValue] = useState(0);
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    let resp = GET_USER_HIERACHY_API();
+    console.warn("ress", resp);
+  }, []);
+
+  useEffect(() => {
+    dispatch(getInterviewAndHiredDetails())
+    dispatch(getPostedJobList())
+    dispatch(getTodayMeetingDetailsList())
+    dispatch(getUpcomings())
+    dispatch(getActivities())
+    dispatch(getHirings())
+
+  }, [])
 
   useEffect(() => {
     // Simulate loading delay
@@ -37,6 +55,9 @@ export default function Home() {
     // Clear the timer on component unmount
     return () => clearTimeout(timer);
   }, []);
+
+
+
   // Define an array of data objects representing each card's content
   const jobsData = [
     {
@@ -119,7 +140,6 @@ export default function Home() {
     };
   }
 
-  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
