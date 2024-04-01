@@ -42,7 +42,7 @@ function CalendarProject() {
       <style>{hideToolbarStyles}</style>
       <style>{hideButtonsStyles}</style>
       <StaticDateRangePicker
-        defaultValue={[dayjs("2024-03-17"), dayjs("2024-03-21")]}
+        defaultValue={[dayjs(), dayjs().add(7,"day")]}
         sx={{
           [`.${pickersLayoutClasses.contentWrapper}`]: {
             alignItems: "center",

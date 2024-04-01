@@ -1,6 +1,11 @@
+"use client"
 import Link from "next/link";
-import HeadersTop from "../dashboard/common/HeadersTop";
 import SideMenu from "../dashboard/component/SideMenu";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { dashboardSelector, getActivities } from "@/store/reducers/dashboard";
+import { useEffect } from "react";
+import moment from "moment";
 
 function UserActivity(props) {
   return (
@@ -11,6 +16,7 @@ function UserActivity(props) {
           src={props.imageSrc}
           alt=""
         />
+        static
       </div>
       <div className="col-lg-4 col-9 col-md-4 md:border-r border-gray-200 px-2 py-1">
         <ul className="text-[14px]">
@@ -43,12 +49,23 @@ function UserActivity(props) {
         <div className="mx-auto w-[60px] h-[60px] rounded-full flex align-items-center justify-center bg-[#c1d1e2] text-blue">
           {props.rating}
         </div>
+        static
       </div>
     </div>
   );
 }
 
 function ProjectManagerActivity() {
+
+  const dispatch = useDispatch();
+  const dashboardData = useSelector(dashboardSelector);
+
+  useEffect(() => {
+    dispatch(getActivities());
+  }, [])
+
+  const activities = dashboardData?.activities_list;
+
   return (
     <>
       <section className="container-fluid my-md-5 my-4">
@@ -71,8 +88,22 @@ function ProjectManagerActivity() {
                   <i className="fa fa-close"></i>
                 </Link>
               </div>
+              {
+                activities?.map((item) => (
+                  <UserActivity
+                    imageSrc="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
+                    name={item?.user_det?.candidate?.candidate_firstName + " " + item?.user_det?.candidate?.candidate_lastName}
+                    position={item?.user_det?.job_id?.jobRequest_Role}
+                    interviewer={"Stella(static)"}
+                    interviewLevel={item?.desc}
+                    startTime={moment(item?.start).format("hh:mm A")}
+                    endTime={moment(item?.end).format("hh:mm A")}
+                    rating={"7/10"}
+                  />
+                ))
+              }
 
-              <UserActivity
+              {/* <UserActivity
                 imageSrc="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
                 name="Jhon Smith"
                 position="Python Developer"
@@ -92,18 +123,7 @@ function ProjectManagerActivity() {
                 startTime="10.15 A.M"
                 endTime="10.45 A.M"
                 rating="7/10"
-              />
-
-              <UserActivity
-                imageSrc="https://cdn.icon-icons.com/icons2/3150/PNG/512/user_profile_female_icon_192701.png"
-                name="Jhon Smith"
-                position="Python Developer"
-                interviewer="Stella"
-                interviewLevel="2nd Level"
-                startTime="10.15 A.M"
-                endTime="10.45 A.M"
-                rating="7/10"
-              />
+              /> */}
             </div>
           </div>
         </div>

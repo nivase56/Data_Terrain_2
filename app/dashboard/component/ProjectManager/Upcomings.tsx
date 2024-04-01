@@ -1,25 +1,28 @@
 import React from "react";
 import Link from "next/link";
+import { dashboardSelector } from "@/store/reducers/dashboard";
+import { useSelector } from "react-redux";
+import moment from "moment";
 
-function AppointmentItem({ date, title, creator, time, colorName }: any) {
+function AppointmentItem({ date, title, creator, time, colorName,...props }: any) {
   return (
     <div className="row mt-4 align-items-center ">
       <div className="col-3 pe-0">
         <div className={`bg-[${colorName}] text-center rounded-2 py-3 px-2`}>
-          <h6 className="text-[12px] text-blue">{date}</h6>
-          <h6 className="text-[12px] text-blue">Feb</h6>
+          <h6 className="text-[12px] text-blue">{moment(props.start)?.format("DD")}</h6>
+          <h6 className="text-[12px] text-blue">{moment(props.start)?.format("MMM")}</h6>
         </div>
       </div>
 
       <div className="col-6 pe-0">
-        <h6 className="text-[12px] Poppins-Medium">{title}</h6>
+        <h6 className="text-[12px] Poppins-Medium">{props.desc}</h6>
         <h6 className="text-[11px] mt-1">
           Created by{" "}
           <Link className="text-blue" href="/" prefetch>
-            {creator}
+            {props?.user_det?.handled_by?.firstName}
           </Link>
         </h6>
-        <h6 className="text-[9px] text-muted mt-1">{time}</h6>
+        <h6 className="text-[9px] text-muted mt-1">{time}static</h6>
       </div>
 
       <div className="col-3 text-end">
@@ -32,30 +35,31 @@ function AppointmentItem({ date, title, creator, time, colorName }: any) {
 }
 
 export default function AppointmentsPage() {
-  const appointments = [
-    {
-      date: "07",
-      title: "Interview with Designer",
-      creator: "Stella",
-      time: "10 A.M to 11 A.M",
-      colorName: "#0B74AD26",
-    },
-    {
-      date: "07",
-      title: "Interview with Designer",
-      creator: "Stella",
-      time: "10 A.M to 11 A.M",
-      colorName: "#0B74AD26",
-    },
-    {
-      date: "07",
-      title: "Interview with Designer",
-      creator: "Stella",
-      time: "10 A.M to 11 A.M",
-      colorName: "#0B74AD26",
-    },
-    // Add more appointments as needed
-  ];
+  const dashboardData = useSelector(dashboardSelector);
+  // const appointments = [
+  //   {
+  //     date: "07",
+  //     title: "Interview with Designer",
+  //     creator: "Stella",
+  //     time: "10 A.M to 11 A.M",
+  //     colorName: "#0B74AD26",
+  //   },
+  //   {
+  //     date: "07",
+  //     title: "Interview with Designer",
+  //     creator: "Stella",
+  //     time: "10 A.M to 11 A.M",
+  //     colorName: "#0B74AD26",
+  //   },
+  //   {
+  //     date: "07",
+  //     title: "Interview with Designer",
+  //     creator: "Stella",
+  //     time: "10 A.M to 11 A.M",
+  //     colorName: "#0B74AD26",
+  //   },
+  //   // Add more appointments as needed
+  // ];
 
   return (
     <div>
@@ -66,7 +70,7 @@ export default function AppointmentsPage() {
         </Link>
       </div>
 
-      {appointments.map((appointment, index) => (
+      {dashboardData?.upcomings_list?.slice(0,3)?.map((appointment, index) => (
         <AppointmentItem key={index} {...appointment} />
       ))}
     </div>

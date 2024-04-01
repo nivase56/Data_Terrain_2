@@ -14,6 +14,8 @@ import Avatar from "@mui/material/Avatar";
 
 import { visuallyHidden } from "@mui/utils";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { dashboardSelector } from "@/store/reducers/dashboard";
 
 interface Data {
   jobId: Number;
@@ -366,6 +368,10 @@ export default function InterviewCandidateTable() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  const dashboardData = useSelector(dashboardSelector);
+
+  const rows = dashboardData?.candidate_status_list;
+
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
     property: keyof Data
@@ -429,6 +435,8 @@ export default function InterviewCandidateTable() {
     [order, orderBy, page, rowsPerPage]
   );
 
+
+
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
@@ -465,15 +473,15 @@ export default function InterviewCandidateTable() {
                     onMouseDown={(e) => e.preventDefault()} // Disable row selection on mouse down
                   >
                     <TableCell component="th" id={labelId} scope="row">
-                      {row.jobId}
+                      {row?.job_details?.id}
                     </TableCell>
-                    <TableCell align="left"> {row.Name}</TableCell>
-                    <TableCell align="left">{row.Position}</TableCell>
-                    <TableCell align="left">{row.A1stLevel}</TableCell>
-                    <TableCell align="left">{row.A2stLevel}</TableCell>
-                    <TableCell align="left">{row.A3stLevel}</TableCell>
-                    <TableCell align="left">{row.A4stLevel}</TableCell>
-                    <TableCell align="left">{row.TotalMarks}</TableCell>
+                    <TableCell align="left"> {row?.candidate_details?.candidate_firstName +" "+row?.candidate_details?.candidate_lastName}</TableCell>
+                    <TableCell align="left">{row.Position}ABC(static) </TableCell>
+                    <TableCell align="left">{row?.meeting_details[0]?.status}</TableCell>
+                    <TableCell align="left">{row?.meeting_details[1]?.status}</TableCell>
+                    <TableCell align="left">{row?.meeting_details[2]?.status}</TableCell>
+                    <TableCell align="left">{row?.meeting_details[3]?.status}</TableCell>
+                    <TableCell align="left">{row.TotalMarks} 0(static)</TableCell>
                     <TableCell align="left">
                       {row.Status}
                       <button className="hover:bg-[#1d7b1c26] text-[#108F0E] px-2 py-1 rounded bg-[#0EAD0B26]">

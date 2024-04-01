@@ -44,16 +44,16 @@ function PostedJobsTop(props: {
         className={`row justify-between align-items-center p-3  ${props.className}`}
       >
         <div className="col-md-5 col-12 col-lg-4 d-flex mb-3 mb-md-0 justify-between align-items-center ">
-          <h4 className={`small_historyText  ${props.classTitle}`}>
+          <h4 className={`small_historyText  ${props?.classTitle}`}>
             {props.titleName}
           </h4>
           <h6>
             <Link
-              className={`text-blue text-[14px]  ${props.classSamll}`}
-              href="/P_M_SendHistory1"
+              className={`text-blue text-[14px]  ${props?.classSamll}`}
+              href={props?.viewAllPath}
               prefetch
             >
-              {props.samllText}
+              {props?.samllText}
             </Link>
           </h6>
         </div>

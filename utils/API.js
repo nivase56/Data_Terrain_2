@@ -34,13 +34,22 @@ export const GET_TODAY_MEETING_DETAILS_API = () =>
   makeRequest(API_ENDPOINTS.TODAY_MEETING_DETAILS_ENDPOINT, null, "get");
 
 export const GET_ACTIVITIES_API = () =>
-  makeRequest(API_ENDPOINTS.ACTIVITIES_ENDPOINT, null, "get");
+  makeRequest(API_ENDPOINTS.ACTIVITIES_ENDPOINT, {
+    from_date: "2024-03-20",
+    to_date: "2024-03-24",
+  });
 
 export const GET_UPCOMINGS_API = () =>
-  makeRequest(API_ENDPOINTS.UPCOMINGS_ENDPOINT, null, "get");
+  makeRequest(API_ENDPOINTS.UPCOMINGS_ENDPOINT, {
+    from_date: "2024-03-20",
+    to_date: "2024-03-24",
+  });
 
 export const GET_HIRED_API = () =>
-  makeRequest(API_ENDPOINTS.HIRED_ENDPOINT, null, "get");
+  makeRequest(API_ENDPOINTS.HIRED_ENDPOINT, {
+    from_date: "2024-03-20",
+    to_date: "2024-03-24",
+  });
 
 export const LOGIN_API = (data) =>
   makeRequest(API_ENDPOINTS.LOGIN_ENDPOINT, data);

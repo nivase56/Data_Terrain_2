@@ -1,7 +1,7 @@
 "use client";
 import { dashboardSelector, getCandidateStatusList } from "@/store/reducers/dashboard";
 import { useEffect } from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function CandidateStatus() {
   const data = [
@@ -94,8 +94,7 @@ function CandidateStatus() {
   const slicedData = data.slice(0, 6);
 
   const dispatch = useDispatch()
-  const candidates_list = useSelector(dashboardSelector)
-  console.log(candidates_list,"candidates_list")
+  const dashboardData = useSelector(dashboardSelector)
 
   useEffect(() => {
     dispatch(getCandidateStatusList())
@@ -120,15 +119,15 @@ function CandidateStatus() {
             </tr>
           </thead>
           <tbody>
-            {slicedData.map((list) => (
-              <tr key={list?.jobId}>
-                <td>{list?.jobId}</td>
-                <td>{list?.name}</td>
-                <td>{list?.position}</td>
-                <td>{list?.firstLevel}</td>
-                <td>{list?.secondLevel}</td>
-                <td>{list?.thirdLevel}</td>
-                <td>{list?.fourLevel}</td>
+            {dashboardData?.candidate_status_list?.slice(0, 6)?.map((list) => (
+              <tr key={list?.candidate_details?.id}>
+                <td>{list?.job_details?.id}</td>
+                <td>{list?.candidate_details?.candidate_firstName + " " + list?.candidate_details?.candidate_lastName}</td>
+                <td>{list?.job_details?.jobRequest_Role}</td>
+                <td>{list?.meeting_details[0]?.status}</td>
+                <td>{list?.meeting_details[1]?.status}</td>
+                <td>{list?.meeting_details[2]?.status}</td>
+                <td>{list?.meeting_details[3]?.status}</td>
                 <td>{list?.totalMarks}</td>
                 {list?.status === "Hired" || list?.status === "hired" ? (
                   <td>

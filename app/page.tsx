@@ -23,12 +23,14 @@ import Link from "next/link";
 import Loader from "./dashboard/common/Loader";
 import { GET_USER_HIERACHY_API } from "../utils/API";
 import { useDispatch } from "react-redux";
-import { getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings } from "@/store/reducers/dashboard";
+import { dashboardSelector, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings } from "@/store/reducers/dashboard";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState(0);
   const dispatch = useDispatch()
+  const dashboardData = useSelector(dashboardSelector)
 
 
   useEffect(() => {
@@ -149,6 +151,10 @@ export default function Home() {
     return <Loader />;
   }
 
+
+  const activeJobsData = dashboardData?.posted_job_list?.filter(() => true)
+  const inactiveJobsData = dashboardData?.posted_job_list?.filter(() => true);
+
   //tab end
   return (
     <main className="">
@@ -224,9 +230,9 @@ export default function Home() {
 
                   <div className="d-flex overflow-x-scroll interviewScroll">
                     <TodayInterviews />
+                    {/* <TodayInterviews />
                     <TodayInterviews />
-                    <TodayInterviews />
-                    <TodayInterviews />
+                    <TodayInterviews /> */}
                   </div>
                 </div>
 
@@ -238,6 +244,7 @@ export default function Home() {
                     classTitle=""
                     classSamll="text-underline"
                     samllText="View All"
+                    viewAllPath={"/JobApplication0"}
                   />
 
                   {/* <div className="ol-lg-12 px-3">
@@ -270,7 +277,7 @@ export default function Home() {
                     <hr className="mt-0" />
                     <CustomTabPanel className="p-0" value={value} index={0}>
                       <div className="row px-3 pb-3">
-                        {jobsData.map((job, index) => (
+                        {inactiveJobsData?.map((job, index) => (
                           <PostedJobsCard key={index} {...job} />
                         ))}
                       </div>
@@ -281,7 +288,7 @@ export default function Home() {
                       index={1}
                     >
                       <div className="row px-3 pb-3">
-                        {jobsData.map((job, index) => (
+                        {activeJobsData?.map((job, index) => (
                           <PostedJobsCard key={index} {...job} />
                         ))}
                       </div>
@@ -295,6 +302,7 @@ export default function Home() {
                     titleName="Candidate Status"
                     classSamll="text-underline"
                     samllText="View All"
+                    viewAllPath={"/CandidatesStatus0"}
                   />
                   <CandidateStatus />
                 </div>

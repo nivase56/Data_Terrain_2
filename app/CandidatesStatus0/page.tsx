@@ -13,12 +13,14 @@ import MenuItem from "@mui/material/MenuItem";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
-import * as React from "react";
+import { useEffect, useState } from "react";
 import InterviewCandidateTable from "./InterviewCandidateTable";
+import {  getCandidateStatusList } from "@/store/reducers/dashboard";
+import { useDispatch } from "react-redux";
 
 export default function CandidatesStatus0() {
   // filter btn
-  const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
+  const [filterBtn, setfilterBtn] = useState<null | HTMLElement>(null);
   const open = Boolean(filterBtn);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setfilterBtn(event.currentTarget);
@@ -26,6 +28,13 @@ export default function CandidatesStatus0() {
   const handleClose = () => {
     setfilterBtn(null);
   };
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getCandidateStatusList())
+  }, [])
+
   // filter btn end
 
   return (
