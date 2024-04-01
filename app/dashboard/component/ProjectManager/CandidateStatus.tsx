@@ -132,7 +132,7 @@ function CandidateStatus() {
                 {list?.status === "Hired" || list?.status === "hired" ? (
                   <td>
                     <button className="bg-[#cbffd7] rounded-2 px-2 py-1 text-green-700">
-                      {list?.status.toUpperCase()}
+                      {list?.status?.toUpperCase()}
                     </button>
                   </td>
                 ) : null}
@@ -140,7 +140,7 @@ function CandidateStatus() {
                 {list?.status === "Active" || list?.status === "active" ? (
                   <td>
                     <button className="bg-[#fff3f3] rounded-2 px-2 py-1 text-yellow-400">
-                      {list?.status.toUpperCase()}
+                      {list?.status?.toUpperCase()}
                     </button>
                   </td>
                 ) : null}
@@ -148,7 +148,7 @@ function CandidateStatus() {
                 {list?.status === "Reject" || list?.status === "reject" ? (
                   <td>
                     <button className="bg-[#E73B3B26] rounded-2 px-2 py-1 redColor">
-                      {list?.status.toUpperCase()}
+                      {list?.status?.toUpperCase()}
                     </button>
                   </td>
                 ) : null}
