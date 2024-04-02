@@ -1,19 +1,27 @@
 "use client";
-import Upcomings from "../dashboard/component/ProjectManager/Upcomings";
-import HeadersTop from "../dashboard/common/HeadersTop";
-import Activity from "../dashboard/component/ProjectManager/Activity";
-import CalendarProject from "../dashboard/component/ProjectManager/CalendarProject";
-import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandidates";
-import SideMenu from "../dashboard/component/SideMenu";
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import GaugeChart from "react-gauge-chart";
-import TotalEmployeesGraph from "../dashboard/component/ProjectManager/TotalEmployeesGraph";
+import Upcomings from "@/app/dashboard/component/ProjectManager/Upcomings";
+import Activity from "@/app/dashboard/component/ProjectManager/Activity";
+import CalendarProject from "@/app/dashboard/component/ProjectManager/CalendarProject";
+import HiringCandidates from "@/app/dashboard/component/ProjectManager/HiringCandidates";
+import SideMenu from "@/app/dashboard/component/SideMenu";
+
+import TotalEmployeesGraph from "@/app/dashboard/component/ProjectManager/TotalEmployeesGraph";
+import { GET_CANDIDATE_DETAILS_API } from "@/utils/API";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-function CandidatesStatus3(_params: type) {
+function CandidatesStatus3({params}) {
+  const getCandidateDetails=async()=>{
+    const response = await GET_CANDIDATE_DETAILS_API(params?.id)
+    console.log(response)
+  }
+
+  useEffect(()=>{
+    getCandidateDetails();
+  },[])
   const Poor = {
     color: "#C7E9FF",
   };

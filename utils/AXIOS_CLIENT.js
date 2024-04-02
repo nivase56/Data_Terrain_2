@@ -53,7 +53,7 @@ AXIOS_CLIENT.interceptors.response.use(
     if (error.response.status === 401) {
       deleteCookie(ACCESS_TOKEN_KEY);
       toast.error(
-        error.response.config.url?.toUpperCase() + ": UnAuthorized API Call..."
+        error.response.config.url.toUpperCase() + ": UnAuthorized API Call..."
       );
 
       toast.error("Logging out due to session out.");
@@ -61,13 +61,13 @@ AXIOS_CLIENT.interceptors.response.use(
     }
     if (error.response.status === 404) {
       toast.error(
-        error.response.config.url?.toUpperCase() + ": API Not Found..."
+        error.response.config.url.toUpperCase() + ": API Not Found..."
       );
     }
 
     if (error.response.status === 500) {
       toast.error(
-        error.response.config.url?.toUpperCase() + ": Something went wrong..."
+        error.response.config.url.toUpperCase() + ": Something went wrong..."
       );
     }
     return error;

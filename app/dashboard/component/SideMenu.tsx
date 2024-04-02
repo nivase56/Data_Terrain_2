@@ -114,7 +114,7 @@ const SideMenu = () => {
             </li>
 
             <li className="subSideMenu">
-              <Link prefetch href="">
+              <Link prefetch href="#">
                 Project Manager
               </Link>
             </li>
@@ -127,7 +127,7 @@ const SideMenu = () => {
           </ul>
         </li>
         <li className="ListSideMEnu">
-          <Link prefetch href="">
+          <Link prefetch href="#">
             <img src="image/noteIcon.png" alt="" />
           </Link>
           <ul className="subMainSideMenu">

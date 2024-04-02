@@ -2,7 +2,7 @@
 
 import HeadersTop from "../dashboard/common/HeadersTop";
 import SideMenu from "../dashboard/component/SideMenu";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -14,6 +14,7 @@ import SecurityInformation from "./SecurityInformation";
 import AccountPreferences from "./AccountPreferences";
 import ManageAccount from "./ManageAccount";
 import NotificationInformation from "./NotificationInformation";
+import { GET_GENERAL_SETTINGS_API, GET_SETTINGS_ACCOUNT_API, GET_SETTINGS_API, GET_SETTINGS_MANAGE_ACCOUNT_API } from "@/utils/API";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -49,6 +50,22 @@ function a11yProps(index: number) {
 
 export default function P_M_Settings() {
   const [value, setValue] = React.useState(0);
+
+  const getAllSettingsData = async () => {
+    const response1 = await GET_SETTINGS_API()
+    const response2 = await GET_SETTINGS_ACCOUNT_API()
+    const response3 = await GET_GENERAL_SETTINGS_API()
+    const response4 = await GET_SETTINGS_MANAGE_ACCOUNT_API()
+
+    console.log(response1, "response1")
+    console.log(response2, "response2")
+    console.log(response3, "response3")
+    console.log(response4, "response4")
+  }
+
+  useEffect(() => {
+    getAllSettingsData()
+  }, [])
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);

@@ -11,7 +11,7 @@ const makeRequest = async (endpoint, data, method = "post") => {
       return result;
     }
   } catch (error) {
-    console.log(endpoint?.toUpperCase() + ": ", error.message);
+    console.log(endpoint.toUpperCase() + ": ", error.message);
     throw new Error(`${endpoint}: ${error.message}`);
   }
 };
@@ -50,6 +50,34 @@ export const GET_HIRED_API = () =>
     from_date: "2024-03-20",
     to_date: "2024-03-24",
   });
+
+export const GET_TICKET_LIST_API = () => {
+  makeRequest(API_ENDPOINTS.TICKET_LIST_ENDPOINT, null, "get");
+};
+
+export const GET_SETTINGS_API = () => {
+  makeRequest(API_ENDPOINTS.SETTINGS_ENDPOINT, null, "get");
+};
+
+export const GET_GENERAL_SETTINGS_API = () => {
+  makeRequest(API_ENDPOINTS.SETTINGS_GENERAL_ENDPOINT, null, "get");
+};
+
+export const GET_SETTINGS_ACCOUNT_API = () => {
+  makeRequest(API_ENDPOINTS.SETTINGS_ACCOUNT_ENDPOINT, null, "get");
+};
+
+export const GET_SETTINGS_MANAGE_ACCOUNT_API = () => {
+  makeRequest(API_ENDPOINTS.SETTINGS_MANAGE_ACCOUNT_ENDPOINT, null, "get");
+};
+
+export const GET_CANDIDATE_DETAILS_API = (candidate_id) => {
+  makeRequest(
+    API_ENDPOINTS.CANDIDATE_DETAILS_ENDPOINT + "/" + candidate_id,
+    null,
+    "get"
+  );
+};
 
 export const LOGIN_API = (data) =>
   makeRequest(API_ENDPOINTS.LOGIN_ENDPOINT, data);

@@ -70,6 +70,7 @@ function ProjectManagerJobDescriptions(params: type) {
                     titleName="Job Descriptions Assets"
                     classTitle="text-[20px] Poppins-Regular"
                     samllText="History"
+                    viewAllPath={"/abc"}
                   />
 
                   <div className="shadow mx-3 mb-4 mt-4 p-3">
@@ -121,7 +122,7 @@ function ProjectManagerJobDescriptions(params: type) {
                           <div className="border p-2 hover:shadow-lg">
                             <div className="d-flex justify-content-between align-items-center border-bottom pb-1">
                               <p className="text-[13px]">ID: {dataItem.id}</p>
-                              <Link href="" prefetch>
+                              <Link href="/abc">
                                 <img src={dataItem.imagePath} alt="" />
                               </Link>
                             </div>
@@ -152,7 +153,7 @@ function ProjectManagerJobDescriptions(params: type) {
                           <div className="border p-2 hover:shadow-lg">
                             <div className="d-flex justify-content-between align-items-center border-bottom pb-1">
                               <p className="text-[13px]">ID: {dataItem.id}</p>
-                              <Link href="" prefetch>
+                              <Link href="/abv">
                                 <img src={dataItem.imagePath} alt="" />
                               </Link>
                             </div>

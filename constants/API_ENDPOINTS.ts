@@ -21,3 +21,12 @@ export const ACTIVITIES_ENDPOINT = "/calendar_app/api/activities";
 export const HIRED_ENDPOINT = "/calendar_app/api/hired";
 
 export const ALL_ACTIVITIES_ENDPOINT = "/api/all_activity";
+
+export const TICKET_LIST_ENDPOINT = "/ticket_list";
+export const SETTINGS_ENDPOINT = "/settings";
+export const SETTINGS_GENERAL_ENDPOINT = "/settings/general";
+export const SETTINGS_ACCOUNT_ENDPOINT = "/settings/account";
+export const SETTINGS_MANAGE_ACCOUNT_ENDPOINT = "/settings/manage_account";
+export const CANDIDATE_DETAILS_ENDPOINT = "/api/calendar_app/candidate";
+
+

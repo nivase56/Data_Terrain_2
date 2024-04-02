@@ -26,10 +26,22 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CreateTicketModal from "./CreateTicketModal";
+import { GET_TICKET_LIST_API } from "@/utils/API";
 
 export default function CandidatesStatus0() {
   // filter btn
   const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
+
+
+  const getTicketListData = async () => {
+    const response = await GET_TICKET_LIST_API()
+    console.log(response, "response")
+  }
+
+  React.useEffect(() => {
+    getTicketListData()
+  }, [])
+
   const open = Boolean(filterBtn);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setfilterBtn(event.currentTarget);

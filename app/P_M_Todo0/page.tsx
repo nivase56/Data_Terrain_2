@@ -1,27 +1,17 @@
 "use client";
-import HeadersTop from "../dashboard/common/HeadersTop";
-import SideMenu from "../dashboard/component/SideMenu";
-import Link from "next/link";
-import {
-  Calendar,
-  momentLocalizer,
-  dateFnsLocalizer,
-} from "react-big-calendar";
-import { format, parse, startOfWeek, getDay } from "date-fns";
-
-import moment from "moment";
-import "./style.css";
-// import 'react-big-calendar/lib/sass/styles.scss';
-
-import "react-big-calendar/lib/css/react-big-calendar.css"; // Import the calendar styles
-import { enUS } from "date-fns/locale";
-
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { format, parse, startOfWeek, getDay } from "date-fns";
+import { enUS } from "date-fns/locale";
+import Link from "next/link";
 
-// Import DnD addon styles if using drag and drop functionality
-// import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
+import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 
-// const localizer = momentLocalizer(moment);
+import "./style.css";
+
+import SideMenu from "../dashboard/component/SideMenu";
+import "react-big-calendar/lib/css/react-big-calendar.css"; // Import the calendar styles
+
 const locales = {
   "en-US": enUS,
 };
@@ -35,10 +25,20 @@ const localizer = dateFnsLocalizer({
 });
 
 export default function P_M_Todo0() {
+  const dispatch = useDispatch();
+
+  const myEventsList = [
+    {
+      title: "Event 1",
+      start: new Date(),
+      end: new Date(new Date().setHours(new Date().getHours() + 1)),
+    },
+  ];
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [activeEventModal, setActiveEventModal] = useState();
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [events, setEvents] = useState(myEventsList);
 
   // Define months and years
   const months = [
@@ -76,15 +76,6 @@ export default function P_M_Todo0() {
     setSelectedYear(e.target.value);
   };
 
-  const myEventsList = [
-    {
-      title: "Event 1",
-      start: new Date(),
-      end: new Date(new Date().setHours(new Date().getHours() + 1)),
-    },
-  ];
-  const [events, setEvents] = useState(myEventsList);
-
   const handleSelectSlot = (event: any) => {
     if (typeof event.start === "string") {
       event.start = new Date(event.start);
@@ -94,49 +85,13 @@ export default function P_M_Todo0() {
       event.end = new Date(event.end);
     }
 
-    // const save = window.confirm(
-    //   `Add availability on ${format(start, "EEEE")} from ${format(
-    //     start,
-    //     "h:mma"
-    //   )} to ${format(end, "h:mm")}?`
-    // );
     setActiveEventModal(event);
-    // if (save) {
-    //   // setEvents([
-    //   //   ...events,
-    //   //   {
-    //   //     start: new FossilizedDate(
-    //   //       start.getDay(),
-    //   //       start.getHours(),
-    //   //       start.getMinutes()
-    //   //     ),
-    //   //     end: new FossilizedDate(
-    //   //       end.getDay(),
-    //   //       end.getHours(),
-    //   //       end.getMinutes()
-    //   //     ),
-    //   //     title: "",
-    //   //   },
-    //   // ]);
-    // }
   };
 
   const handleSelect = (event: any, e) => {
     const { start, end } = event;
-    // const del = window.confirm(
-    //   `Delete availability on ${format(start, "EEEE")} from ${format(
-    //     start,
-    //     "h:mma"
-    //   )} to ${format(end, "h:mm")}?`
-    // );
-    console.log(event, event);
     setActiveEventModal(event);
     setPosition({ x: e.clientX, y: e.clientY });
-
-    // if (del) {
-    //   const index = events.findIndex((e) => e.id === event.id);
-    //   setEvents([...events.slice(0, index), ...events.slice(index + 1)]);
-    // }
   };
 
   const EventDetailModal = () => {
@@ -168,11 +123,19 @@ export default function P_M_Todo0() {
   const CustomEvent = ({ event }: any) => {
     return (
       <>
-        <div className="shadow bg-white" style={{ position: "relative" }}>
+        <div className="calendarTopSection">
+          <ul>
+            <li className="text-[12px] py-1">Python Developer</li>
+            <li className="text-[12px] py-1">Interviewer: Geetha</li>
+            <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
+            <li className="text-[12px] py-1">Via : Google Voice</li>
+          </ul>
+        </div>
+        {/* <div className="shadow bg-white" style={{ position: "relative" }}>
           <strong className="text-black">{event.title}</strong>
           <p>{event.start.toLocaleString()}</p>
         </div>
-        {activeEventModal && <EventDetailModal />}
+        {activeEventModal && <EventDetailModal />} */}
       </>
     );
   };
@@ -241,8 +204,7 @@ export default function P_M_Todo0() {
                 className="d-none d-lg-block "
                 style={{ width: "100%", position: "relative" }}
               >
-
-                <div className="calendarTopSection top-[250px] left-[100px]">
+                {/* <div className="calendarTopSection top-[250px] left-[100px]">
                   <ul>
                     <li className="text-[12px] py-1">Python Developer</li>
                     <li className="text-[12px] py-1">Interviewer: Geetha</li>
@@ -295,7 +257,7 @@ export default function P_M_Todo0() {
                     <li className="text-[12px] py-1">Time : 10 - 11 A.M</li>
                     <li className="text-[12px] py-1">Via : Google Voice</li>
                   </ul>
-                </div>
+                </div> */}
                 <Calendar
                   className="TodoDataTable"
                   selectable
