@@ -5,7 +5,11 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import { enUS } from "date-fns/locale";
 import Link from "next/link";
 
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+import {
+  Calendar,
+  momentLocalizer,
+  dateFnsLocalizer,
+} from "react-big-calendar";
 
 import "./style.css";
 
@@ -25,7 +29,11 @@ const localizer = dateFnsLocalizer({
 });
 
 export default function P_M_Todo0() {
-  const dispatch = useDispatch();
+
+  const dispatch = useDispatch()
+
+
+
 
   const myEventsList = [
     {
@@ -39,6 +47,7 @@ export default function P_M_Todo0() {
   const [activeEventModal, setActiveEventModal] = useState();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [events, setEvents] = useState(myEventsList);
+
 
   // Define months and years
   const months = [
@@ -76,6 +85,7 @@ export default function P_M_Todo0() {
     setSelectedYear(e.target.value);
   };
 
+
   const handleSelectSlot = (event: any) => {
     if (typeof event.start === "string") {
       event.start = new Date(event.start);
@@ -86,6 +96,7 @@ export default function P_M_Todo0() {
     }
 
     setActiveEventModal(event);
+
   };
 
   const handleSelect = (event: any, e) => {
@@ -204,6 +215,7 @@ export default function P_M_Todo0() {
                 className="d-none d-lg-block "
                 style={{ width: "100%", position: "relative" }}
               >
+
                 {/* <div className="calendarTopSection top-[250px] left-[100px]">
                   <ul>
                     <li className="text-[12px] py-1">Python Developer</li>

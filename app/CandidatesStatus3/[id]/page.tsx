@@ -13,15 +13,17 @@ import { GET_CANDIDATE_DETAILS_API } from "@/utils/API";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-function CandidatesStatus3({params}) {
-  const getCandidateDetails=async()=>{
+function CandidatesStatus3({ params }: any) {
+
+
+  const getCandidateDetails = async () => {
     const response = await GET_CANDIDATE_DETAILS_API(params?.id)
     console.log(response)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getCandidateDetails();
-  },[])
+  }, [])
   const Poor = {
     color: "#C7E9FF",
   };
@@ -42,6 +44,8 @@ function CandidatesStatus3({params}) {
   const None = {
     color: "#E6E6E6",
   };
+
+
   return (
     <section className="">
       {/* ... rest of your component code */}

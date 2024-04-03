@@ -3,8 +3,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ManageContactsTable from './ManageContactsTable';
+import { useDispatch,useSelector } from "react-redux";
+import { dashboardSelector, userAccountManagementAccount } from '@/store/reducers/dashboard';
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -37,8 +40,15 @@ function a11yProps(index: number) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
+
 function ManageAccount(params: type) {
-    const label = { inputProps: { 'aria-label': 'Switch demo' } };
+  const dispatch = useDispatch()
+  const dashboardData = useSelector(dashboardSelector)
+  useEffect(() => {
+    dispatch(userAccountManagementAccount())
+  }, [])
+
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {

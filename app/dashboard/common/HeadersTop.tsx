@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
 import AppBar from "@mui/material/AppBar";
@@ -18,8 +18,9 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import { useDispatch } from "react-redux";
 import { toggleTheme } from "@/store/reducers/theme";
+import { dashboardSelector, userLogout, getNotifications } from "@/store/reducers/dashboard";
+import { useSelector, useDispatch } from "react-redux";
 
 const HeaderSearch = dynamic(() => import("./HeaderSearch"));
 
@@ -29,7 +30,22 @@ const HeaderSearch = dynamic(() => import("./HeaderSearch"));
 
 function HeadersTop() {
   const dispatch = useDispatch();
+  const dashboardData = useSelector(dashboardSelector)
   // const darkMode = useSelector((state: RootState) => state.theme.darkMode);
+
+  useEffect(() => {
+    dispatch(getNotifications())
+  }, [])
+  const handleLogout = async () => {
+    let data = {
+      "refresh_token": dashboardData?.login?.refresh_token
+    }
+    if (dashboardData?.login.refresh_token) {
+      await dispatch(userLogout(data))
+    } else {
+      console.warn('else')
+    }
+  }
 
   const handleThemeToggle = () => {
     dispatch(toggleTheme());
@@ -108,7 +124,7 @@ function HeadersTop() {
         </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link prefetch className="text-[14px]" href="/">
+        <Link className="text-[14px]" href="#" onClick={handleLogout}>
           Sign Out
         </Link>
       </MenuItem>

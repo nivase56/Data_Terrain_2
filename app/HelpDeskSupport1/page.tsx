@@ -1,6 +1,5 @@
 "use client";
 import Upcomings from "../dashboard/component/ProjectManager/Upcomings";
-import HeadersTop from "../dashboard/common/HeadersTop";
 import Activity from "../dashboard/component/ProjectManager/Activity";
 import CalendarProject from "../dashboard/component/ProjectManager/CalendarProject";
 import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandidates";
@@ -12,7 +11,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import * as React from "react";
 import TicketTable from "./TicketTable";
 
@@ -26,20 +24,19 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CreateTicketModal from "./CreateTicketModal";
-import { GET_TICKET_LIST_API } from "@/utils/API";
+import { useDispatch, useSelector } from "react-redux";
+import { dashboardSelector, getTicketList } from "@/store/reducers/dashboard";
 
 export default function CandidatesStatus0() {
   // filter btn
   const [filterBtn, setfilterBtn] = React.useState<null | HTMLElement>(null);
 
+  const dispatch = useDispatch()
+  const dashboardData = useSelector(dashboardSelector)
 
-  const getTicketListData = async () => {
-    const response = await GET_TICKET_LIST_API()
-    console.log(response, "response")
-  }
 
   React.useEffect(() => {
-    getTicketListData()
+   dispatch(getTicketList())
   }, [])
 
   const open = Boolean(filterBtn);
@@ -220,7 +217,7 @@ export default function CandidatesStatus0() {
                   </div>
 
                   <div className="p-3">
-                    <TicketTable />
+                    <TicketTable dashboardData={dashboardData} />
                   </div>
                 </div>
               </div>

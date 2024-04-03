@@ -15,6 +15,8 @@ import AccountPreferences from "./AccountPreferences";
 import ManageAccount from "./ManageAccount";
 import NotificationInformation from "./NotificationInformation";
 import { GET_GENERAL_SETTINGS_API, GET_SETTINGS_ACCOUNT_API, GET_SETTINGS_API, GET_SETTINGS_MANAGE_ACCOUNT_API } from "@/utils/API";
+import { dashboardSelector } from "@/store/reducers/dashboard";
+import { useSelector } from "react-redux";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -50,11 +52,12 @@ function a11yProps(index: number) {
 
 export default function P_M_Settings() {
   const [value, setValue] = React.useState(0);
-
-  const getAllSettingsData = async () => {
+  const dashboardData = useSelector(dashboardSelector)
+  const getAllSettingsData = async ({userId}:any) => {
+    console.warn(userId)
     const response1 = await GET_SETTINGS_API()
     const response2 = await GET_SETTINGS_ACCOUNT_API()
-    const response3 = await GET_GENERAL_SETTINGS_API()
+    const response3 = GET_GENERAL_SETTINGS_API(userId)
     const response4 = await GET_SETTINGS_MANAGE_ACCOUNT_API()
 
     console.log(response1, "response1")
@@ -64,7 +67,8 @@ export default function P_M_Settings() {
   }
 
   useEffect(() => {
-    getAllSettingsData()
+    let userId = dashboardData?.login?.user_id
+    getAllSettingsData(userId)
   }, [])
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {

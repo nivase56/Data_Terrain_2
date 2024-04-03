@@ -1,11 +1,14 @@
+"use client"
 import Upcomings from "../dashboard/component/ProjectManager/Upcomings";
-import HeadersTop from "../dashboard/common/HeadersTop";
 import Activity from "../dashboard/component/ProjectManager/Activity";
 import CalendarProject from "../dashboard/component/ProjectManager/CalendarProject";
 import HiringCandidates from "../dashboard/component/ProjectManager/HiringCandidates";
 import SideMenu from "../dashboard/component/SideMenu";
 import PostedJobsTop from "../dashboard/component/ProjectManager/PostedJobsTop";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { dashboardSelector, inventoryAssets } from "@/store/reducers/dashboard";
+import React, { useEffect } from "react";
 
 function ProjectManagerJobDescriptions(params: type) {
   const dataArray = [
@@ -31,6 +34,14 @@ function ProjectManagerJobDescriptions(params: type) {
     },
     // Add more data objects as needed
   ];
+
+  const dispatch = useDispatch()
+  const dashboardData = useSelector(dashboardSelector)
+
+
+  useEffect(() => {
+    dispatch(inventoryAssets())
+  }, [])
 
   return (
     <section className="">

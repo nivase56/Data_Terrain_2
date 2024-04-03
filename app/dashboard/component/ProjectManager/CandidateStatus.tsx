@@ -1,10 +1,11 @@
 "use client";
 import { dashboardSelector, getCandidateStatusList } from "@/store/reducers/dashboard";
-import React,{ useEffect } from "react";
+import Link from "next/link";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function CandidateStatus() {
- 
+
   const dispatch = useDispatch()
   const dashboardData = useSelector(dashboardSelector)
 
@@ -36,11 +37,12 @@ function CandidateStatus() {
                 <td>{list?.job_details?.id}</td>
                 <td>{list?.candidate_details?.candidate_firstName + " " + list?.candidate_details?.candidate_lastName}</td>
                 <td>{list?.job_details?.jobRequest_Role}</td>
-                <td>{list?.meeting_details[0]?.status}</td>
-                <td>{list?.meeting_details[1]?.status}</td>
-                <td>{list?.meeting_details[2]?.status}</td>
-                <td>{list?.meeting_details[3]?.status}</td>
-                <td>{list?.totalMarks}</td>
+                <td>{list?.meeting_details[0]?.computed_score}/{list?.meeting_details[0]?.out_of_score}</td>
+                <td>{list?.meeting_details[1]?.computed_score}/{list?.meeting_details[1]?.out_of_score}</td>
+                <td>{list?.meeting_details[2]?.computed_score}/{list?.meeting_details[2]?.out_of_score}</td>
+                <td>{list?.meeting_details[3]?.computed_score}/{list?.meeting_details[3]?.out_of_score}</td>
+                {/* UPDATE TOTAL MARKS REAMAINING */}
+                <td>{list?.meeting_details[0]?.computed_score}/{list?.meeting_details[0]?.out_of_score}</td>
                 {list?.status === "Hired" || list?.status === "hired" ? (
                   <td>
                     <button className="bg-[#cbffd7] rounded-2 px-2 py-1 text-green-700">
@@ -66,10 +68,10 @@ function CandidateStatus() {
                 ) : null}
 
                 <td>
-                  <button className="btn">
+                  <Link className="btn" href={`CandidatesStatus3/${list?.candidate_details?.id}`}>
                     <img src="image/eye-black.png" alt="" className="text-muted text-dark" />
                     {/* <i className="fa fa-eye text-muted" aria-hidden="true"></i> */}
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}

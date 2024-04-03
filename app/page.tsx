@@ -21,10 +21,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "next/link";
 import Loader from "./dashboard/common/Loader";
-import { GET_USER_HIERACHY_API } from "../utils/API";
-import { useDispatch } from "react-redux";
-import { dashboardSelector, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings } from "@/store/reducers/dashboard";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+import { dashboardSelector,userlogin, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings,getPostedJobActiveList } from "@/store/reducers/dashboard";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -32,20 +30,15 @@ export default function Home() {
   const dispatch = useDispatch()
   const dashboardData = useSelector(dashboardSelector)
 
-
-  useEffect(() => {
-    let resp = GET_USER_HIERACHY_API();
-    console.warn("ress", resp);
-  }, []);
-
   useEffect(() => {
     dispatch(getInterviewAndHiredDetails())
     dispatch(getPostedJobList())
+    dispatch(getPostedJobActiveList())
     dispatch(getTodayMeetingDetailsList())
     dispatch(getUpcomings())
     dispatch(getActivities())
     dispatch(getHirings())
-
+    dispatch(userlogin())
   }, [])
 
   useEffect(() => {
@@ -58,55 +51,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-
-
-  // Define an array of data objects representing each card's content
-  const jobsData = [
-    {
-      title: "Angular Developers",
-      category: "Senior Developers",
-      number: "250",
-      percentage: "18%",
-      time: "8 mins ago",
-      imageSrc: "image/Angularicon.png",
-      bgColor: "#D9E4EF",
-      textColor: "#0A66C2",
-    },
-
-    {
-      title: "Java Developers",
-      category: "Senior Developers",
-      number: "250",
-      percentage: "18%",
-      time: "8 mins ago",
-      imageSrc: "image/graphic.png",
-      bgColor: "#73A1FB",
-      textColor: "#FFFFFF",
-    },
-    {
-      title: "UX|UI Designers",
-      category: "Senior Developers",
-      number: "250",
-      percentage: "18%",
-      time: "8 mins ago",
-      imageSrc: "image/java.png",
-      bgColor: "#2F73A0",
-      textColor: "#FFFFFF",
-    },
-
-    {
-      title: "Python Developer",
-      category: "Senior Developers",
-      number: "303",
-      percentage: "22%",
-      time: "6 mins ago",
-      imageSrc: "image/python.png",
-      bgColor: "#0A66C2",
-      textColor: "#FFFFFF",
-    },
-
-    // Add more job data objects as needed
-  ];
 
   // tab start
   interface TabPanelProps {
@@ -151,9 +95,8 @@ export default function Home() {
     return <Loader />;
   }
 
-
-  const activeJobsData = dashboardData?.posted_job_list?.filter(() => true)
-  const inactiveJobsData = dashboardData?.posted_job_list?.filter(() => true);
+  const activeJobsData = dashboardData?.posted_job_list
+  const inactiveJobsData = dashboardData?.posted_job_active_list
 
   //tab end
   return (
@@ -277,7 +220,7 @@ export default function Home() {
                     <hr className="mt-0" />
                     <CustomTabPanel className="p-0" value={value} index={0}>
                       <div className="row px-3 pb-3">
-                        {inactiveJobsData?.map((job, index) => (
+                        {inactiveJobsData?.map((job: any, index: any) => (
                           <PostedJobsCard key={index} {...job} />
                         ))}
                       </div>
@@ -288,7 +231,7 @@ export default function Home() {
                       index={1}
                     >
                       <div className="row px-3 pb-3">
-                        {activeJobsData?.map((job, index) => (
+                        {activeJobsData?.map((job: any, index: any) => (
                           <PostedJobsCard key={index} {...job} />
                         ))}
                       </div>
@@ -302,7 +245,7 @@ export default function Home() {
                     titleName="Candidate Status"
                     classSamll="text-underline"
                     samllText="View All"
-                    viewAllPath={"/CandidatesStatus0"}
+                    viewAllPath={"/CandidateStatusList"}
                   />
                   <CandidateStatus />
                 </div>

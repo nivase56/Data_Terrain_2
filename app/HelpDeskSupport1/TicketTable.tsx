@@ -270,7 +270,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-export default function TicketTable() {
+export default function TicketTable({ dashboardData }: any) {
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("calories");
   const [selected, setSelected] = React.useState<readonly number[]>([]);
@@ -289,7 +289,7 @@ export default function TicketTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.id);
+      const newSelected = dashboardData?.ticket_List?.map((n) => n.id);
       setSelected(newSelected);
       return;
     }
@@ -334,7 +334,7 @@ export default function TicketTable() {
 
   const visibleRows = React.useMemo(
     () =>
-      stableSort(rows, getComparator(order, orderBy)).slice(
+      stableSort(dashboardData?.ticket_List, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
         page * rowsPerPage + rowsPerPage
       ),
@@ -356,7 +356,7 @@ export default function TicketTable() {
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={dashboardData?.ticket_List?.length}
             />
             <TableBody>
               {visibleRows.map((row, index) => {
@@ -370,7 +370,7 @@ export default function TicketTable() {
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.id}
+                    key={dashboardData?.ticket_List?.id}
                     selected={isItemSelected}
                     sx={{ whiteSpace: "nowrap" }} // Apply white-space: nowrap; to table rows
                     // sx={{ cursor: 'pointer' }}
@@ -379,11 +379,11 @@ export default function TicketTable() {
                     <TableCell component="th" id={labelId} scope="row">
                       {row.TicketID}
                     </TableCell>
-                    <TableCell align="left"> {row.TicketSubject}</TableCell>
-                    <TableCell align="left">{row.Descriptions}</TableCell>
-                    <TableCell align="left">{row.CreationDate}</TableCell>
+                    <TableCell align="left"> {dashboardData?.ticket_List?.ticket_subject}</TableCell>
+                    <TableCell align="left">{dashboardData?.ticket_List?.ticket_description}</TableCell>
+                    <TableCell align="left">{dashboardData?.ticket_List?.created_date}</TableCell>
                     <TableCell align="left">
-                      {row.Status}
+                      {dashboardData?.ticket_List?.Status}
                       <button className="hover:bg-[#1d7b1c26] text-[#108F0E] px-2 py-1 rounded bg-[#0EAD0B26]">
                         Hired
                       </button>
@@ -400,7 +400,7 @@ export default function TicketTable() {
                         className="hover:text-blue-500 text-muted mx-1"
                         onClick={(e) => e.stopPropagation()}
                       >
-                       <i className="fa fa-trash" aria-hidden="true"></i>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </TableCell>
                   </TableRow>
