@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/dashboard/assets/css/bootstrap.min.css";
+import "@/app/dashboard/assets/css/globals.css";
+import "@/app/dashboard/assets/css/comman.css";
+import "@/app/dashboard/assets/css/style.css";
+import "@/app/dashboard/assets/css/responsive.css";
+import { Providers } from "./Providers";
+import HeadersTop from "@/app/dashboard/common/HeadersTop";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body style={{ paddingTop: 50 }} className={inter.className}>
+        <Providers>
+          <HeadersTop />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }

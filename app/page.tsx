@@ -1,113 +1,278 @@
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
+
+import ApplicationsReceived from "@/app/dashboard/component/ProjectManager/ApplicationsReceived";
+import SideMenu from "@/app/dashboard/component/SideMenu";
+import TotalEmployees from "@/app/dashboard/component/ProjectManager/TotalEmployees";
+import NumberofVacancies from "@/app/dashboard/component/ProjectManager/NumberofVacancies";
+import Number_of_Interviews from "@/app/dashboard/component/ProjectManager/Number_of_Interviews";
+import TodayInterviews from "@/app/dashboard/component/ProjectManager/TodayInterviews";
+
+import PostedJobsCard from "@/app/dashboard/component/ProjectManager/PostedJobsCard";
+import CandidateStatus from "@/app/dashboard/component/ProjectManager/CandidateStatus";
+import PostedJobsTop from "@/app/dashboard/component/ProjectManager/PostedJobsTop";
+import Upcomings from "@/app/dashboard/component/ProjectManager/Upcomings";
+import Activity from "@/app/dashboard/component/ProjectManager/Activity";
+import HiringCandidates from "@/app/dashboard/component/ProjectManager/HiringCandidates";
+import ScheduledInterviewsGraph from "@/app/dashboard/component/ProjectManager/ScheduledInterviewsGraph";
+import CalendarProject from "@/app/dashboard/component/ProjectManager/CalendarProject";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Loader from "@/app/dashboard/common/Loader";
+import { dashboardSelector, userlogin, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings, getPostedJobActiveList } from "@/store/reducers/dashboard";
+import { P_M_JOB_DESCRIPTIONS1, P_M_JOB_DESCRIPTIONS4 } from "@/constants/ROUTES";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [value, setValue] = useState(0);
+  const dispatch = useDispatch()
+  const dashboardData = useSelector(dashboardSelector)
+
+  useEffect(() => {
+    dispatch(getInterviewAndHiredDetails())
+    dispatch(getPostedJobList())
+    dispatch(getPostedJobActiveList())
+    dispatch(getTodayMeetingDetailsList())
+    dispatch(getUpcomings())
+    dispatch(getActivities())
+    dispatch(getHirings())
+    dispatch(userlogin())
+  }, [])
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Set the loading state to false after 2 seconds (you can adjust this delay)
+
+    // Clear the timer on component unmount
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  // tab start
+  interface TabPanelProps {
+    children?: React.ReactNode;
+    index: number;
+    value: number;
+  }
+
+  function CustomTabPanel(props: TabPanelProps) {
+    const { children, value, index, ...other } = props;
+
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box className="p-0" sx={{ p: 3 }}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
+
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  const activeJobsData = dashboardData?.posted_job_list
+  const inactiveJobsData = dashboardData?.posted_job_active_list
+
+  //tab end
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="">
+      <section className="container-fluid my-md-5 my-4">
+        <div className="row">
+          <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
+            <SideMenu />
+          </div>
+
+          <div className="col-lg-11 pe-lg-4 ps-lg-0">
+            <div className="row justify-content-between  align-items-center">
+              <div className="col-lg-8 projectText">
+                <h1>Project Manager</h1>
+                <p className="mt-3">
+                  Enjoy your selecting potential candidates Tracking and
+                  Management System.
+                </p>
+              </div>
+
+              <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
+                <Link
+                  prefetch
+                  href={P_M_JOB_DESCRIPTIONS1}
+                  className="btn btn-light me-3 mx-lg-2"
+                >
+                  JD Assets
+                </Link>
+                <Link
+                  prefetch
+                  href={P_M_JOB_DESCRIPTIONS4}
+                  className="btn btn-blue bg-[#0a66c2!important]"
+                >
+                  Create New JD
+                </Link>
+              </div>
+            </div>
+
+            <div className="row mt-4">
+              <div className="col-lg-8 col-md-7 mt-3 mt-md-0 projectText d-flex">
+                <ScheduledInterviewsGraph />
+              </div>
+
+              <div className="col-lg-4 col-md-5 mt-3 mt-md-0">
+                <ApplicationsReceived />
+              </div>
+            </div>
+
+            {/* new section */}
+
+            <div className="row">
+              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
+                <TotalEmployees />
+              </div>
+
+              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
+                <NumberofVacancies />
+              </div>
+
+              <div className="col-lg-4 col-md-12 mt-4 pt-md-2 d-flex">
+                <Number_of_Interviews />
+              </div>
+            </div>
+
+            {/* new section */}
+
+            <div className="row">
+              <div className="col-lg-9  mt-4">
+                <div className="shadow bg-white p-3">
+                  <h3 className="projectManHeading">
+                    Today Interviews Meetings Info
+                  </h3>
+                  <hr className="my-3" />
+
+                  <div className="d-flex overflow-x-scroll interviewScroll">
+                    <TodayInterviews />
+                    {/* <TodayInterviews />
+                    <TodayInterviews />
+                    <TodayInterviews /> */}
+                  </div>
+                </div>
+
+                {/* new section */}
+
+                <div className="shadow bg-white mt-4">
+                  <PostedJobsTop
+                    titleName="Posted Jobs"
+                    classTitle=""
+                    classSamll="text-underline"
+                    samllText="View All"
+                    viewAllPath={"/JobApplication0"}
+                  />
+
+                  {/* <div className="ol-lg-12 px-3">
+                    <ul className="d-flex">
+                      <li className="d-inline-block pe-5">Active Jobs</li>
+                      <li className="d-inline-block pe-5">Inactive Jobs</li>
+                    </ul>
+                   
+                  </div> */}
+
+                  <Box sx={{ width: "100%" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                      <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="basic tabs example"
+                      >
+                        <Tab
+                          className="postedTab"
+                          label="Active Jobs"
+                          {...a11yProps(0)}
+                        />
+                        <Tab
+                          className="postedTab"
+                          label="Inactive Jobs"
+                          {...a11yProps(1)}
+                        />
+                      </Tabs>
+                    </Box>
+                    <hr className="mt-0" />
+                    <CustomTabPanel className="p-0" value={value} index={0}>
+                      <div className="row px-3 pb-3">
+                        {inactiveJobsData?.map((job: any, index: any) => (
+                          <PostedJobsCard key={index} {...job} />
+                        ))}
+                      </div>
+                    </CustomTabPanel>
+                    <CustomTabPanel
+                      className="p-0 bg-dark"
+                      value={value}
+                      index={1}
+                    >
+                      <div className="row px-3 pb-3">
+                        {activeJobsData?.map((job: any, index: any) => (
+                          <PostedJobsCard key={index} {...job} />
+                        ))}
+                      </div>
+                    </CustomTabPanel>
+                  </Box>
+                </div>
+
+                {/* new sections */}
+                <div className="shadow bg-white mt-4">
+                  <PostedJobsTop
+                    titleName="Candidate Status"
+                    classSamll="text-underline"
+                    samllText="View All"
+                    viewAllPath={"/CandidateStatusList"}
+                  />
+                  <CandidateStatus />
+                </div>
+              </div>
+
+              <div className="col-lg-3 mt-4">
+                <div className="overflow-hidden d-flex justify-center ">
+                  <CalendarProject />
+                </div>
+                <div className="mt-5">
+                  <Upcomings />
+                </div>
+
+                <div className="mt-5">
+                  <Activity />
+                </div>
+
+                <div className="mt-5">
+                  <HiringCandidates />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
     </main>
   );
 }
