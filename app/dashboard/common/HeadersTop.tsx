@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useSelector, useDispatch } from "react-redux";
+
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -18,9 +20,10 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+
 import { toggleTheme } from "@/store/reducers/theme";
 import { dashboardSelector, userLogout, getNotifications } from "@/store/reducers/dashboard";
-import { useSelector, useDispatch } from "react-redux";
+import { HOME, INTERVIEW_STATUS_FORM_1, P_M_MESSAGES, P_M_NOTIFICATIONS, P_M_PROFILE, P_M_REQUEST_STATUS_1 } from "@/constants/ROUTES";
 
 const HeaderSearch = dynamic(() => import("./HeaderSearch"));
 
@@ -119,7 +122,7 @@ function HeadersTop() {
       onClose={handleOneMenuClose}
     >
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link prefetch className="text-[14px]" href="/P_M_Profile">
+        <Link prefetch className="text-[14px]" href={P_M_PROFILE}>
           Profile
         </Link>
       </MenuItem>
@@ -130,12 +133,12 @@ function HeadersTop() {
       </MenuItem>
 
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link prefetch className="text-[14px]" href="/P_M_RequestStatus1">
+        <Link prefetch className="text-[14px]" href={P_M_REQUEST_STATUS_1}>
           P_M_RequestStatus1...
         </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuTwoClose}>
-        <Link prefetch className="text-[14px]" href="/InterviewStatusForm1">
+        <Link prefetch className="text-[14px]" href={INTERVIEW_STATUS_FORM_1}>
           InterviewStatusForm1...
         </Link>
       </MenuItem>
@@ -166,7 +169,7 @@ function HeadersTop() {
             You have Received in 20 notifications
           </p>
           <hr className="my-1" />
-          <Link href="/P_M_Notifications" prefetch>
+          <Link href={P_M_NOTIFICATIONS} prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -192,7 +195,7 @@ function HeadersTop() {
             </div>
           </Link>
 
-          <Link href="/P_M_Notifications" prefetch>
+          <Link href={P_M_NOTIFICATIONS} prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -246,7 +249,7 @@ function HeadersTop() {
             You have Received in 17 notifications
           </p>
           <hr className="my-1" />
-          <Link href="/P_M_Messages" prefetch>
+          <Link href={P_M_MESSAGES} prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -272,7 +275,7 @@ function HeadersTop() {
             </div>
           </Link>
 
-          <Link href="/P_M_Messages" prefetch>
+          <Link href={P_M_MESSAGES} prefetch>
             <div className="notification_Menu">
               <div className="row mx-0 py-2 mb-2 border-bottom align-items-center">
                 <div className="col-lg-3 col-3 ps-2 pe-0">
@@ -322,7 +325,7 @@ function HeadersTop() {
       onClose={handleMobileOneMenuClose}
     >
       <MenuItem>
-        <Link href="/P_M_Messages" prefetch>
+        <Link href={P_M_MESSAGES} prefetch>
           <IconButton
             size="large"
             aria-label="show 4 new mails"
@@ -335,7 +338,7 @@ function HeadersTop() {
       </MenuItem>
 
       <MenuItem>
-        <Link href="/P_M_Messages" prefetch>
+        <Link href={P_M_MESSAGES} prefetch>
           <IconButton
             size="large"
             aria-label="show 4 new mails"
@@ -397,7 +400,7 @@ function HeadersTop() {
               component="div"
               sx={{ display: { xs: "block", sm: "block" } }}
             >
-              <Link href="/" prefetch>
+              <Link href={HOME} prefetch>
                 {" "}
                 <img className="logo-top" src="image/logo.png" alt="Logo" />
               </Link>

@@ -1,28 +1,30 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ApplicationsReceived from "./dashboard/component/ProjectManager/ApplicationsReceived";
-import SideMenu from "./dashboard/component/SideMenu";
-import TotalEmployees from "./dashboard/component/ProjectManager/TotalEmployees";
-import NumberofVacancies from "./dashboard/component/ProjectManager/NumberofVacancies";
-import Number_of_Interviews from "./dashboard/component/ProjectManager/Number_of_Interviews";
-import TodayInterviews from "./dashboard/component/ProjectManager/TodayInterviews";
+import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 
-import PostedJobsCard from "./dashboard/component/ProjectManager/PostedJobsCard";
-import CandidateStatus from "./dashboard/component/ProjectManager/CandidateStatus";
-import PostedJobsTop from "./dashboard/component/ProjectManager/PostedJobsTop";
-import Upcomings from "./dashboard/component/ProjectManager/Upcomings";
-import Activity from "./dashboard/component/ProjectManager/Activity";
-import HiringCandidates from "./dashboard/component/ProjectManager/HiringCandidates";
-import ScheduledInterviewsGraph from "./dashboard/component/ProjectManager/ScheduledInterviewsGraph";
-import CalendarProject from "./dashboard/component/ProjectManager/CalendarProject";
+import ApplicationsReceived from "@/app/dashboard/component/ProjectManager/ApplicationsReceived";
+import SideMenu from "@/app/dashboard/component/SideMenu";
+import TotalEmployees from "@/app/dashboard/component/ProjectManager/TotalEmployees";
+import NumberofVacancies from "@/app/dashboard/component/ProjectManager/NumberofVacancies";
+import Number_of_Interviews from "@/app/dashboard/component/ProjectManager/Number_of_Interviews";
+import TodayInterviews from "@/app/dashboard/component/ProjectManager/TodayInterviews";
+
+import PostedJobsCard from "@/app/dashboard/component/ProjectManager/PostedJobsCard";
+import CandidateStatus from "@/app/dashboard/component/ProjectManager/CandidateStatus";
+import PostedJobsTop from "@/app/dashboard/component/ProjectManager/PostedJobsTop";
+import Upcomings from "@/app/dashboard/component/ProjectManager/Upcomings";
+import Activity from "@/app/dashboard/component/ProjectManager/Activity";
+import HiringCandidates from "@/app/dashboard/component/ProjectManager/HiringCandidates";
+import ScheduledInterviewsGraph from "@/app/dashboard/component/ProjectManager/ScheduledInterviewsGraph";
+import CalendarProject from "@/app/dashboard/component/ProjectManager/CalendarProject";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Link from "next/link";
-import Loader from "./dashboard/common/Loader";
-import { useDispatch,useSelector } from "react-redux";
-import { dashboardSelector,userlogin, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings,getPostedJobActiveList } from "@/store/reducers/dashboard";
+import Loader from "@/app/dashboard/common/Loader";
+import { dashboardSelector, userlogin, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings, getPostedJobActiveList } from "@/store/reducers/dashboard";
+import { P_M_JOB_DESCRIPTIONS1, P_M_JOB_DESCRIPTIONS4 } from "@/constants/ROUTES";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -120,14 +122,14 @@ export default function Home() {
               <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
                 <Link
                   prefetch
-                  href="/P_M_JobDescriptions1"
+                  href={P_M_JOB_DESCRIPTIONS1}
                   className="btn btn-light me-3 mx-lg-2"
                 >
                   JD Assets
                 </Link>
                 <Link
                   prefetch
-                  href="P_M_JobDescriptions4"
+                  href={P_M_JOB_DESCRIPTIONS4}
                   className="btn btn-blue bg-[#0a66c2!important]"
                 >
                   Create New JD

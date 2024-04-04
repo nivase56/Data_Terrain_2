@@ -1,4 +1,5 @@
 "use client";
+import { ACCESS_TOKEN } from "@/constants/ENVIRONMENT_VARIABLES";
 import {
   GET_ACTIVITIES_API,
   GET_CANDIDATE_STATUS_API,
@@ -13,16 +14,35 @@ import {
   LOGIN_API,
   LOGOUT_API,
   NOTIFICATIONS_API,
-  USER_ACCOUNT_MANAGEMENT_ACCOUNT_API
+  USER_ACCOUNT_MANAGEMENT_ACCOUNT_API,
 } from "@/utils/API";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+import Cookies from "js-cookie"; // Import the js-cookie library
+
 // Helper function to handle common async thunk logic
-const createAsyncThunkHandler = (apiFunction, propName) =>
-  createAsyncThunk(`dashboard/${propName}`, async () => {
-    const response = await apiFunction();
-    console.log(response);
-    return response;
+const createAsyncThunkHandler = (apiFunction, propName, onLoginSuccess?) =>
+  createAsyncThunk(`dashboard/${propName}`, async (data: any) => {
+    try {
+      // Call the API function with provided data
+      let response;
+      if (data) {
+        response = await apiFunction(data);
+      } else {
+        response = await apiFunction();
+      }
+
+      // If there's a login success callback, call it with the response
+      if (onLoginSuccess && propName === "login") {
+        onLoginSuccess(response);
+      }
+
+      return response;
+    } catch (error) {
+      // Handle error
+      console.error(`${propName} failed:`, error);
+      throw error;
+    }
   });
 
 // Define async thunks using the helper function
@@ -67,38 +87,39 @@ export const getHirings = createAsyncThunkHandler(
 );
 export const userlogin = createAsyncThunkHandler(
   LOGIN_API,
-  "login"
+  "login",
+  (response) => {
+    // Assuming response contains session information such as user data, access token, etc.
+    const { access_token, user_email, user_id, refresh_token } = response;
+    // Store user data and access token in cookies
+    Cookies.set(
+      ACCESS_TOKEN,
+      JSON.stringify({ access_token, user_email, user_id, refresh_token })
+    );
+  }
 );
 
-export const getTicketList
-  = createAsyncThunkHandler(
-    GET_TICKET_LIST_API,
-    "ticket_List"
-  );
+export const getTicketList = createAsyncThunkHandler(
+  GET_TICKET_LIST_API,
+  "ticket_List"
+);
 
-export const userLogout
-  = createAsyncThunkHandler(
-    LOGOUT_API,
-    "logout"
-  );
+export const userLogout = createAsyncThunkHandler(LOGOUT_API, "logout");
 
+export const userAccountManagementAccount = createAsyncThunkHandler(
+  USER_ACCOUNT_MANAGEMENT_ACCOUNT_API,
+  "user_account_management"
+);
 
-export const userAccountManagementAccount
-  = createAsyncThunkHandler(
-    USER_ACCOUNT_MANAGEMENT_ACCOUNT_API,
-    "user_account_management"
-  );
+export const inventoryAssets = createAsyncThunkHandler(
+  INVENTORY_ASSETS_API,
+  "inventory_Assets"
+);
 
-export const inventoryAssets
-  = createAsyncThunkHandler(
-    INVENTORY_ASSETS_API,
-    "inventory_Assets"
-  );
-
-  export const getNotifications
-=createAsyncThunkHandler(
-  NOTIFICATIONS_API, "notification_list"
-)
+export const getNotifications = createAsyncThunkHandler(
+  NOTIFICATIONS_API,
+  "notification_list"
+);
 const dashboardSlice = createSlice({
   name: "dashboard",
   initialState: {
@@ -111,8 +132,8 @@ const dashboardSlice = createSlice({
     upcomings_list: [],
     hirings_list: [],
     ticket_List: [],
-    inventory_Assets:[],
-    notification_list:[],
+    inventory_Assets: [],
+    notification_list: [],
     login: {},
     logout: {},
     user_account_management: {},

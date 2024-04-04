@@ -8,8 +8,7 @@ const makeRequest = async (endpoint, data, method = "post") => {
     let result = await response?.data;
 
     if (result) {
-
-      console.warn(`--=${endpoint}===`, result)
+      console.warn(`--=${endpoint}===`, result);
       return result;
     }
   } catch (error) {
@@ -30,14 +29,22 @@ export const GET_INTERVIEW_AND_HIRED_DETAILS_API = () =>
   makeRequest(API_ENDPOINTS.INTERVIEW_AND_HIRED_DETAILS_ENDPOINT, null, "get");
 
 export const GET_POSTED_JOB_LISTS_API = () =>
-  makeRequest(API_ENDPOINTS.POST_JOB_LIST_ENDPOINT, {
-    "status": "InActive"
-  }, "get");
+  makeRequest(
+    API_ENDPOINTS.POST_JOB_LIST_ENDPOINT,
+    {
+      status: "InActive",
+    },
+    "get"
+  );
 
 export const GET_POSTED_JOB_Active_LISTS_API = () =>
-  makeRequest(API_ENDPOINTS.POST_JOB_Active_LIST_ENDPOINT, {
-    "status": "Active"
-  }, "get");
+  makeRequest(
+    API_ENDPOINTS.POST_JOB_Active_LIST_ENDPOINT,
+    {
+      status: "Active",
+    },
+    "get"
+  );
 
 export const GET_TODAY_MEETING_DETAILS_API = () =>
   makeRequest(API_ENDPOINTS.TODAY_MEETING_DETAILS_ENDPOINT, null, "get");
@@ -69,7 +76,7 @@ export const GET_SETTINGS_API = () => {
 };
 
 export const GET_GENERAL_SETTINGS_API = (id) => {
-  makeRequest(API_ENDPOINTS.SETTINGS_GENERAL_ENDPOINT+ id + '/', null, "get");
+  makeRequest(API_ENDPOINTS.SETTINGS_GENERAL_ENDPOINT + id + "/", null, "get");
 };
 
 export const GET_SETTINGS_ACCOUNT_API = () => {
@@ -82,20 +89,18 @@ export const GET_SETTINGS_MANAGE_ACCOUNT_API = (id) => {
 
 export const GET_CANDIDATE_DETAILS_API = ({ candidate_id, job_id }) => {
   makeRequest(
-    API_ENDPOINTS.CANDIDATE_DETAILS_ENDPOINT, {
-    "candidate_id": 2,
-    "job_id": 1
-  },
+    API_ENDPOINTS.CANDIDATE_DETAILS_ENDPOINT,
+    {
+      candidate_id: 2,
+      job_id: 1,
+    },
     null,
     "get"
   );
 };
 
 export const LOGIN_API = (data) =>
-  makeRequest(API_ENDPOINTS.LOGIN_ENDPOINT, {
-    "Useremail": "adminsuper@admin.com",
-    "Password": "Data@123"
-  });
+  makeRequest(API_ENDPOINTS.LOGIN_ENDPOINT, data);
 
 export const LOGOUT_API = ({ data }) =>
   makeRequest(API_ENDPOINTS.LOGOUT_ENDPOINT, data);
@@ -103,17 +108,19 @@ export const LOGOUT_API = ({ data }) =>
 export const USER_ACCOUNT_MANAGEMENT_ACCOUNT_API = () =>
   makeRequest(API_ENDPOINTS.USER_ACCOUNT_MANAGEMENT_ACCOUNT, null, "get");
 
-
 export const INVENTORY_ASSETS_API = () =>
-  makeRequest(API_ENDPOINTS.INVENTORY_ASSETS, {
-    "filter_by": "all"
-  }, "get");
+  makeRequest(
+    API_ENDPOINTS.INVENTORY_ASSETS,
+    {
+      filter_by: "all",
+    },
+    "get"
+  );
 
-  export const NOTIFICATIONS_API = () =>
+export const NOTIFICATIONS_API = () =>
   makeRequest(API_ENDPOINTS.NOTIFICATIONS_ENDPOINT, {
-    "filter_by": "Not Read"
-  }, "get");
-  
+    filter_by: "Not Read",
+  });
 
 export const GET_COUNTRIES_API = () =>
   makeRequest(API_ENDPOINTS.COUNTRY_LIST_ENDPOINT, null, "get");

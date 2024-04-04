@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 function Number_of_Interviews() {
     const dashboardData = useSelector(state => state.dashboard)
 
-    console.log(dashboardData)
     return (
         <div className="row w-100">
             <div className="col-lg-12 col-md-6 d-flex">

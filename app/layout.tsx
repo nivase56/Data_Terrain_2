@@ -1,13 +1,12 @@
 import { Inter } from "next/font/google";
-import "../app/dashboard/assets/css/bootstrap.min.css";
-import "../app/dashboard/assets/css/globals.css";
-import "../app/dashboard/assets/css/comman.css";
-import "../app/dashboard/assets/css/style.css";
-import "../app/dashboard/assets/css/responsive.css";
-import { ReduxProvider } from "./StoreProvider";
-import HeadersTop from "./dashboard/common/HeadersTop";
+import "@/app/dashboard/assets/css/bootstrap.min.css";
+import "@/app/dashboard/assets/css/globals.css";
+import "@/app/dashboard/assets/css/comman.css";
+import "@/app/dashboard/assets/css/style.css";
+import "@/app/dashboard/assets/css/responsive.css";
+import { Providers } from "./Providers";
+import HeadersTop from "@/app/dashboard/common/HeadersTop";
 import { Metadata } from "next";
-import SideMenu from "./dashboard/component/SideMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,18 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ paddingTop: 50 }} className={inter.className}>
-        <ReduxProvider>
+        <Providers>
           <HeadersTop />
           {children}
-          {/* <div className="container-fluid my-md-5 my-4">
-            <div className="row">
-              <div className="col-lg-1 leftMenuWidth ps-0 position-relative">
-                <SideMenu />
-              </div>
-              <div className="col-lg-11 pe-lg-4 ps-lg-0">{children}</div>
-            </div>
-          </div> */}
-        </ReduxProvider>
+        </Providers>
       </body>
     </html>
   );
