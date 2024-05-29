@@ -2,6 +2,10 @@ import axios from "axios";
 import { deleteCookie } from ".";
 import toast from "react-hot-toast";
 import { BASE_URL } from "@/constants/ENVIRONMENT_VARIABLES";
+import Cookies from 'js-cookie';
+
+const ACCESS_TOKEN = 'ta_access_token';
+
 
 export const AXIOS_CLIENT = axios.create({
   baseURL: BASE_URL,
@@ -12,7 +16,12 @@ export const AXIOS_CLIENT = axios.create({
 
 AXIOS_CLIENT.interceptors.request.use(
   (config) => {
-    const token = "asdf";
+    // const token = JSON.parse(Cookies.get(ACCESS_TOKEN))?.access_token || "";
+
+    const accesstoken = Cookies.get(ACCESS_TOKEN)
+    const token = accesstoken ? JSON.parse(accesstoken)?.access_token : ""
+
+    console.log(Cookies.get(ACCESS_TOKEN), "from toekn");
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }

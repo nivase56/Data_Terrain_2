@@ -55,6 +55,33 @@ export const GET_ACTIVITIES_API = () =>
     // to_date: "2024-03-24",
   });
 
+
+export const CALENDAR_API = async (from, to) => {
+  try {
+    const params = from ? `from_date=${from}&to_date=${to}` : '';
+    console.log(from, to);
+    console.log(params);
+    const response = await makeRequest(`${API_ENDPOINTS.CALENDAR}?${params}`, null, "get");
+    return response;
+  } catch (error) {
+    console.error("Error in CALENDAR_API:", error);
+    throw error;
+  }
+};
+
+export const CALENDAR_DETAIL = async (id) => {
+  try {
+    const params = id ? `id=${id}` : '';
+    console.log(params);
+    const response = await makeRequest(`${API_ENDPOINTS.CALENDAR_DETAILS}?${params}`, null, "get");
+    return response;
+  } catch (error) {
+    console.error("Error in CALENDAR_API:", error);
+    throw error;
+  }
+};
+
+
 export const GET_UPCOMINGS_API = () =>
   makeRequest(API_ENDPOINTS.UPCOMINGS_ENDPOINT, {
     // from_date: "2024-03-20",
@@ -108,19 +135,3 @@ export const LOGOUT_API = ({ data }) =>
 export const USER_ACCOUNT_MANAGEMENT_ACCOUNT_API = () =>
   makeRequest(API_ENDPOINTS.USER_ACCOUNT_MANAGEMENT_ACCOUNT, null, "get");
 
-export const INVENTORY_ASSETS_API = () =>
-  makeRequest(
-    API_ENDPOINTS.INVENTORY_ASSETS,
-    {
-      filter_by: "all",
-    },
-    "get"
-  );
-
-export const NOTIFICATIONS_API = () =>
-  makeRequest(API_ENDPOINTS.NOTIFICATIONS_ENDPOINT, {
-    filter_by: "Not Read",
-  });
-
-export const GET_COUNTRIES_API = () =>
-  makeRequest(API_ENDPOINTS.COUNTRY_LIST_ENDPOINT, null, "get");

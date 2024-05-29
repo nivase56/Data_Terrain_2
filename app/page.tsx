@@ -23,25 +23,39 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Loader from "@/app/dashboard/common/Loader";
-import { dashboardSelector, userlogin, getActivities, getHirings, getInterviewAndHiredDetails, getPostedJobList, getTodayMeetingDetailsList, getUpcomings, getPostedJobActiveList } from "@/store/reducers/dashboard";
-import { P_M_JOB_DESCRIPTIONS1, P_M_JOB_DESCRIPTIONS4 } from "@/constants/ROUTES";
+import {
+  dashboardSelector,
+  userlogin,
+  getActivities,
+  getHirings,
+  getInterviewAndHiredDetails,
+  getPostedJobList,
+  getTodayMeetingDetailsList,
+  getUpcomings,
+  getPostedJobActiveList,
+} from "@/store/reducers/dashboard";
+import {
+  P_M_JOB_DESCRIPTIONS1,
+  P_M_JOB_DESCRIPTIONS4,
+} from "@/constants/ROUTES";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState(0);
-  const dispatch = useDispatch()
-  const dashboardData = useSelector(dashboardSelector)
+  const dispatch = useDispatch();
+  const dashboardData = useSelector(dashboardSelector);
+  console.log(dashboardData, "dash");
 
   useEffect(() => {
-    dispatch(getInterviewAndHiredDetails())
-    dispatch(getPostedJobList())
-    dispatch(getPostedJobActiveList())
-    dispatch(getTodayMeetingDetailsList())
-    dispatch(getUpcomings())
-    dispatch(getActivities())
-    dispatch(getHirings())
-    dispatch(userlogin())
-  }, [])
+    dispatch(getInterviewAndHiredDetails());
+    dispatch(getPostedJobList());
+    dispatch(getPostedJobActiveList());
+    dispatch(getTodayMeetingDetailsList());
+    dispatch(getUpcomings());
+    dispatch(getActivities());
+    dispatch(getHirings());
+    // dispatch(userlogin());
+  }, []);
 
   useEffect(() => {
     // Simulate loading delay
@@ -52,7 +66,6 @@ export default function Home() {
     // Clear the timer on component unmount
     return () => clearTimeout(timer);
   }, []);
-
 
   // tab start
   interface TabPanelProps {
@@ -88,7 +101,6 @@ export default function Home() {
     };
   }
 
-
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -97,8 +109,8 @@ export default function Home() {
     return <Loader />;
   }
 
-  const activeJobsData = dashboardData?.posted_job_list
-  const inactiveJobsData = dashboardData?.posted_job_active_list
+  const activeJobsData = dashboardData?.posted_job_list;
+  const inactiveJobsData = dashboardData?.posted_job_active_list?.jobs;
 
   //tab end
   return (
@@ -120,7 +132,7 @@ export default function Home() {
               </div>
 
               <div className="col-lg-4 mt-3 mt-lg-0 text-center text-lg-end">
-                <Link
+                {/* <Link
                   prefetch
                   href={P_M_JOB_DESCRIPTIONS1}
                   className="btn btn-light me-3 mx-lg-2"
@@ -133,7 +145,7 @@ export default function Home() {
                   className="btn btn-blue bg-[#0a66c2!important]"
                 >
                   Create New JD
-                </Link>
+                </Link> */}
               </div>
             </div>
 

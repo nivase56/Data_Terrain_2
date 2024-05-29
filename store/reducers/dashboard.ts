@@ -15,6 +15,8 @@ import {
   LOGOUT_API,
   NOTIFICATIONS_API,
   USER_ACCOUNT_MANAGEMENT_ACCOUNT_API,
+  CALENDAR_API,
+  CALENDAR_DETAIL,
 } from "@/utils/API";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
@@ -88,7 +90,12 @@ export const getHirings = createAsyncThunkHandler(
 export const userlogin = createAsyncThunkHandler(
   LOGIN_API,
   "login",
-  (response) => {
+  (response: {
+    access_token: any;
+    user_email: any;
+    user_id: any;
+    refresh_token: any;
+  }) => {
     // Assuming response contains session information such as user data, access token, etc.
     const { access_token, user_email, user_id, refresh_token } = response;
     // Store user data and access token in cookies
@@ -96,6 +103,9 @@ export const userlogin = createAsyncThunkHandler(
       ACCESS_TOKEN,
       JSON.stringify({ access_token, user_email, user_id, refresh_token })
     );
+    if (response) {
+      window.location.href = "/";
+    }
   }
 );
 
@@ -120,6 +130,33 @@ export const getNotifications = createAsyncThunkHandler(
   NOTIFICATIONS_API,
   "notification_list"
 );
+
+export const getCalendarDetails = createAsyncThunk(
+  "dashboard/calendar_details",
+  async ({ from, to }, { rejectWithValue }) => {
+    try {
+      const response = await CALENDAR_API(from, to);
+      return response;
+    } catch (error) {
+      console.error("Error fetching calendar details:", error);
+      return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
+export const getIndividualCalendarDetails = createAsyncThunk(
+  "dashboard/calendar_individual_details",
+  async ({ id }, { rejectWithValue }) => {
+    try {
+      const response = await CALENDAR_DETAIL(id);
+      return response;
+    } catch (error) {
+      console.error("Error fetching calendar details:", error);
+      return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
 const dashboardSlice = createSlice({
   name: "dashboard",
   initialState: {
@@ -172,4 +209,6 @@ const dashboardSlice = createSlice({
 });
 
 export const dashboardSelector = (state: any) => state.dashboard;
+console.log(dashboardSelector);
+
 export default dashboardSlice.reducer;
